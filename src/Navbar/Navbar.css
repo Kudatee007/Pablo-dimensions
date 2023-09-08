@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.pabloHead {
+  background-color: black;
+}
+.pabloHead > h1 {
+  color: white;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 15px 0;
+}
+.Nav {
+  background-color: whitesmoke;
+  height: 11vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.pablo-logo {
+  width: 180px;
+  height: 55.7px;
+  max-width: 200px;
+}
+.search {
+  width: 17px;
+}
+.cart {
+  width: 16px;
+}
+.profile {
+    width: 17px;
+  }
+.hamburger {
+  width: 30px;
+}
