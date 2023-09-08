@@ -24,19 +24,5 @@
   justify-content: space-around;
 }
 .pablo-logo {
-  width: 180px;
-  height: 55.7px;
-  max-width: 200px;
-}
-.search {
-  width: 17px;
-}
-.cart {
-  width: 16px;
-}
-.profile {
-    width: 17px;
-  }
-.hamburger {
-  width: 30px;
+  height: 50px;
 }
