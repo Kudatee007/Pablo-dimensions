@@ -21,7 +21,7 @@
 }
 .Nav {
   background-color: whitesmoke;
-  height: 11vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -30,26 +30,42 @@
   height: 50px;
 }
 .side {
-  display: block;
   background-color: black;
-  position: absolute;
-  width: 300px;
+  position: fixed;
+  width: 80%;
   height: 100vh;
   top: 0;
-  left: 0;
+  left: 0px;
+  overflow-y: auto; /* Add scroll when content overflows */
+  transition: 0.4s ease;
 }
 .side-NX {
-  display: none;
+  position: absolute;
+  width: 300px;
+  top: 0;
+  background-color: black;
+  left: -300px;
+  height: 100vh;
+  transition: 0.4s ease-in-out;
 }
 .side > ul {
   list-style: none;
 }
+.side-NX > ul {
+  list-style: none;
+}
 .list {
-  display: block;
   padding-bottom: 20px;
+  transition: 0s ease;
+  max-height: 1000px; /* Set a maximum height, this should be large enough */
+  overflow: hidden;
+  transition: 0.9s ease;
 }
 .list-NX {
-  display: none;
+  height: 0px;
+  max-height: 0; /* Hide the content by setting max-height to 0 */
+  overflow: hidden; /* Hide content */
+  transition: 0.2s ease;
 }
 .women {
   display: block;
@@ -89,14 +105,21 @@ h3 {
   color: white;
 }
 .secondList {
-  display: block;
   list-style: none;
   margin: 10px;
   padding: 0 10px;
   border-left: 2px solid white;
+  max-height: 1000px; /* Set a maximum height, this should be large enough */
+  overflow: hidden; /* Hide content that overflows the max-height */
+  transition: max-height 1s ease; /* Add transition to max-height property */
 }
+
+/* Hidden state */
 .secondList-NX {
-  display: none;
+  height: 0px;
+  max-height: 0; /* Hide the content by setting max-height to 0 */
+  overflow: hidden; /* Hide content */
+  transition: max-height 0.2s ease; /* Add transition to max-height property */
 }
 .secondList > li {
   list-style: none;
@@ -115,12 +138,73 @@ h3 {
   padding: 0 10px;
 }
 .secondList > li {
-    color: white;
-    line-height: 30px;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  color: white;
+  line-height: 30px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.icon-foot {
+  width: 80%;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  padding: 20px 0;
+  background-color: black;
+}
+@media (min-width: 420px) {
+  .pablo-logo {
+    width: 40%;
+  }
+}
+@media (min-width: 540px) {
+  .pablo-logo {
+    width: 55%;
+  }
+}
+@media (min-width: 640px) {
+  .pablo-logo {
+    width: 60%;
+  }
+}
+@media (min-width: 1024px) {
+  .Nav img:nth-child(4) {
+    order: -1;
+  }
+  .hamburger {
+    display: none;
+  }
+  .side,
+  .side-NX {
+    background-color: initial;
+    position: initial;
+    width: initial;
+    height: initial;
+    top: initial;
+    left: initial;
+    overflow-y: initial;
+    transition: initial;
+    display: grid;
+    flex-direction: column; /* You can set the flex direction as needed */
+  }
+
+  .side-NX {
+    position: initial;
+    width: initial;
+    top: initial;
+    background-color: initial;
+    left: initial;
+    height: initial;
+    transition: initial;
+    display: flex;
+  }
+  .icon-foot {
+    display: none;
+  }
+  .line {
+    display: none;
+  }
 }
