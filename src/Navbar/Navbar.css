@@ -2,6 +2,9 @@
   padding: 0;
   margin: 0;
 }
+.navBar {
+  position: relative;
+}
 .pabloHead {
   background-color: black;
 }
@@ -25,4 +28,99 @@
 }
 .pablo-logo {
   height: 50px;
+}
+.side {
+  display: block;
+  background-color: black;
+  position: absolute;
+  width: 300px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.side-NX {
+  display: none;
+}
+.side > ul {
+  list-style: none;
+}
+.list {
+  display: block;
+  padding-bottom: 20px;
+}
+.list-NX {
+  display: none;
+}
+.women {
+  display: block;
+}
+.women-NX {
+  display: none;
+}
+.men {
+  display: block;
+}
+.men-NX {
+  display: none;
+}
+.cancel {
+  background-color: white;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.first-list {
+  color: white;
+  line-height: 60px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.first-dropdown {
+  padding: 80px 20px;
+}
+li {
+  color: white;
+}
+h3 {
+  color: white;
+}
+.secondList {
+  display: block;
+  list-style: none;
+  margin: 10px;
+  padding: 0 10px;
+  border-left: 2px solid white;
+}
+.secondList-NX {
+  display: none;
+}
+.secondList > li {
+  list-style: none;
+}
+.second-list > h3 {
+  color: white;
+  line-height: 25px;
+  font-family: Montserrat;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.second-list {
+  padding: 0 10px;
+}
+.secondList > li {
+    color: white;
+    line-height: 30px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
