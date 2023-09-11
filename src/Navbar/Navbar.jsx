@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import hamburger from "../Img/hamburger.svg";
 import pabloLogo from "../Img/pablologo.svg";
+import pabloblacklogo from "../Img/pabloblacklogo.svg";
 import search from "../Img/search.svg";
 import cart from "../Img/cart.svg";
 import profile from "../Img/profile.svg";
+import plus from "../Img/plus.svg";
+import minus from "../Img/minus.svg";
+import lightcancel from "../Img/lightcancel.svg";
+import lightplus from "../Img/lightplus.svg";
+import lightminus from "../Img/lightminus.svg";
 
 const Navbar = () => {
   const [side, setSide] = useState(false);
@@ -21,7 +27,19 @@ const Navbar = () => {
   const [womenCloth, setWomenCloth] = useState(false);
   const [womenAccess, setWomenAccess] = useState(false);
   const [womenFoot, setWomenFoot] = useState(false);
-  //   const [latest, seeMen] = useState(false);
+  const [latestIcon, setLatestIcon] = useState(lightplus);
+  const [menIcon, setMenIcon] = useState(lightplus);
+  const [womenIcon, setWomenIcon] = useState(lightplus);
+  const [newmenIcon, setNewmenIcon] = useState(plus);
+  const [newomenIcon, setNewomenIcon] = useState(plus);
+  const [newBoyIcon, setNewBoyIcon] = useState(plus);
+  const [newGirlIcon, setNewgirlIcon] = useState(plus);
+  const [clothIcon, setClothIcon] = useState(plus);
+  const [accessIcon, setAccessIcon] = useState(plus);
+  const [menFootIcon, setMenFootIcon] = useState(plus);
+  const [womenFootIcon, setWomenFootIcon] = useState(plus);
+  const [womenClothIcon, setWomenClothIcon] = useState(plus);
+  const [womenAccessIcon, setWomenAccessIcon] = useState(plus);
 
   function handleSide() {
     setSide(!side);
@@ -30,59 +48,166 @@ const Navbar = () => {
     setWomen(!women);
     setMen(false);
     setLatest(false);
+    setMenIcon(lightplus);
+    setLatestIcon(lightplus);
+    if (womenIcon == lightplus) {
+      setWomenIcon(lightminus);
+    } else {
+      setWomenIcon(lightplus);
+    }
   }
   function handleMen() {
     setMen(!men);
     setWomen(false);
     setLatest(false);
+    setWomenIcon(lightplus);
+    setLatestIcon(lightplus);
+    if (menIcon == lightplus) {
+      setMenIcon(lightminus);
+    } else {
+      setMenIcon(lightplus);
+    }
   }
   function handleLatest() {
     setLatest(!latest);
     setMen(false);
     setWomen(false);
+    setMenIcon(lightplus);
+    setWomenIcon(lightplus);
+    if (latestIcon == lightplus) {
+      setLatestIcon(lightminus);
+    } else {
+      setLatestIcon(lightplus);
+    }
   }
   function handleNewMen() {
     setNewMen(!newMen);
     setNewWomen(false);
     setNewBoys(false);
     setNewGirls(false);
+    setNewomenIcon(plus);
+    setNewBoyIcon(plus);
+    setNewgirlIcon(plus);
+    if (newmenIcon == plus) {
+      setNewmenIcon(minus);
+    } else {
+      setNewmenIcon(plus);
+    }
   }
   function handleNewWomen() {
     setNewWomen(!newWomen);
     setNewMen(false);
     setNewBoys(false);
     setNewGirls(false);
+    setNewmenIcon(plus);
+    setNewBoyIcon(plus);
+    setNewgirlIcon(plus);
+    if (newomenIcon == plus) {
+      setNewomenIcon(minus);
+    } else {
+      setNewomenIcon(plus);
+    }
   }
   function handleNewBoys() {
     setNewBoys(!newBoys);
     setNewWomen(false);
     setNewMen(false);
     setNewGirls(false);
+    setNewmenIcon(plus);
+    setNewomenIcon(plus);
+    setNewgirlIcon(plus);
+    if (newBoyIcon == plus) {
+      setNewBoyIcon(minus);
+    } else {
+      setNewBoyIcon(plus);
+    }
   }
   function handleNewGirls() {
     setNewGirls(!newGirls);
     setNewWomen(false);
     setNewMen(false);
     setNewBoys(false);
+    setNewmenIcon(plus);
+    setNewomenIcon(plus);
+    setNewBoyIcon(plus);
+    if (newGirlIcon == plus) {
+      setNewgirlIcon(minus);
+    } else {
+      setNewgirlIcon(plus);
+    }
   }
 
   function handleMenCloth() {
     setMenCloth(!menCloth);
+    setMenAccess(false);
+    setMenFoots(false);
+    setAccessIcon(plus);
+    setMenFootIcon(plus);
+    if (clothIcon == plus) {
+      setClothIcon(minus);
+    } else {
+      setClothIcon(plus);
+    }
   }
   function handleMenAccess() {
     setMenAccess(!menAccess);
+    setMenCloth(false);
+    setMenFoots(false);
+    setClothIcon(plus);
+    setMenFootIcon(plus);
+    if (accessIcon == plus) {
+      setAccessIcon(minus);
+    } else {
+      setAccessIcon(plus);
+    }
   }
   function handleMenFoot() {
     setMenFoots(!menFoot);
+    setMenAccess(false);
+    setMenCloth(false);
+    setClothIcon(plus);
+    setAccessIcon(plus);
+    if (menFootIcon == plus) {
+      setMenFootIcon(minus);
+    } else {
+      setMenFootIcon(plus);
+    }
   }
   function handleWomenCloth() {
     setWomenCloth(!womenCloth);
+    setWomenAccess(false);
+    setWomenFoot(false);
+    setWomenAccessIcon(plus);
+    setWomenFootIcon(plus);
+    if (womenClothIcon == plus) {
+      setWomenClothIcon(minus);
+    } else {
+      setWomenClothIcon(plus);
+    }
   }
   function handleWomenAccess() {
     setWomenAccess(!womenAccess);
+    setWomenCloth(false);
+    setWomenFoot(false);
+    setWomenClothIcon(plus);
+    setWomenFootIcon(plus);
+    if (womenAccessIcon == plus) {
+      setWomenAccessIcon(minus);
+    } else {
+      setWomenAccessIcon(plus);
+    }
   }
   function handleWomenFoot() {
     setWomenFoot(!womenFoot);
+    setWomenAccess(false);
+    setWomenCloth(false);
+    setWomenClothIcon(plus);
+    setWomenAccessIcon(plus);
+    if (womenFootIcon == plus) {
+      setWomenFootIcon(minus);
+    } else {
+      setWomenFootIcon(plus);
+    }
   }
   return (
     <div className="navBar">
@@ -97,19 +222,31 @@ const Navbar = () => {
           onClick={handleSide}
         />
         <div className={side ? "side" : "side-NX"}>
-          <img src={hamburger} alt="" className="cancel" onClick={handleSide} />
-          <ul className="first-dropdown">
-            <li className="first-list">HOME</li>
-            <hr className="line"/>
-            <div>
-              <li onClick={handleLatest} className="first-list">
-                LATEST
-              </li>
-
-              <div className={latest ? "list" : "list-NX"}>
+          <img
+            src={lightcancel}
+            alt=""
+            className="cancel"
+            onClick={handleSide}
+          />
+          <div className="first-dropdown">
+            <div className="headTag">
+              <h2 className="first-list">HOME</h2>
+            </div>
+            <div className="headTag">
+              <div className="plus-div" onClick={handleLatest} id="Latest">
+                <h2 className="first-list">LATEST</h2>
+                <img src={latestIcon} alt="" className="plus-icon" />
+              </div>
+              <div className={latest ? "list" : "list-NX"} id="latest">
                 <div className="second-list">
-                  <h3 onClick={handleNewMen}>NEW MENS</h3>
-                  <ul className={newMen ? "secondList" : "secondList-NX"}>
+                  <div className="plus-div" onClick={handleNewMen}>
+                    <h3>NEW MENS</h3>
+                    <img src={newmenIcon} alt="" className="plus-icon" />
+                  </div>
+                  <ul
+                    className={newMen ? "secondList" : "secondList-NX"}
+                    id="latests"
+                  >
                     <li>T-shirts</li>
                     <li>Shirts</li>
                     <li>Sweatshirts</li>
@@ -122,9 +259,12 @@ const Navbar = () => {
                   </ul>
                 </div>
                 <div className="second-list">
-                  <h3 onClick={handleNewWomen}>NEW WOMANS</h3>
+                  <div onClick={handleNewWomen} className="plus-div">
+                    <h3>NEW WOMANS</h3>
+                    <img src={newomenIcon} alt="" className="plus-icon" />
+                  </div>
                   <ul className={newWomen ? "secondList" : "secondList-NX"}>
-                    <li>Dresses</li>
+                    <li className="dress">Dresses</li>
                     <li>T-Shirts</li>
                     <li>Jacket & Coats</li>
                     <li>Hoodies & Sweatshirts</li>
@@ -136,7 +276,10 @@ const Navbar = () => {
                   </ul>
                 </div>
                 <div className="second-list">
-                  <h3 onClick={handleNewBoys}>NEW BOYS</h3>
+                  <div className="plus-div" onClick={handleNewBoys}>
+                    <h3>NEW BOYS</h3>
+                    <img src={newBoyIcon} alt="" className="plus-icon" />
+                  </div>
                   <ul className={newBoys ? "secondList" : "secondList-NX"}>
                     <li>T-shirts</li>
                     <li>Polo Shirts</li>
@@ -150,7 +293,10 @@ const Navbar = () => {
                   </ul>
                 </div>
                 <div className="second-list">
-                  <h3 onClick={handleNewGirls}>NEW GIRLS</h3>
+                  <div className="plus-div" onClick={handleNewGirls}>
+                    <h3>NEW GIRLS</h3>
+                    <img src={newGirlIcon} alt="" className="plus-icon" />
+                  </div>
                   <ul className={newGirls ? "secondList" : "secondList-NX"}>
                     <li>Tops</li>
                     <li>Dresses</li>
@@ -164,15 +310,18 @@ const Navbar = () => {
                   </ul>
                 </div>
               </div>
-              <hr className="line"/>
             </div>
-            <div>
-              <li onClick={handleMen} className="first-list">
-                MEN
-              </li>
-              <div className={men ? "list" : "list-NX"}>
+            <div className="headTag">
+              <div className="plus-div" onClick={handleMen} id="Men">
+                <h2 className="first-list">MEN</h2>
+                <img src={menIcon} alt="" className="plus-icon" />
+              </div>
+              <div className={men ? "list" : "list-NX"} id="men">
                 <div className="second-list">
-                  <h3 onClick={handleMenCloth}>CLOTHING</h3>
+                  <div className="plus-div" onClick={handleMenCloth}>
+                    <h3>CLOTHING</h3>
+                    <img src={clothIcon} alt="" className="plus-icon" />
+                  </div>
                   <ul className={menCloth ? "secondList" : "secondList-NX"}>
                     <li>T-Shirts</li>
                     <li>Polo Shirts</li>
@@ -190,7 +339,10 @@ const Navbar = () => {
                   </ul>
                 </div>
                 <div className="second-list">
-                  <h3 onClick={handleMenAccess}>ACCESSORIES</h3>
+                  <div className="plus-div" onClick={handleMenAccess}>
+                    <h3>ACCESSORIES</h3>
+                    <img src={accessIcon} alt="" className="plus-icon" />
+                  </div>
                   <ul className={menAccess ? "secondList" : "secondList-NX"}>
                     <li>Bags</li>
                     <li>Belts</li>
@@ -209,7 +361,10 @@ const Navbar = () => {
                   </ul>
                 </div>
                 <div className="second-list">
-                  <h3 onClick={handleMenFoot}>FOOTWEAR</h3>
+                  <div className="plus-div" onClick={handleMenFoot}>
+                    <h3>FOOTWEAR</h3>
+                    <img src={menFootIcon} alt="" className="plus-icon" />
+                  </div>
                   <ul className={menFoot ? "secondList" : "secondList-NX"}>
                     <li>Shoes</li>
                     <li>Sneakers</li>
@@ -219,15 +374,18 @@ const Navbar = () => {
                   </ul>
                 </div>
               </div>
-              <hr className="line"/>
             </div>
-            <div>
-              <li onClick={handleWomen} className="first-list">
-                WOMEN
-              </li>
-              <div className={women ? "list" : "list-NX"}>
+            <div className="headTag">
+              <div className="plus-div" onClick={handleWomen} id="Women">
+                <h2 className="first-list">WOMEN</h2>
+                <img src={womenIcon} alt="" className="plus-icon" />
+              </div>
+              <div className={women ? "list" : "list-NX"} id="women">
                 <div className="second-list">
-                  <h3 onClick={handleWomenCloth}>CLOTHING</h3>
+                  <div className="plus-div" onClick={handleWomenCloth}>
+                    <h3>CLOTHING</h3>
+                    <img src={womenClothIcon} alt="" className="plus-icon" />
+                  </div>
                   <ul className={womenCloth ? "secondList" : "secondList-NX"}>
                     <li>Tops</li>
                     <li>Jeans and Trousers</li>
@@ -240,7 +398,10 @@ const Navbar = () => {
                   </ul>
                 </div>
                 <div className="second-list">
-                  <h3 onClick={handleWomenAccess}>ACCESSORIES</h3>
+                  <div className="plus-div" onClick={handleWomenAccess}>
+                    <h3>ACCESSORIES</h3>
+                    <img src={womenAccessIcon} alt="" className="plus-icon" />
+                  </div>
                   <ul className={womenAccess ? "secondList" : "secondList-NX"}>
                     <li>Bags and Purses</li>
                     <li>Belts</li>
@@ -251,7 +412,10 @@ const Navbar = () => {
                   </ul>
                 </div>
                 <div className="second-list">
-                  <h3 onClick={handleWomenFoot}>FOOTWEAR</h3>
+                  <div className="plus-div" onClick={handleWomenFoot}>
+                    <h3>FOOTWEAR</h3>
+                    <img src={womenFootIcon} alt="" className="plus-icon" />
+                  </div>
                   <ul className={womenFoot ? "secondList" : "secondList-NX"}>
                     <li>Boots</li>
                     <li>Sneakers</li>
@@ -260,12 +424,15 @@ const Navbar = () => {
                   </ul>
                 </div>
               </div>
-              <hr className="line"/>
             </div>
-          </ul>
+          </div>
+          <div className="black-logo">
+            <img src={pabloblacklogo} alt="" />
+          </div>
           <div className="icon-foot">
-            <hr className="line"/>
-            <h1 className="h11">fwrwrwrw</h1>
+            <img src={lightminus} alt="" />
+            <img src={lightplus} alt="" />
+            <img src={lightcancel} alt="" />
           </div>
         </div>
         <img src={search} alt="" className="search" />
@@ -273,7 +440,6 @@ const Navbar = () => {
         <img src={profile} alt="" className="profile" />
         <img src={cart} alt="" className="cart" />
       </nav>
-      <div></div>
     </div>
   );
 };

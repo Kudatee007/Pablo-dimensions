@@ -20,30 +20,37 @@
   padding: 15px 0;
 }
 .Nav {
-  background-color: whitesmoke;
+  background-color: white;
   height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  gap: 0px;
 }
 .pablo-logo {
   height: 50px;
 }
+.black-logo {
+  text-align: center;
+}
+.black-logo > img {
+  width: 120px;
+}
 .side {
-  background-color: black;
+  background-color: rgb(23, 23, 23);
   position: fixed;
   width: 80%;
   height: 100vh;
   top: 0;
   left: 0px;
-  overflow-y: auto; /* Add scroll when content overflows */
+  overflow-y: auto;
   transition: 0.4s ease;
 }
 .side-NX {
   position: absolute;
   width: 300px;
   top: 0;
-  background-color: black;
+  background-color: rgb(23, 23, 23);
   left: -300px;
   height: 100vh;
   transition: 0.4s ease-in-out;
@@ -62,7 +69,6 @@
   transition: 0.9s ease;
 }
 .list-NX {
-  height: 0px;
   max-height: 0; /* Hide the content by setting max-height to 0 */
   overflow: hidden; /* Hide content */
   transition: 0.2s ease;
@@ -80,35 +86,34 @@
   display: none;
 }
 .cancel {
-  background-color: white;
   position: absolute;
   left: 20px;
   top: 20px;
+  width: 20px;
 }
 .first-list {
-  color: white;
-  line-height: 60px;
+  color: rgb(218, 207, 207);
+  line-height: 65px;
   font-family: Montserrat;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
+  /* width: 30px; */
+}
+.headTag {
+  border-bottom: 0.1px solid rgb(154, 164, 154);
 }
 .first-dropdown {
-  padding: 80px 20px;
-}
-li {
-  color: white;
-}
-h3 {
-  color: white;
+  padding: 100px 30px;
+  /* width: 250px; */
 }
 .secondList {
   list-style: none;
   margin: 10px;
   padding: 0 10px;
-  border-left: 2px solid white;
+  border-left: 0.5px solid rgb(154, 164, 154);
   max-height: 1000px; /* Set a maximum height, this should be large enough */
   overflow: hidden; /* Hide content that overflows the max-height */
   transition: max-height 1s ease; /* Add transition to max-height property */
@@ -121,24 +126,18 @@ h3 {
   overflow: hidden; /* Hide content */
   transition: max-height 0.2s ease; /* Add transition to max-height property */
 }
-.secondList > li {
-  list-style: none;
-}
-.second-list > h3 {
-  color: white;
-  line-height: 25px;
+.plus-div > h3 {
+  color: rgb(174, 170, 170);
+  line-height: 35px;
   font-family: Montserrat;
-  font-size: 13px;
+  font-size: 11px;
   font-style: normal;
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-.second-list {
-  padding: 0 10px;
-}
-.secondList > li {
-  color: white;
+.secondList-NX > li {
+  color: rgb(218, 207, 207);
   line-height: 30px;
   font-family: Montserrat;
   font-size: 16px;
@@ -146,14 +145,36 @@ h3 {
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
+  list-style: none;
+}
+.second-list {
+  padding: 0 10px;
+}
+.secondList > li {
+  color: rgb(218, 207, 207);
+  line-height: 30px;
+  font-family: Montserrat;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  list-style: none;
 }
 .icon-foot {
-  width: 80%;
-  color: white;
   position: fixed;
   bottom: 0;
+  background-color: rgb(23, 23, 23);
+  width: 80%;
   padding: 20px 0;
-  background-color: black;
+  border-top: 0.1px solid rgb(154, 164, 154);
+  display: flex;
+  justify-content: space-around;
+}
+.plus-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 @media (min-width: 420px) {
   .pablo-logo {
@@ -171,26 +192,49 @@ h3 {
   }
 }
 @media (min-width: 1024px) {
+  .secondList {
+    list-style: none;
+    margin: 10px;
+    padding: 0 10px;
+    border: none;
+    max-height: 1000px;
+    overflow: initial;
+    transition: initial;
+    height: 100vh;
+  }
+  .secondList-NX {
+    /* height: 40vh; */
+    max-height: 1000px;
+    overflow: initial;
+    transition: initial;
+  }
+  .list-NX {
+    padding-bottom: 20px;
+    transition: 0s ease;
+    max-height: 1000px; /* Set a maximum height, this should be large enough */
+    overflow: hidden;
+    transition: 0.9s ease;
+  }
+  .Nav {
+    justify-content: center;
+    gap: 40px;
+  }
   .Nav img:nth-child(4) {
     order: -1;
   }
   .hamburger {
     display: none;
   }
-  .side,
-  .side-NX {
+  .side {
     background-color: initial;
     position: initial;
-    width: initial;
-    height: initial;
+    width: 1000px;
+    height: 1000px;
     top: initial;
     left: initial;
     overflow-y: initial;
     transition: initial;
-    display: grid;
-    flex-direction: column; /* You can set the flex direction as needed */
   }
-
   .side-NX {
     position: initial;
     width: initial;
@@ -199,12 +243,146 @@ h3 {
     left: initial;
     height: initial;
     transition: initial;
+  }
+  .cancel {
+    display: none;
+  }
+  .first-dropdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* display: flex; */
+    gap: 0px;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 0 120px;
+    /* width: 100%; */
+  }
+  #latest {
+    display: none;
+  }
+  #Latest:hover + #latest,
+  #latest:hover {
+    background-color: rgb(23, 23, 23);
+    position: absolute;
+    left: 0;
+    padding-top: 50px;
+    height: 45vh;
+    width: 100%;
     display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 100px;
+    transition: initial;
+    cursor: pointer;
+    transition: 0.9s ease-in-out;
+  }
+  #men {
+    position: absolute;
+    display: none;
+  }
+  #Men:hover + #men,
+  #men:hover {
+    background-color: rgb(23, 23, 23);
+    position: absolute;
+    left: 0;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    width: 100%;
+    height: 57vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 90px;
+    transition: initial;
+  }
+  #Men #men:hover #Men {
+    display: flex;
+  }
+  #women {
+    display: none;
+  }
+  #Women:hover + #women,
+  #women:hover {
+    background-color: rgb(23, 23, 23);
+    position: fixed;
+    left: 0;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 90px;
+    transition: 0.9s;
   }
   .icon-foot {
     display: none;
   }
-  .line {
+  .first-list {
+    color: black;
+    text-align: center;
+  }
+  .pablo-logo {
+    width: auto;
+  }
+  .first-list {
+    cursor: pointer;
+    width: 100px;
+    font-size: 16px;
+  }
+  .first-list:hover {
+    border-bottom: 5px solid #333;
+    transition: 0.3s ease;
+  }
+  .plus-div > h3 {
+    color: rgb(218, 207, 207);
+    line-height: 35px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    list-style: none;
+  }
+  .plus-div > h3:hover {
+    color: rgb(173, 121, 121);
+  }
+  .secondList-NX > li {
+    color: rgb(174, 170, 170);
+    line-height: 30px;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .secondList-NX > li:hover {
+    color: white;
+    transition: 0.1s ease-in-out;
+  }
+  .plus-icon {
     display: none;
+  }
+  .plus-div {
+    display: block;
+  }
+  .black-logo {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .first-dropdown {
+    padding: 0 210px;
+  }
+}
+@media (min-width: 1400px) {
+  .first-dropdown {
+    padding: 0 260px;
+  }
+  .first-list {
+    width: 120px;
   }
 }
