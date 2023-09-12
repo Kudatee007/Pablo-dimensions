@@ -21,7 +21,7 @@
 }
 .Nav {
   background-color: white;
-  height: 10vh;
+  padding: 7px 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -32,6 +32,7 @@
 }
 .black-logo {
   text-align: center;
+  padding-top: 100px;
 }
 .black-logo > img {
   width: 120px;
@@ -48,7 +49,7 @@
 }
 .side-NX {
   position: absolute;
-  width: 300px;
+  width: 0;
   top: 0;
   background-color: rgb(23, 23, 23);
   left: -300px;
@@ -162,14 +163,17 @@
   list-style: none;
 }
 .icon-foot {
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  background-color: rgb(23, 23, 23);
-  width: 80%;
-  padding: 20px 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  padding-top: 10px;
   border-top: 0.1px solid rgb(154, 164, 154);
-  display: flex;
-  justify-content: space-around;
+  text-align: center;
+}
+.icon-foot > img {
+  width: 40px;
 }
 .plus-div {
   display: flex;
@@ -185,10 +189,16 @@
   .pablo-logo {
     width: 55%;
   }
+  .side {
+    width: 300px;
+  }
 }
 @media (min-width: 640px) {
   .pablo-logo {
     width: 60%;
+  }
+  .side {
+    width: 350px;
   }
 }
 @media (min-width: 1024px) {
@@ -228,7 +238,7 @@
   .side {
     background-color: initial;
     position: initial;
-    width: 1000px;
+    width: 400px;
     height: 1000px;
     top: initial;
     left: initial;
@@ -371,6 +381,9 @@
   }
   .black-logo {
     display: none;
+  }
+  .headTag {
+    border: none;
   }
 }
 @media (min-width: 1200px) {

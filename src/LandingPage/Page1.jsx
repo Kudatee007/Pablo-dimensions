@@ -1,7 +1,4 @@
 import React from "react";
-import model1 from "../Img/IMG_6125.jpg";
-import model2 from "../Img/IMG_6126.jpg";
-import model3 from "../Img/IMG_6127.jpg";
 import "./Page1.css";
 
 const Page1 = () => {

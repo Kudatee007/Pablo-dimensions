@@ -11,6 +11,7 @@ import minus from "../Img/minus.svg";
 import lightcancel from "../Img/lightcancel.svg";
 import lightplus from "../Img/lightplus.svg";
 import lightminus from "../Img/lightminus.svg";
+import insta from "../Img/insta.svg";
 
 const Navbar = () => {
   const [side, setSide] = useState(false);
@@ -425,14 +426,12 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="black-logo">
-            <img src={pabloblacklogo} alt="" />
-          </div>
+            <div className="black-logo">
+              <img src={pabloblacklogo} alt="" />
+            </div>
           <div className="icon-foot">
-            <img src={lightminus} alt="" />
-            <img src={lightplus} alt="" />
-            <img src={lightcancel} alt="" />
+            <img src={insta} alt="" />
+          </div>
           </div>
         </div>
         <img src={search} alt="" className="search" />
