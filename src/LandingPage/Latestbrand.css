@@ -1,11 +1,136 @@
 .carousel-img {
-    width: 95%;
+  width: 98.6%;
+  border-radius: 3px;
+  /* border: 0.1px solid black; */
+  /* height: 300px; */
 }
 .carousel {
-    padding: 30px 170px;
+  padding: 35px 3px;
 }
-Carousel {
-    display: flex;
-    gap: 100px;
- 
+.carousel-div {
+  position: relative;
+}
+.carousel-div > button {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  background: #fff;
+  border: none;
+  width: 65%;
+  /* width: 141px; */
+  height: 38px;
+  color: #000;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px; 
+   transition: 0.2s ease;
+}
+.carousel-div > button:hover {
+    background-color: initial;
+    border: 1px solid white;
+    color: white;
+    font-size: 14px;
+    transition: 0.2s ease;
+    border-radius: 5px;
+    width: 63%;
+}
+.inner-carousel {
+  padding-bottom: 60px;
+}
+.latest-text {
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 100% */
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+@media (min-width: 540px) {
+  .carousel-img {
+    height: 320px;
+  }
+  .latest-text {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    padding-bottom: 20px;
+    padding-left: 0;
+  }
+  .inner-carousel {
+    padding-bottom: 70px;
+  }
+  .carousel-div > button {
+    bottom: 40px;
+    font-size: 14px;
+  }
+}
+@media (min-width: 620px) {
+  .carousel-img {
+    height: 350px;
+  }
+}
+@media (min-width: 767px) {
+  .carousel-img {
+    height: 248.67px;
+  }
+  .carousel {
+    padding: 80px 75px;
+  }
+  .carousel-img {
+    height: 320px;
+  }
+  .carousel-div > button {
+    height: 43px;
+    width: 50%;
+    font-size: 15px;
+  }
+  .carousel-div > button:hover {
+    background-color: initial;
+    border: 1px solid white;
+    color: white;
+    font-size: 16px;
+    transition: 0.2s ease;
+    border-radius: 5px;
+    width: 48%;
+}
+}
+@media (min-width: 1024px) {
+  .carousel-img {
+    height: 350px;
+  }
+  .inner-carousel {
+    padding-bottom: 100px;
+  }
+  .carousel-div > button {
+    height: 48px;
+    left: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .carousel-img {
+    height: 420px;
+  }
+  .latest-text {
+    color: #000;
+    font-family: Helvetica;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 100% */
+  }
+  .carousel-div > button {
+    bottom: 45px;
+  }
+}
+@media (min-width: 1400px) {
+  .carousel-img {
+    height: 540px;
+  }
+  .inner-carousel {
+    padding-bottom: 120px;
+  }
 }

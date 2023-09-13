@@ -79,7 +79,7 @@
 @media (min-width: 1024px) {
   .models {
     background-image: url("../Img/model1.svg");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     animation-name: example;
     width: 100%;

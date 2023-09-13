@@ -1,49 +1,212 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import model1 from "../Img/IMG_6125.jpg";
-import model2 from "../Img/IMG_6126.jpg";
-import model3 from "../Img/IMG_6127.jpg";
+import carousel1 from "../Img/carousel1.svg";
+// import carousel2 from "../Img/carousel2.svg";
+// import carousel3 from "../Img/carousel3.svg";
+// import carousel4 from "../Img/carousel4.svg";
+// import carousel5 from "../Img/carousel5.svg";
+// import carousel6 from "../Img/carousel6.svg";
 import "./Latestbrand.css";
 
 const Latestbrand = () => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      breakpoint: { max: 4000, min: 1400 },
+      items: 3,
     },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 1400, min: 767 },
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 767, min: 464 },
       items: 2,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1,
+      items: 2,
     },
   };
   return (
     <div className="carousel">
-      <h1>Latest brand</h1>
-      <Carousel responsive={responsive} className="carousel-responsive">
-        <div>
-          <img src={model1} alt="" className="carousel-img" />
-        </div>
-        <div>
-          <img src={model2} alt="" className="carousel-img" />
-        </div>
-        <div>
-          <img src={model3} alt="" className="carousel-img" />
-        </div>
-        <div>
-          <img src={model1} alt="" className="carousel-img" />
-        </div>
-      </Carousel>
-      ;
+      {/* LATEST MEN'S BRANDS */}
+      <div className="inner-carousel">
+        <h1 className="latest-text">LATEST MEN'S BRANDS</h1>
+        <Carousel
+          swipeable={false}
+          draggable={false}
+          showDots={true}
+          responsive={responsive}
+          ssr={true} // means to render carousel on server-side.
+          autoPlaySpeed={1000}
+          // renderDotsOutside={true}
+          keyBoardControl={true}
+          transitionDuration={500}
+          containerClass="carousel-container"
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+          className="carousel-responsive"
+        >
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+        </Carousel>
+      </div>
+      {/* LATEST WOMAN'S BRANDS */}
+      <div className="inner-carousel">
+        <h1 className="latest-text">LATEST WOMAN'S BRANDS</h1>
+        <Carousel
+          swipeable={false}
+          draggable={false}
+          showDots={true}
+          responsive={responsive}
+          ssr={true} // means to render carousel on server-side.
+          autoPlaySpeed={1000}
+          // renderDotsOutside={true}
+          keyBoardControl={true}
+          transitionDuration={500}
+          containerClass="carousel-container"
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+          className="carousel-responsive"
+        >
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+        </Carousel>
+      </div>
+      {/* LATEST BRAND */}
+      <div className="inner-carousel">
+        <h1 className="latest-text">LATEST BRANDS</h1>
+        <Carousel
+          swipeable={false}
+          draggable={false}
+          showDots={true}
+          responsive={responsive}
+          ssr={true} // means to render carousel on server-side.
+          autoPlaySpeed={1000}
+          // renderDotsOutside={true}
+          keyBoardControl={true}
+          transitionDuration={500}
+          containerClass="carousel-container"
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+          className="carousel-responsive"
+        >
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+        </Carousel>
+      </div>
+      {/* LATEST SLIDES */}
+      <div className="inner-carousel">
+        <h1 className="latest-text">LATEST SLIDES BRANDS</h1>
+        <Carousel
+          swipeable={false}
+          draggable={false}
+          showDots={true}
+          responsive={responsive}
+          ssr={true} // means to render carousel on server-side.
+          autoPlaySpeed={1000}
+          // renderDotsOutside={true}
+          keyBoardControl={true}
+          transitionDuration={500}
+          containerClass="carousel-container"
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+          className="carousel-responsive"
+        >
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div">
+            <img src={carousel1} alt="" className="carousel-img" />
+            <button>Shop now</button>
+          </div>
+        </Carousel>
+      </div>
     </div>
   );
 };

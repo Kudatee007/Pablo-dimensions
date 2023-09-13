@@ -20,12 +20,16 @@
   padding: 15px 0;
 }
 .Nav {
+  position: sticky;
+  top: 0; 
+  z-index: 100;
   background-color: white;
   padding: 7px 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
   gap: 0px;
+  /* position: -webkit-sticky; */
 }
 .pablo-logo {
   height: 50px;
@@ -48,7 +52,7 @@
   transition: 0.4s ease;
 }
 .side-NX {
-  position: absolute;
+  position: fixed;
   width: 0;
   top: 0;
   background-color: rgb(23, 23, 23);
