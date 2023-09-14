@@ -1,18 +1,40 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import "./Latestbrand.css";
 import carousel1 from "../Img/carousel1.svg";
 // import carousel2 from "../Img/carousel2.svg";
 // import carousel3 from "../Img/carousel3.svg";
 // import carousel4 from "../Img/carousel4.svg";
 // import carousel5 from "../Img/carousel5.svg";
 // import carousel6 from "../Img/carousel6.svg";
-import "./Latestbrand.css";
+import shoe1 from "../Img/shoe1.svg";
+import shoe2 from "../Img/shoe2.svg";
+import shoe3 from "../Img/shoe3.svg";
+import shoe4 from "../Img/shoe4.svg";
+import shoe5 from "../Img/shoe5.svg";
+import shoe6 from "../Img/shoe6.svg";
+import shoe7 from "../Img/shoe7.svg";
+import shoe8 from "../Img/shoe8.svg";
+import shoe9 from "../Img/shoe9.svg";
+import shoe10 from "../Img/shoe10.svg";
+import women1 from "../Img/women1.svg";
+import women2 from "../Img/women2.svg";
+import women3 from "../Img/women3.svg";
+import latest1 from "../Img/latest1.svg";
+import latest2 from "../Img/latest2.svg";
+import latest3 from "../Img/latest3.svg";
+import latest4 from "../Img/latest4.svg";
+import latest5 from "../Img/latest5.svg";
+import latest6 from "../Img/latest6.svg";
+import latest7 from "../Img/latest7.svg";
+import latest8 from "../Img/latest8.svg";
+import latest9 from "../Img/latest9.svg";
+import latest10 from "../Img/latest10.svg";
 
 const Latestbrand = () => {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 1400 },
       items: 3,
     },
@@ -29,6 +51,55 @@ const Latestbrand = () => {
       items: 2,
     },
   };
+  const responsive1 = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 1400 },
+      items: 6,
+    },
+    desktop: {
+      breakpoint: { max: 1400, min: 767 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 767, min: 464 },
+      items: 3,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 2,
+    },
+  };
+
+  // const responsive = {
+  //   desktop: {
+  //     breakpoint: {
+  //       max: 3000,
+  //       min: 1024,
+  //     },
+  //     items: 3,
+  //     slidesToSlide: 2,
+  //     partialVisibilityGutter: 40,
+  //   },
+  //   mobile: {
+  //     breakpoint: {
+  //       max: 464,
+  //       min: 0,
+  //     },
+  //     items: 2,
+  //     slidesToSlide: 2,
+  //     partialVisibilityGutter: 30,
+  //   },
+  //   tablet: {
+  //     breakpoint: {
+  //       max: 1024,
+  //       min: 200,
+  //     },
+  //     items: 1,
+  //     slidesToSlide: 1,
+  //     partialVisibilityGutter: 30,
+  //   },
+  // };
+
   return (
     <div className="carousel">
       {/* LATEST MEN'S BRANDS */}
@@ -94,27 +165,27 @@ const Latestbrand = () => {
           className="carousel-responsive"
         >
           <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+            <img src={women1} alt="" className="carousel-img" />
             <button>Shop now</button>
           </div>
           <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+            <img src={women2} alt="" className="carousel-img" />
             <button>Shop now</button>
           </div>
           <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+            <img src={women3} alt="" className="carousel-img" />
             <button>Shop now</button>
           </div>
           <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+            <img src={women1} alt="" className="carousel-img" />
             <button>Shop now</button>
           </div>
           <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+            <img src={women2} alt="" className="carousel-img" />
             <button>Shop now</button>
           </div>
           <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+            <img src={women3} alt="" className="carousel-img" />
             <button>Shop now</button>
           </div>
         </Carousel>
@@ -126,7 +197,7 @@ const Latestbrand = () => {
           swipeable={false}
           draggable={false}
           showDots={true}
-          responsive={responsive}
+          responsive={responsive1}
           ssr={true} // means to render carousel on server-side.
           autoPlaySpeed={1000}
           // renderDotsOutside={true}
@@ -137,28 +208,44 @@ const Latestbrand = () => {
           itemClass="carousel-item-padding-40-px"
           className="carousel-responsive"
         >
-          <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+          <div className="carousel-div1">
+            <img src={latest1} alt="" className="carousel-img1" />
             <button>Shop now</button>
           </div>
-          <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+          <div className="carousel-div1">
+            <img src={latest2} alt="" className="carousel-img1" />
             <button>Shop now</button>
           </div>
-          <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+          <div className="carousel-div1">
+            <img src={latest3} alt="" className="carousel-img1" />
             <button>Shop now</button>
           </div>
-          <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+          <div className="carousel-div1">
+            <img src={latest4} alt="" className="carousel-img1" />
             <button>Shop now</button>
           </div>
-          <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+          <div className="carousel-div1">
+            <img src={latest5} alt="" className="carousel-img1" />
             <button>Shop now</button>
           </div>
-          <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+          <div className="carousel-div1">
+            <img src={latest6} alt="" className="carousel-img1" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div1">
+            <img src={latest7} alt="" className="carousel-img1" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div1">
+            <img src={latest8} alt="" className="carousel-img1" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div1">
+            <img src={latest9} alt="" className="carousel-img1" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div1">
+            <img src={latest10} alt="" className="carousel-img1" />
             <button>Shop now</button>
           </div>
         </Carousel>
@@ -170,7 +257,7 @@ const Latestbrand = () => {
           swipeable={false}
           draggable={false}
           showDots={true}
-          responsive={responsive}
+          responsive={responsive1}
           ssr={true} // means to render carousel on server-side.
           autoPlaySpeed={1000}
           // renderDotsOutside={true}
@@ -181,28 +268,44 @@ const Latestbrand = () => {
           itemClass="carousel-item-padding-40-px"
           className="carousel-responsive"
         >
-          <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+          <div className="carousel-div1">
+            <img src={shoe1} alt="" className="carousel-img1" />
             <button>Shop now</button>
           </div>
-          <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+          <div className="carousel-div1">
+            <img src={shoe2} alt="" className="carousel-img1" />
             <button>Shop now</button>
           </div>
-          <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+          <div className="carousel-div1">
+            <img src={shoe3} alt="" className="carousel-img1" />
             <button>Shop now</button>
           </div>
-          <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+          <div className="carousel-div1">
+            <img src={shoe4} alt="" className="carousel-img1" />
             <button>Shop now</button>
           </div>
-          <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+          <div className="carousel-div1">
+            <img src={shoe5} alt="" className="carousel-img1" />
             <button>Shop now</button>
           </div>
-          <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
+          <div className="carousel-div1">
+            <img src={shoe6} alt="" className="carousel-img1" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div1">
+            <img src={shoe7} alt="" className="carousel-img1" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div1">
+            <img src={shoe8} alt="" className="carousel-img1" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div1">
+            <img src={shoe9} alt="" className="carousel-img1" />
+            <button>Shop now</button>
+          </div>
+          <div className="carousel-div1">
+            <img src={shoe10} alt="" className="carousel-img1" />
             <button>Shop now</button>
           </div>
         </Carousel>

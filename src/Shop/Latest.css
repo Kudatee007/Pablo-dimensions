@@ -1,0 +1,118 @@
+.brand-txt {
+  color: #1c1b1b;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 33px; /* 165% */
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 40px 0;
+  border-top: 2px solid #ededed;
+}
+.func-box {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ededed;
+}
+.func-box > button {
+  width: 100%;
+  border: 1px solid #ededed;
+  height: 57px;
+  background-color: white;
+}
+.grid-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 0px 20px;
+  border: 1px solid #ededed;
+}
+.grid-box > img {
+  width: 23px;
+}
+.grid-img {
+  width: 100%;
+}
+.display-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 8px;
+  grid-row-gap: 35px;
+  padding: 40px 10px;
+}
+.dis-box > h5 {
+  color: #1c1b1b;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18.15px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  padding-top: 20px;
+}
+.dis-box > h6 {
+  color: #1c1b1b;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18.15px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+}
+.dis-box > p {
+  color: #f94c43;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18.15px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+}
+.empty-div {
+  display: none;
+}
+@media (min-width: 540px) {
+  .grid-img {
+    height: 330px;
+  }
+}
+@media (min-width: 767px) {
+  .grid-img {
+    height: 330px;
+  }
+  .display-box {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .empty-div {
+    display: block;
+    width: 100%;
+  }
+  .func-box {
+    flex-direction: row-reverse;
+    gap: 0;
+  }
+  .func-box > button {
+    width: 250px;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .grid-box {
+    padding: 0px 30px;
+  }
+  .brand-txt {
+    padding: 50px 0;
+  }
+}
+@media (min-width: 767px) {
+  .display-box {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
