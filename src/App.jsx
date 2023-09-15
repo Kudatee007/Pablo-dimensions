@@ -5,6 +5,7 @@ import Navbar from "./Navbar/Navbar";
 import Latestbrand from "./LandingPage/Latestbrand";
 import Footer from "./Footer/Footer";
 import Latest from "./Shop/Latest";
+import Latestdetails from "./Shop-details/Latestdetails";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <Navbar />
       {/* <Page1 />
       <Latestbrand /> */}
-      <Latest />
+      {/* <Latest /> */}
+      <Latestdetails />
       <Footer />
     </>
   );

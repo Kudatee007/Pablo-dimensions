@@ -12,6 +12,8 @@ import lightcancel from "../Img/lightcancel.svg";
 import lightplus from "../Img/lightplus.svg";
 import lightminus from "../Img/lightminus.svg";
 import insta from "../Img/insta.svg";
+import Page1 from "../LandingPage/Page1";
+import Latestbrand from "../LandingPage/Latestbrand";
 
 const Navbar = () => {
   const [side, setSide] = useState(false);
@@ -439,6 +441,8 @@ const Navbar = () => {
         <img src={profile} alt="" className="profile" />
         <img src={cart} alt="" className="cart" />
       </nav>
+      {/* <Page1 />
+      <Latestbrand /> */}
     </div>
   );
 };

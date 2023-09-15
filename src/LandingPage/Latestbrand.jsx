@@ -70,46 +70,17 @@ const Latestbrand = () => {
     },
   };
 
-  // const responsive = {
-  //   desktop: {
-  //     breakpoint: {
-  //       max: 3000,
-  //       min: 1024,
-  //     },
-  //     items: 3,
-  //     slidesToSlide: 2,
-  //     partialVisibilityGutter: 40,
-  //   },
-  //   mobile: {
-  //     breakpoint: {
-  //       max: 464,
-  //       min: 0,
-  //     },
-  //     items: 2,
-  //     slidesToSlide: 2,
-  //     partialVisibilityGutter: 30,
-  //   },
-  //   tablet: {
-  //     breakpoint: {
-  //       max: 1024,
-  //       min: 200,
-  //     },
-  //     items: 1,
-  //     slidesToSlide: 1,
-  //     partialVisibilityGutter: 30,
-  //   },
-  // };
-
   return (
     <div className="carousel">
       {/* LATEST MEN'S BRANDS */}
       <div className="inner-carousel">
         <h1 className="latest-text">LATEST MEN'S BRANDS</h1>
         <Carousel
-          swipeable={false}
-          draggable={false}
+          swipeable={true}
+          draggable={true}
           showDots={true}
           responsive={responsive}
+          removeArrowOnDeviceType={["tablet", "mobile"]}
           ssr={true} // means to render carousel on server-side.
           autoPlaySpeed={1000}
           // renderDotsOutside={true}
