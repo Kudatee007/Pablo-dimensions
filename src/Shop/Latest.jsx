@@ -27,24 +27,62 @@ const Latest = () => {
             <p>$45.50 USD</p>
           </div>
         </Link>
-        <div className="dis-box">
-          <img src={shop} alt="" className="grid-img" />
-          <h5>PABLO</h5>
-          <h6>FLAIR African Print mini skirt -SAMPLE SALE</h6>
-          <p>$45.50 USD</p>
-        </div>
-        <div className="dis-box">
-          <img src={shop} alt="" className="grid-img" />
-          <h5>PABLO</h5>
-          <h6>FLAIR African Print mini skirt -SAMPLE SALE</h6>
-          <p>$45.50 USD</p>
-        </div>
-        <div className="dis-box">
-          <img src={shop} alt="" className="grid-img" />
-          <h5>PABLO</h5>
-          <h6>FLAIR African Print mini skirt -SAMPLE SALE</h6>
-          <p>$45.50 USD</p>
-        </div>
+        <Link to="/collection-details" className="Link">
+          <div className="dis-box">
+            <img src={shop} alt="" className="grid-img" />
+            <h5>PABLO</h5>
+            <h6>FLAIR African Print mini skirt -SAMPLE SALE</h6>
+            <p>$45.50 USD</p>
+          </div>
+        </Link>
+        <Link to="/collection-details" className="Link">
+          <div className="dis-box">
+            <img src={shop} alt="" className="grid-img" />
+            <h5>PABLO</h5>
+            <h6>FLAIR African Print mini skirt -SAMPLE SALE</h6>
+            <p>$45.50 USD</p>
+          </div>
+        </Link>
+        <Link to="/collection-details" className="Link">
+          <div className="dis-box">
+            <img src={shop} alt="" className="grid-img" />
+            <h5>PABLO</h5>
+            <h6>FLAIR African Print mini skirt -SAMPLE SALE</h6>
+            <p>$45.50 USD</p>
+          </div>
+        </Link>
+        <Link to="/collection-details" className="Link">
+          <div className="dis-box">
+            <img src={shop} alt="" className="grid-img" />
+            <h5>PABLO</h5>
+            <h6>FLAIR African Print mini skirt -SAMPLE SALE</h6>
+            <p>$45.50 USD</p>
+          </div>
+        </Link>
+        <Link to="/collection-details" className="Link">
+          <div className="dis-box">
+            <img src={shop} alt="" className="grid-img" />
+            <h5>PABLO</h5>
+            <h6>FLAIR African Print mini skirt -SAMPLE SALE</h6>
+            <p>$45.50 USD</p>
+          </div>
+        </Link>
+        <Link to="/collection-details" className="Link">
+          <div className="dis-box">
+            <img src={shop} alt="" className="grid-img" />
+            <h5>PABLO</h5>
+            <h6>FLAIR African Print mini skirt -SAMPLE SALE</h6>
+            <p>$45.50 USD</p>
+          </div>
+        </Link>
+        <Link to="/collection-details" className="Link">
+          <div className="dis-box">
+            <img src={shop} alt="" className="grid-img" />
+            <h5>PABLO</h5>
+            <h6>FLAIR African Print mini skirt -SAMPLE SALE</h6>
+            <p>$45.50 USD</p>
+          </div>
+        </Link>
       </div>
     </div>
   );

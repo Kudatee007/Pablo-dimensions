@@ -106,24 +106,34 @@ const Page1 = () => {
               </Link>
             </div>
             <div className="carousel-div">
-              <img src={carousel1} alt="" className="carousel-img" />
-              <button className="shop-now">Shop now</button>
+            <img src={carousel1} alt="" className="carousel-img" />
+            <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div">
               <img src={carousel1} alt="" className="carousel-img" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div">
               <img src={carousel1} alt="" className="carousel-img" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div">
               <img src={carousel1} alt="" className="carousel-img" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div">
               <img src={carousel1} alt="" className="carousel-img" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
           </Carousel>
         </div>
@@ -147,27 +157,39 @@ const Page1 = () => {
           >
             <div className="carousel-div">
               <img src={women1} alt="" className="carousel-img" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div">
               <img src={women2} alt="" className="carousel-img" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div">
               <img src={women3} alt="" className="carousel-img" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div">
               <img src={women1} alt="" className="carousel-img" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div">
               <img src={women2} alt="" className="carousel-img" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div">
               <img src={women3} alt="" className="carousel-img" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
           </Carousel>
         </div>
@@ -191,43 +213,63 @@ const Page1 = () => {
           >
             <div className="carousel-div1">
               <img src={latest1} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={latest2} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={latest3} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={latest4} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={latest5} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={latest6} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={latest7} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={latest8} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={latest9} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={latest10} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
           </Carousel>
         </div>
@@ -251,43 +293,63 @@ const Page1 = () => {
           >
             <div className="carousel-div1">
               <img src={shoe1} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={shoe2} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={shoe3} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={shoe4} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={shoe5} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={shoe6} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={shoe7} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={shoe8} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={shoe9} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
             <div className="carousel-div1">
               <img src={shoe10} alt="" className="carousel-img1" />
-              <button className="shop-now">Shop now</button>
+              <Link to="/collections">
+                <button className="shop-now">Shop now</button>
+              </Link>
             </div>
           </Carousel>
         </div>

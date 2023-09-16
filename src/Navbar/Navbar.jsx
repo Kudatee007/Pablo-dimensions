@@ -13,7 +13,7 @@ import lightplus from "../Img/lightplus.svg";
 import lightminus from "../Img/lightminus.svg";
 import insta from "../Img/insta.svg";
 import { Link } from "react-router-dom";
-import Page from "../LandingPage/Page";
+
 
 const Navbar = () => {
   const [side, setSide] = useState(false);
@@ -442,7 +442,7 @@ const Navbar = () => {
         <Link to="/" className="Link">
           <img src={pabloLogo} alt="" className="pablo-logo" />
         </Link>
-        <Link to="/profile" className="Link">
+        <Link to="/login" className="Link">
           <img src={profile} alt="" className="profile" />
         </Link>
         <Link to="/cart" className="Link">

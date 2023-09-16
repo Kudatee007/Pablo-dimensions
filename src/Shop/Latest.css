@@ -120,6 +120,7 @@
 @media (min-width: 1024px) {
   .display-box {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 70px;
   }
   .display-box{
     padding: 50px 30px;
