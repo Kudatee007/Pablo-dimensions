@@ -12,8 +12,8 @@ import lightcancel from "../Img/lightcancel.svg";
 import lightplus from "../Img/lightplus.svg";
 import lightminus from "../Img/lightminus.svg";
 import insta from "../Img/insta.svg";
-import Page1 from "../LandingPage/Page1";
-import Latestbrand from "../LandingPage/Latestbrand";
+import { Link } from "react-router-dom";
+import Page from "../LandingPage/Page";
 
 const Navbar = () => {
   const [side, setSide] = useState(false);
@@ -233,7 +233,9 @@ const Navbar = () => {
           />
           <div className="first-dropdown">
             <div className="headTag">
-              <h2 className="first-list">HOME</h2>
+              <Link to="/" className="Link">
+                <h2 className="first-list">HOME</h2>
+              </Link>
             </div>
             <div className="headTag">
               <div className="plus-div" onClick={handleLatest} id="Latest">
@@ -431,18 +433,22 @@ const Navbar = () => {
             <div className="black-logo">
               <img src={pabloblacklogo} alt="" />
             </div>
-          <div className="icon-foot">
-            <img src={insta} alt="" />
-          </div>
+            <div className="icon-foot">
+              <img src={insta} alt="" />
+            </div>
           </div>
         </div>
         <img src={search} alt="" className="search" />
-        <img src={pabloLogo} alt="" className="pablo-logo" />
-        <img src={profile} alt="" className="profile" />
-        <img src={cart} alt="" className="cart" />
+        <Link to="/" className="Link">
+          <img src={pabloLogo} alt="" className="pablo-logo" />
+        </Link>
+        <Link to="/profile" className="Link">
+          <img src={profile} alt="" className="profile" />
+        </Link>
+        <Link to="/cart" className="Link">
+          <img src={cart} alt="" className="cart" />
+        </Link>
       </nav>
-      {/* <Page1 />
-      <Latestbrand /> */}
     </div>
   );
 };

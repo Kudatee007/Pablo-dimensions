@@ -3,6 +3,7 @@ import shop from "../Img/shop1.svg";
 import "./Latest.css";
 import grid1 from "../Img/grid1.svg";
 import grid2 from "../Img/grid2.svg";
+import { Link } from "react-router-dom";
 
 const Latest = () => {
   return (
@@ -18,12 +19,14 @@ const Latest = () => {
         </div>
       </div>
       <div className="display-box">
-        <div className="dis-box">
-          <img src={shop} alt="" className="grid-img" />
-          <h5>PABLO</h5>
-          <h6>FLAIR African Print mini skirt -SAMPLE SALE</h6>
-          <p>$45.50 USD</p>
-        </div>
+        <Link to="/collection-details" className="Link">
+          <div className="dis-box">
+            <img src={shop} alt="" className="grid-img" />
+            <h5>PABLO</h5>
+            <h6>FLAIR African Print mini skirt -SAMPLE SALE</h6>
+            <p>$45.50 USD</p>
+          </div>
+        </Link>
         <div className="dis-box">
           <img src={shop} alt="" className="grid-img" />
           <h5>PABLO</h5>
