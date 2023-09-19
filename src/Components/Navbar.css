@@ -8,32 +8,31 @@
 } */
 .navBar {
   position: relative;
-  /* position: -webkit-sticky;
+  position: -webkit-sticky;
   position: sticky;
-  top: 0px; */
-  /* z-index: 1; */
+   top: 0px;
+  z-index: 1;
 }
 .pabloHead {
-  background-color: black;
+  background-color: #111;
 }
-.pabloHead > h1 {
+.pb-txt {
   color: white;
   text-align: center;
-  font-family: Montserrat;
-  font-size: 15px;
+  font-family: 'Mooli', sans-serif;
+  font-size: 14px;
   font-style: normal;
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 15px 0;
+  padding: 13px 0;
 }
 .Nav {
-  position: -webkit-sticky;
   position: sticky;
   top: 0px; 
   z-index: 1;
   background-color: white;
-  padding: 7px 0;
+  padding: 5px 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -110,10 +109,9 @@
 .first-list {
   color: rgb(218, 207, 207);
   line-height: 65px;
-  font-family: Montserrat;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
   /* width: 30px; */
@@ -145,8 +143,8 @@
 .plus-div > h3 {
   color: rgb(174, 170, 170);
   line-height: 35px;
-  font-family: Montserrat;
-  font-size: 11px;
+  font-family: 'Mooli', sans-serif;
+  font-size: 10px;
   font-style: normal;
   font-weight: 500;
   letter-spacing: 2px;
@@ -155,7 +153,7 @@
 .secondList-NX > li {
   color: rgb(218, 207, 207);
   line-height: 30px;
-  font-family: Montserrat;
+  font-family: 'Rubik', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -169,26 +167,13 @@
 .secondList > li {
   color: rgb(218, 207, 207);
   line-height: 30px;
-  font-family: Montserrat;
-  font-size: 13px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 12px;
   font-style: normal;
   font-weight: lighter;
   letter-spacing: 2px;
   text-transform: uppercase;
   list-style: none;
-}
-.icon-foot {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: black;
-  width: 100%;
-  padding-top: 10px;
-  border-top: 0.1px solid rgb(154, 164, 154);
-  text-align: center;
-}
-.icon-foot > img {
-  width: 40px;
 }
 .plus-div {
   display: flex;
@@ -243,6 +228,7 @@
   .Nav {
     justify-content: center;
     gap: 40px;
+    padding: 7px 0;
   }
   .Nav .Link:nth-child(4) {
     order: -1;
@@ -345,7 +331,7 @@
     display: none;
   }
   .first-list {
-    color: black;
+    color: #333;
     text-align: center;
   }
   .pablo-logo {
@@ -363,7 +349,6 @@
   .plus-div > h3 {
     color: rgb(218, 207, 207);
     line-height: 35px;
-    font-family: Montserrat;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -377,7 +362,6 @@
   .secondList-NX > li {
     color: rgb(174, 170, 170);
     line-height: 30px;
-    font-family: Montserrat;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;

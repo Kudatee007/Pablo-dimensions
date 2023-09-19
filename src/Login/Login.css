@@ -7,18 +7,18 @@
 }
 
 .login-txt {
-  color: #000;
-  font-family: Open Sans;
+  color: #333;
+  font-family: "Rubik", sans-serif;
   font-size: 20px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 40px;
   letter-spacing: 4px;
   padding-bottom: 10px;
 }
 .login-p {
-  color: #000;
-  font-family: Open Sans;
+  color: #333;
+  font-family: "Mooli", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -29,9 +29,13 @@
 .input-login {
   width: 100%;
   padding: 13px 14px;
-  border: 1px solid #e4e0e0;
+  border: none;
+  background-color: #efecec;
+  font-family: "Rubik", sans-serif;
   margin-bottom: 17px;
   box-sizing: border-box;
+  color: #000;
+  border-radius: 10px;
 }
 .btn-login {
   width: 100%;
@@ -44,6 +48,7 @@
   font-family: Open Sans;
   letter-spacing: 2px;
   font-size: 13px;
+  font-family: "Rubik", sans-serif;
 }
 .login-box {
   padding: 0 20px;
@@ -58,13 +63,13 @@
   font-size: 12px;
   font-weight: 0;
   color: rgb(114, 112, 112);
-  font-family: Open Sans;
+  font-family: "Mooli", sans-serif;
 }
 .create-one {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 0;
   color: rgb(114, 112, 112);
-  font-family: Open Sans;
+  font-family: "Mooli", sans-serif;
   padding-top: 15px;
 }
 .create-one > span {

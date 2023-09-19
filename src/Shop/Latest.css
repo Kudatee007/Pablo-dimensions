@@ -1,10 +1,10 @@
 .brand-txt {
-  color: #1c1b1b;
+  color: #333;
   text-align: center;
-  font-family: Montserrat;
+  font-family: 'Rubik', sans-serif;
   font-size: 22px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 33px; /* 165% */
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -21,6 +21,8 @@
   border: 1px solid #ededed;
   height: 57px;
   background-color: white;
+  font-family: 'Mooli', sans-serif;
+  color: #333;
 }
 .grid-box {
   display: flex;
@@ -34,6 +36,7 @@
 }
 .grid-img {
   width: 100%;
+  height: 170px;
 }
 .display-box {
   display: grid;
@@ -42,10 +45,47 @@
   grid-row-gap: 35px;
   padding: 40px 10px;
 }
+.dis-box {
+  position: relative;
+}
+.wish-cart {
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cart-w {
+  height: 18px;
+  display: none;
+}
+.dis-box:hover .cart-w {
+  display: block;
+}
+/* .dis-box .grid-img {
+ height: 290px;
+ } */
+.dis-box:hover .gridImg > img {
+ object-fit: contain;
+ transition: 0.3s;
+}
+.dis-box .gridImg > img:last-child {
+  display: none;
+  transition: 0.3s;
+}
+.dis-box:hover .gridImg > img:nth-child(1) {
+  display: none;
+  transition: 0.3s;
+}
+.dis-box:hover .gridImg > img:last-child {
+  display: block;
+  transition: 0.3s;
+}
 .dis-box > h5 {
   color: #1c1b1b;
   text-align: center;
-  font-family: Montserrat;
+  font-family: 'Rubik', sans-serif;
   font-size: 11px;
   font-style: normal;
   font-weight: 500;
@@ -57,18 +97,18 @@
 .dis-box > h6 {
   color: #1c1b1b;
   text-align: center;
-  font-family: Montserrat;
+  font-family: 'Mooli', sans-serif;
   font-size: 11px;
   font-style: normal;
   font-weight: 500;
-  line-height: 18.15px;
+  line-height: 18px;
   letter-spacing: 2.2px;
   text-transform: uppercase;
 }
 .dis-box > p {
-  color: #f94c43;
+  color: #dc5a54;
   text-align: center;
-  font-family: Montserrat;
+  font-family: 'Rubik', sans-serif;
   font-size: 11px;
   font-style: normal;
   font-weight: 500;
@@ -82,11 +122,19 @@
 .Link {
   text-decoration: none;
 }
+.react-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+ 
+  width: 100%;
+}
 @media (min-width: 540px) {
   .grid-img {
-    height: 330px;
+    height: 290px;
   }
-  .display-box{
+  .display-box {
     padding: 40px 20px;
   }
 }
@@ -113,7 +161,7 @@
   .grid-box {
     padding: 0px 30px;
   }
-  .display-box{
+  .display-box {
     padding: 40px 20px;
   }
 }
@@ -122,7 +170,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-row-gap: 70px;
   }
-  .display-box{
+  .display-box {
     padding: 50px 30px;
   }
 }

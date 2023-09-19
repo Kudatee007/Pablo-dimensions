@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import Marquee from "react-fast-marquee";
 import hamburger from "../Img/hamburger.svg";
 import pabloLogo from "../Img/pablologo.svg";
 import pabloblacklogo from "../Img/pabloblacklogo.svg";
@@ -13,7 +14,6 @@ import lightplus from "../Img/lightplus.svg";
 import lightminus from "../Img/lightminus.svg";
 import insta from "../Img/insta.svg";
 import { Link } from "react-router-dom";
-
 
 const Navbar = () => {
   const [side, setSide] = useState(false);
@@ -214,9 +214,12 @@ const Navbar = () => {
   }
   return (
     <div className="navBar">
-      <div className="pabloHead">
+      <Marquee className="pabloHead">
+      <h1 className="pb-txt">Pablo_Dimensions</h1>
+      </Marquee>
+      {/* <div >
         <h1>Pablo_Dimensions</h1>
-      </div>
+      </div> */}
       <nav className="Nav">
         <img
           src={hamburger}
@@ -432,9 +435,6 @@ const Navbar = () => {
             </div>
             <div className="black-logo">
               <img src={pabloblacklogo} alt="" />
-            </div>
-            <div className="icon-foot">
-              <img src={insta} alt="" />
             </div>
           </div>
         </div>

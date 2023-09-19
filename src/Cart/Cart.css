@@ -5,7 +5,8 @@
 }
 .cart-sum {
   color: #555;
-  font-family: Open Sans;
+  font-family: "Mooli", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 13px;
   font-style: normal;
   font-weight: 600;
@@ -21,8 +22,9 @@
   padding: 10px 20px;
 }
 .total-h {
-  color: #000;
-  font-family: Open Sans;
+  color: #333;
+  font-family: "Mooli", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -31,7 +33,8 @@
 }
 .total-p {
   color: #555;
-  font-family: Open Sans;
+  font-family: "Mooli", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
@@ -39,35 +42,44 @@
   letter-spacing: 1px;
 }
 .total-price {
-  color: #222;
-  font-family: Open Sans;
-  font-size: 22px;
+  color: #333;
+  font-family: "Mooli", sans-serif;
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 21px; /* 150% */
 }
 .cart-info {
   background-color: #fff;
   display: flex;
-  gap: 10px;
-  padding: 5px 10px;
+  gap: 14px;
+  padding: 0 10px;
   margin-bottom: 7px;
   border-radius: 5px;
+  position: relative;
+  align-items: center;
+}
+.cart-count {
+  font-family: "Mooli", sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 .cart-image {
   height: 100px;
 }
 .cart-name {
-  color: #000;
-  font-family: Open Sans;
+  color: #333;
+  font-family: "Mooli", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
-  line-height: 22.5px; /* 150% */
+  line-height: 17px; /* 150% */
 }
 .cart-s {
-  color: #000;
-  font-family: Open Sans;
+  color: #333;
+  font-family: "Mooli", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 11px;
   font-style: normal;
   font-weight: 400;
@@ -76,8 +88,9 @@
 }
 .cart-price {
   color: #333;
-  font-family: Open Sans;
-  font-size: 17px;
+  font-family: "Mooli", sans-serif;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 21px; /* 150% */
@@ -86,84 +99,93 @@
 .btn-plus-minus {
   display: flex;
   gap: 20px;
-  justify-content: end;
+  /* justify-content: end; */
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
 }
 .btn-plus-minus > button {
-    border: none;
-    background-color: black;
-    padding: 4px 7px;
+  border: none;
+  background-color: #222;
+  padding: 4px 7px;
 }
 .remove-box {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 .remove-txt {
-  color: #000;
-  font-family: Open Sans;
-  font-size: 13px;
+  color: #333;
+  font-family: "Mooli", sans-serif;
+  font-family: "Rubik", sans-serif;
+  font-size: 11px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; 
+  line-height: 24px;
 }
 .but-cart {
-    display: flex;
-    gap: 15px;
-    justify-content: end;
-    position: sticky;
-    bottom: 15px;
-    padding: 40px 7px;
+  display: flex;
+  gap: 15px;
+  justify-content: end;
+  position: sticky;
+  bottom: 15px;
+  padding: 40px 7px;
 }
 .cart-space {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 @media (min-width: 420px) {
-    /* .cart-space {
+  /* .cart-space {
         margin: 0 40px;
     } */
-    .cart-info {
-        gap: 20px;
-        /* justify-content: space-around; */
-    }
+  .cart-info {
+    gap: 20px;
+    /* justify-content: space-around; */
+  }
 }
 @media (min-width: 540px) {
-    .cart-space {
-        margin: 0 40px;
-    }
-    .cart-info {
-        gap: 20px;
-    }
+  .cart-space {
+    margin: 0 40px;
+  }
+  .cart-info {
+    gap: 30px;
+    margin-bottom: 12px;
+    align-items: center;
+  }
 }
 @media (min-width: 620px) {
-    .cart-space {
-        margin: 0 80px;
-    }
-    .cart-info {
-        gap: 20px;
-    }
+  .cart-space {
+    margin: 0 80px;
+  }
+  .cart-info {
+    gap: 20px;
+  }
 }
 @media (min-width: 767px) {
-    .cart-space {
-        margin: 0 100px;
-    }
+  .cart-space {
+    margin: 0 100px;
+  }
 }
 @media (min-width: 1024px) {
-    .cart-space {
-        margin: 0 130px;
-    }
-    .cart-info {
-        margin-bottom: 15px;
-    }
-    .sub-total {
-        padding: 10px 30px;
-    }
+  .cart-space {
+    margin: 0 130px;
+  }
+  .cart-info {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    gap: 30px;
+  }
+  .sub-total {
+    padding: 10px 30px;
+  }
 }
 @media (min-width: 1200px) {
-    .cart-space {
-        margin: 20px 150px;
-    }
+  .cart-space {
+    margin: 20px 150px;
+  }
 }
 @media (min-width: 1400px) {
-    .cart-space {
-        margin: 20px 220px;
-    }
+  .cart-space {
+    margin: 20px 220px;
+  }
 }

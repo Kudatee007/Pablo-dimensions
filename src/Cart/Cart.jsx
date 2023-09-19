@@ -3,6 +3,7 @@ import "./Cart.css";
 import cart from "../Img/shoe1.svg";
 import plus from "../Img/lightplus.svg";
 import minus from "../Img/lightminus.svg";
+import { FaTrash, FaPhone, FaShoppingCart } from "react-icons/fa";
 
 const Cart = () => {
   return (
@@ -23,7 +24,7 @@ const Cart = () => {
           <div>
             <img src={cart} alt="" className="cart-image" />
             <div className="remove-box">
-              <img src={plus} alt="" className="remove" />
+            <FaTrash size={12} />
               <p className="remove-txt">REMOVE</p>
             </div>
           </div>
@@ -49,7 +50,7 @@ const Cart = () => {
           <div>
             <img src={cart} alt="" className="cart-image" />
             <div className="remove-box">
-              <img src={plus} alt="" className="remove" />
+            <FaTrash size={12} />
               <p className="remove-txt">REMOVE</p>
             </div>
           </div>
@@ -75,7 +76,7 @@ const Cart = () => {
           <div>
             <img src={cart} alt="" className="cart-image" />
             <div className="remove-box">
-              <img src={plus} alt="" className="remove" />
+              <FaTrash size={12} />
               <p className="remove-txt">REMOVE</p>
             </div>
           </div>
@@ -90,7 +91,7 @@ const Cart = () => {
               <button>
                 <img src={minus} alt="" />
               </button>
-              <p>2</p>
+              <p className="cart-count">2</p>
               <button>
                 <img src={plus} alt="" />
               </button>
@@ -98,8 +99,8 @@ const Cart = () => {
           </div>
         </div>
         <div className="but-cart">
-          <button className="call">CA</button>
-          <button className="add-cart">Checkout ($32,997)</button>
+          <button className="call"><FaPhone /></button>
+          <button className="add-cart"><FaShoppingCart /> Checkout ($32,997)</button>
         </div>
       </div>
     </div>

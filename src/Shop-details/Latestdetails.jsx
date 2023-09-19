@@ -8,6 +8,7 @@ import shoe3 from "../Img/shoe3.svg";
 import shoe4 from "../Img/shoe4.svg";
 import shoe5 from "../Img/shoe5.svg";
 import plus from "../Img/plus.svg";
+import { FaShoppingCart, FaPhone } from "react-icons/fa";
 
 const Latestdetails = () => {
   const responsive = {
@@ -64,18 +65,22 @@ const Latestdetails = () => {
           <div className="size">
             <h2 className="size-txt">Size</h2>
             <div className="size-box">
-              <p>M</p>
-              <p>L</p>
-              <p>XL</p>
+              <p className="medium">M</p>
+              <p className="large">L</p>
+              <p className="xlarge">XL</p>
             </div>
           </div>
           <div className="color">
             <h2 className="color-txt">Color</h2>
             <div className="color-box">
-              <p>white</p>
-              <p>black</p>
-              <p>orange</p>
-              <p>green</p>
+              <span className="white"></span>
+              <span className="black"></span>
+              <span className="orange"></span>
+              <span className="green"></span>
+              <span className="pink"></span>
+              <span className="blue"></span>
+              <span className="red"></span>
+              <span className="purple"></span>
             </div>
           </div>
           <div>
@@ -96,8 +101,8 @@ const Latestdetails = () => {
             </div>
           </div>
           <div className="button-cart">
-            <button className="call">CA</button>
-            <button className="add-cart">ADD TO CART</button>
+            <button className="call"><FaPhone /></button>
+            <button className="add-cart"> <FaShoppingCart /> <span>ADD TO CART</span></button>
           </div>
         </div>
       </div>
