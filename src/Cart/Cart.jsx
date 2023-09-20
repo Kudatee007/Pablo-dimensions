@@ -4,6 +4,7 @@ import cart from "../Img/shoe1.svg";
 import plus from "../Img/lightplus.svg";
 import minus from "../Img/lightminus.svg";
 import { FaTrash, FaPhone, FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   return (
@@ -24,7 +25,7 @@ const Cart = () => {
           <div>
             <img src={cart} alt="" className="cart-image" />
             <div className="remove-box">
-            <FaTrash size={12} />
+              <FaTrash size={12} />
               <p className="remove-txt">REMOVE</p>
             </div>
           </div>
@@ -50,7 +51,7 @@ const Cart = () => {
           <div>
             <img src={cart} alt="" className="cart-image" />
             <div className="remove-box">
-            <FaTrash size={12} />
+              <FaTrash size={12} />
               <p className="remove-txt">REMOVE</p>
             </div>
           </div>
@@ -99,8 +100,14 @@ const Cart = () => {
           </div>
         </div>
         <div className="but-cart">
-          <button className="call"><FaPhone /></button>
-          <button className="add-cart"><FaShoppingCart /> Checkout ($32,997)</button>
+          <button className="call">
+            <FaPhone />
+          </button>
+          <Link to="/contact-info" className="Link add-cart">
+            <button className="add-cart">
+              <FaShoppingCart /> Checkout ($32,997)
+            </button>
+          </Link>
         </div>
       </div>
     </div>

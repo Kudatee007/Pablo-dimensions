@@ -8,6 +8,8 @@ import Login from "./Login/Login";
 import Register from "./Register/Register";
 import Layout from "./components/Layout";
 import ResetPass from "./Login/ResetPass";
+import Contact from "./Cart/Contact";
+import Shipping from "./Cart/Shipping";
 
 function App() {
   return (
@@ -19,11 +21,11 @@ function App() {
             <Route path="/collections" element={<Latest />} />
             <Route path="/collection-details" element={<Latestdetails />} />
             <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/reset-pass" element={<ResetPass />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/reset-pass" element={<ResetPass />} />
+            <Route path="/contact-info" element={<Shipping />} />
           </Route>
-           
         </Routes>
       </BrowserRouter>
     </>

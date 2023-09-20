@@ -1,0 +1,207 @@
+.pablo-d {
+  font-size: 20px;
+  font-family: "Mooli", sans-serif;
+  color: #333;
+  font-weight: 400;
+  padding: 10px 0;
+  padding-left: 10px;
+}
+.contact-ship {
+  border: 2px solid #efecec;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.conship-txt {
+  font-family: "Mooli", sans-serif;
+  font-size: 13px;
+  color: #555;
+  font-weight: 400;
+  line-height: 20px;
+}
+.txt {
+  padding-top: 10px;
+}
+.conship-p {
+  font-family: "Mooli", sans-serif;
+  font-size: 14px;
+  color: #222;
+  font-weight: 400;
+  line-height: 20px;
+}
+.conship-change {
+  font-family: "Mooli", sans-serif;
+  font-size: 12px;
+  color: #222;
+  font-weight: 400;
+  line-height: 20px;
+  text-decoration: underline;
+}
+.conship {
+  border-bottom: 2px solid #efecec;
+}
+.shipping {
+  padding: 14px 14px;
+}
+.ship-H {
+  font-size: 16px;
+  font-family: "Mooli", sans-serif;
+  color: #333;
+  font-weight: 400;
+  padding: 10px 0;
+  padding-left: 10px;
+}
+.ship {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #efecec;
+  border-radius: 5px;
+  padding: 12px 12px;
+}
+.ship-check {
+  display: flex;
+  gap: 10px;
+}
+.ship-p {
+  font-family: "Mooli", sans-serif;
+  font-size: 14px;
+  color: #555;
+  font-weight: 400;
+  line-height: 20px;
+}
+.ship-price {
+  font-family: "Mooli", sans-serif;
+  font-size: 16px;
+  color: #222;
+  font-weight: 400;
+  line-height: 20px;
+}
+.ship_price {
+  font-family: "Mooli", sans-serif;
+  font-size: 14px;
+  color: #222;
+  font-weight: 400;
+  line-height: 20px;
+}
+.kk {
+  font-family: "Mooli", sans-serif;
+  font-family: "Rubik", sans-serif;
+}
+.ship-info {
+  display: none;
+}
+.return-payment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+.return-payment1 {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+.cnt-payment {
+  font-family: "Rubik", sans-serif;
+  font-size: 13px;
+  width: 160px;
+  height: 45px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+.sub-ship1 {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.sub-ship2 {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #efecec;
+  padding-bottom: 10px;
+}
+.ship-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.total-span {
+  font-family: "Mooli", sans-serif;
+  font-size: 21px;
+  color: #222;
+  font-weight: 400;
+  line-height: 20px;
+}
+.total-txt {
+  font-family: "Mooli", sans-serif;
+  font-size: 14px;
+  color: #222;
+  font-weight: 400;
+  line-height: 20px;
+}
+.return-txt {
+  font-family: "Mooli", sans-serif;
+  font-size: 15px;
+  color: #555;
+  font-weight: 400;
+  line-height: 20px;
+}
+@media (min-width: 768px) {
+  .conship {
+    /* display: flex;
+    justify-content: space-between; */
+  }
+  .shipping {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+  .shipping1 {
+    width: 55%;
+    padding: 14px 20px;
+  }
+  .shipping2 {
+    width: 45%;
+    background-color: rgb(250, 248, 248);
+    padding: 14px 20px;
+  }
+  .divider {
+    border: 1px solid #efecec;
+  }
+  .ship-info {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 20px 0;
+  }
+  .ship-info > p {
+    font-family: "Mooli", sans-serif;
+    font-size: 13px;
+    color: #222;
+    font-weight: 400;
+    line-height: 13px;
+  }
+  .ship-img {
+    height: 50px;
+    border: 1px solid #efecec;
+  }
+  .sub-ship1 {
+    border-top: 2px solid #efecec;
+    padding-top: 10px;
+  }
+}
+@media (min-width: 1024px) {
+.cont-shipping {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.cont-ship {
+  display: flex;
+  gap: 25px;
+}
+}
