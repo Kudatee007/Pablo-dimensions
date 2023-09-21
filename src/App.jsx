@@ -10,6 +10,10 @@ import Layout from "./components/Layout";
 import ResetPass from "./Login/ResetPass";
 import Contact from "./Cart/Contact";
 import Shipping from "./Cart/Shipping";
+import About from "./Footer/About";
+import Return from "./Footer/Return";
+import Delivery from "./Footer/Delivery";
+import Contactus from "./Footer/Contactus";
 
 function App() {
   return (
@@ -24,7 +28,12 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/reset-pass" element={<ResetPass />} />
-            <Route path="/contact-info" element={<Shipping />} />
+            <Route path="/contact-info" element={<Contact />} />
+            <Route path="/shipping" element={<Shipping />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/return" element={<Return />} />
+            <Route path="/delivery-policy" element={<Delivery />} />
+            <Route path="/contact-us" element={<Contactus />} />
           </Route>
         </Routes>
       </BrowserRouter>

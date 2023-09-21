@@ -8,7 +8,7 @@
 }
 .contact-ship {
   border: 2px solid #efecec;
-  padding: 8px 12px;
+  padding: 5px 12px;
   border-radius: 5px;
   margin-bottom: 10px;
 }
@@ -41,7 +41,7 @@
   border-bottom: 2px solid #efecec;
 }
 .shipping {
-  padding: 14px 14px;
+  padding: 14px 18px;
 }
 .ship-H {
   font-size: 16px;
@@ -57,6 +57,7 @@
   border: 2px solid #efecec;
   border-radius: 5px;
   padding: 12px 12px;
+  margin-bottom: 10px;
 }
 .ship-check {
   display: flex;
@@ -95,6 +96,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+  margin-bottom: 20px;
 }
 .return-payment1 {
   display: none;
@@ -150,6 +152,103 @@
   font-weight: 400;
   line-height: 20px;
 }
+.cont-shipping1 {
+  border-bottom: 1px solid #efecec;
+  padding-bottom: 5px;
+}
+/* PAYMENT BOX */
+.payment-txt {
+  font-family: "Mooli", sans-serif;
+  font-size: 13px;
+  color: #555;
+  font-weight: 400;
+  line-height: 15px;
+}
+.card-box {
+  border: 2px solid #efecec;
+  margin: 15px 0;
+}
+.credit-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 2px solid #efecec;
+}
+.credit-txt {
+  font-family: "Mooli", sans-serif;
+  font-size: 14px;
+  color: #222;
+  font-weight: 400;
+  line-height: 20px;
+}
+.card-position {
+  /* position: relative; */
+}
+.react-icon {
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+.card-number {
+  position: relative;
+  width: 100%;
+  border: 1.5px solid #efecec;
+  background-color: white;
+  height: 40px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-family: "Mooli", sans-serif;
+  font-size: 14px;
+  color: #222;
+  margin: 2px 0;
+}
+.input-card {
+  width: 100%;
+  border: 1.5px solid #efecec;
+  background-color: white;
+  height: 40px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-family: "Mooli", sans-serif;
+  font-size: 14px;
+  color: #222;
+  margin: 2px 0;
+}
+.card-numberbox {
+  padding: 10px;
+  background-color: rgb(250, 248, 248);
+}
+.billing-box {
+  border: 2px solid #efecec;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.bill-box {
+  display: flex;
+  border-bottom: 2px solid #efecec;
+  gap: 12px;
+  padding: 12px;
+}
+@media (min-width: 540px) {
+.cvv-date {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.card-number {
+  margin: 4px 0;
+}
+.input-card {
+  margin: 4px 0;
+}
+.payment-txt {
+  font-size: 14.5px;
+}
+.credit-txt {
+  font-size: 15px;
+}
+}
 @media (min-width: 768px) {
   .conship {
     /* display: flex;
@@ -176,6 +275,7 @@
     display: flex;
     gap: 8px;
     align-items: center;
+    justify-content: space-between;
     padding: 20px 0;
   }
   .ship-info > p {
@@ -193,15 +293,85 @@
     border-top: 2px solid #efecec;
     padding-top: 10px;
   }
+  .return-payment {
+    margin-bottom: 40px;
+  }
 }
 @media (min-width: 1024px) {
-.cont-shipping {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
+  .cont-shipping {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  .cont-ship {
+    display: flex;
+    gap: 25px;
+  }
+  .shipping1 {
+    padding: 14px 60px;
+    box-sizing: border-box;
+    padding-right: 60px;
+    padding-left: 80px;
+    padding-top: 30px;
+  }
+  .shipping2 {
+    /* padding: 14px 40px; */
+    padding-left: 40px;
+    padding-right: 100px;
+    padding-top: 30px;
+    box-sizing: border-box;
+  }
+  .pablo-d {
+    font-size: 22px;
+  }
+  .conship-txt {
+    font-size: 15px;
+  }
+  .conship-p {
+    font-size: 16px;
+  }
+  .ship-H {
+    font-size: 18px;
+  }
+  .ship-p {
+    font-size: 16px;
+  }
+  .ship-price {
+    font-size: 18px;
+  }
+  .cnt-payment {
+    width: 180px;
+    font-size: 14px;
+  }
+  .ship-info > p {
+    font-size: 15px;
+  }
+  .ship-img {
+    height: 70px;
+  }
+  .ship_price {
+    font-size: 16px;
+  }
+  .total-span {
+    font-size: 24px;
+  }
+  .total-txt {
+    font-size: 16px;
+  }
 }
-.cont-ship {
-  display: flex;
-  gap: 25px;
-}
+@media (min-width: 1200px) {
+  .shipping1 {
+    padding: 14px 60px;
+    box-sizing: border-box;
+    padding-right: 60px;
+    padding-left: 130px;
+    padding-top: 30px;
+  }
+  .shipping2 {
+    /* padding: 14px 40px; */
+    padding-left: 40px;
+    padding-right: 160px;
+    padding-top: 30px;
+    box-sizing: border-box;
+  }
 }

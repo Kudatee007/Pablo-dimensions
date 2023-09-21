@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ficon from "../Img/fbicon.svg";
 import ticon from "../Img/ticon.svg";
 import igicon from "../Img/igicon.svg";
 import yicon from "../Img/yicon.svg";
 import tikicon from "../Img/tiktokicon.svg";
-import "./Footer.css"
+import "./Footer.css";
 
 const Footer = () => {
   return (
@@ -12,11 +13,19 @@ const Footer = () => {
       <div className="foot1">
         <h2>Footer menu</h2>
         <ul className="footer-list">
-          <li>About</li>
+          <Link to="/about" className="Link">
+            <li>About</li>
+          </Link>
           <li>FAQs</li>
-          <li>Return Policy</li>
-          <li>Delivery Policy</li>
+          <Link to="/return" className="Link">
+            <li>Return Policy</li>
+          </Link>
+          <Link to="/delivery-policy" className="Link">
+            <li>Delivery Policy</li>
+          </Link>
+          <Link to="/contact-us" className="Link">
           <li>Contact</li>
+          </Link>
           <li>Reviews</li>
           <li>Custom orders</li>
         </ul>
