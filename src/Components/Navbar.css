@@ -1,0 +1,400 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+/* nav {
+  position: fixed;
+  background-color: #333;
+} */
+.navBar {
+  /* position: relative; */
+  position: -webkit-sticky;
+  position: sticky;
+   top: 0px;
+  z-index: 1;
+}
+.pabloHead {
+  background-color: #111;
+}
+.pb-txt {
+  color: white;
+  text-align: center;
+  font-family: 'Mooli', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 13px 0;
+}
+.Nav {
+  position: sticky;
+  top: 200px; 
+  z-index: 1;
+  background-color: white;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0px;
+  width: 100%;
+  border-bottom: 1px solid #ededed;
+  /* position: -webkit-sticky; */
+}
+.pablo-logo {
+  height: 50px;
+}
+.black-logo {
+  text-align: center;
+  padding-top: 100px;
+}
+.black-logo > img {
+  width: 120px;
+}
+.side {
+  background-color: rgb(23, 23, 23);
+  position: fixed;
+  width: 80%;
+  height: 100vh;
+  top: 0;
+  left: 0px;
+  overflow-y: auto;
+  transition: 0.4s ease;
+}
+.side-NX {
+  position: fixed;
+  width: 0;
+  top: 0;
+  background-color: rgb(23, 23, 23);
+  left: -300px;
+  height: 100vh;
+  transition: 0.4s ease-in-out;
+}
+.side > ul {
+  list-style: none;
+}
+.side-NX > ul {
+  list-style: none;
+}
+.list {
+  padding-bottom: 20px;
+  transition: 0s ease;
+  max-height: 1000px; /* Set a maximum height, this should be large enough */
+  overflow: hidden;
+  transition: 0.9s ease;
+}
+.list-NX {
+  max-height: 0; /* Hide the content by setting max-height to 0 */
+  overflow: hidden; /* Hide content */
+  transition: 0.2s ease;
+}
+.women {
+  display: block;
+}
+.women-NX {
+  display: none;
+}
+.men {
+  display: block;
+}
+.men-NX {
+  display: none;
+}
+.cancel {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 20px;
+}
+.first-list {
+  color: rgb(218, 207, 207);
+  line-height: 65px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  /* width: 30px; */
+}
+.headTag {
+  border-bottom: 0.1px solid rgb(154, 164, 154);
+}
+.first-dropdown {
+  padding: 100px 30px;
+  /* width: 250px; */
+}
+.secondList {
+  list-style: none;
+  margin: 10px;
+  padding: 0 10px;
+  border-left: 0.5px solid rgb(154, 164, 154);
+  max-height: 1000px; /* Set a maximum height, this should be large enough */
+  overflow: hidden; /* Hide content that overflows the max-height */
+  transition: max-height 1s ease; /* Add transition to max-height property */
+}
+
+/* Hidden state */
+.secondList-NX {
+  height: 0px;
+  max-height: 0; /* Hide the content by setting max-height to 0 */
+  overflow: hidden; /* Hide content */
+  transition: max-height 0.2s ease; /* Add transition to max-height property */
+}
+.plus-div > h3 {
+  color: rgb(174, 170, 170);
+  line-height: 35px;
+  font-family: 'Mooli', sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.secondList-NX > li {
+  color: rgb(218, 207, 207);
+  line-height: 30px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  list-style: none;
+}
+.second-list {
+  padding: 0 10px;
+}
+.secondList > li {
+  color: rgb(218, 207, 207);
+  line-height: 30px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  list-style: none;
+}
+.plus-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 420px) {
+  .pablo-logo {
+    width: 40%;
+  }
+}
+@media (min-width: 540px) {
+  .pablo-logo {
+    width: 55%;
+  }
+  .side {
+    width: 300px;
+  }
+}
+@media (min-width: 640px) {
+  .pablo-logo {
+    width: 60%;
+  }
+  .side {
+    width: 350px;
+  }
+}
+@media (min-width: 1024px) {
+  .secondList {
+    list-style: none;
+    margin: 10px;
+    padding: 0 10px;
+    border: none;
+    max-height: 1000px;
+    overflow: initial;
+    transition: initial;
+    height: 100vh;
+  }
+  .secondList-NX {
+    /* height: 40vh; */
+    max-height: 1000px;
+    overflow: initial;
+    transition: initial;
+  }
+  .list-NX {
+    padding-bottom: 20px;
+    transition: 0s ease;
+    max-height: 1000px; /* Set a maximum height, this should be large enough */
+    overflow: hidden;
+    transition: 0.9s ease;
+  }
+  .Nav {
+    justify-content: center;
+    gap: 40px;
+    padding: 7px 0;
+  }
+  .Nav .Link:nth-child(4) {
+    order: -1;
+  }
+  .hamburger {
+    display: none;
+  }
+  .side {
+    background-color: initial;
+    position: initial;
+    width: 400px;
+    height: 1000px;
+    top: initial;
+    left: initial;
+    overflow-y: initial;
+    transition: initial;
+  }
+  .side-NX {
+    position: initial;
+    width: initial;
+    top: initial;
+    background-color: initial;
+    left: initial;
+    height: initial;
+    transition: initial;
+  }
+  .cancel {
+    display: none;
+  }
+  .first-dropdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* display: flex; */
+    gap: 0px;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 0 120px;
+    /* width: 100%; */
+  }
+  #latest {
+    display: none;
+  }
+  #Latest:hover + #latest,
+  #latest:hover {
+    background-color: rgb(23, 23, 23);
+    position: absolute;
+    left: 0;
+    padding-top: 50px;
+    height: 45vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 100px;
+    transition: initial;
+    cursor: pointer;
+    transition: 0.9s ease-in-out;
+  }
+  #men {
+    position: absolute;
+    display: none;
+  }
+  #Men:hover + #men,
+  #men:hover {
+    background-color: rgb(23, 23, 23);
+    position: absolute;
+    left: 0;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    width: 100%;
+    height: 57vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 90px;
+    transition: initial;
+  }
+  #Men #men:hover #Men {
+    display: flex;
+  }
+  #women {
+    display: none;
+  }
+  #Women:hover + #women,
+  #women:hover {
+    background-color: rgb(23, 23, 23);
+    position: fixed;
+    left: 0;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 90px;
+    transition: 0.9s;
+  }
+  .icon-foot {
+    display: none;
+  }
+  .first-list {
+    color: #333;
+    text-align: center;
+  }
+  .pablo-logo {
+    width: auto;
+  }
+  .first-list {
+    cursor: pointer;
+    width: 100px;
+    font-size: 16px;
+  }
+  .first-list:hover {
+    border-bottom: 5px solid #333;
+    transition: 0.3s ease;
+  }
+  .plus-div > h3 {
+    color: rgb(218, 207, 207);
+    line-height: 35px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    list-style: none;
+  }
+  .plus-div > h3:hover {
+    color: rgb(173, 121, 121);
+  }
+  .secondList-NX > li {
+    color: rgb(174, 170, 170);
+    line-height: 30px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .secondList-NX > li:hover {
+    color: white;
+    transition: 0.1s ease-in-out;
+  }
+  .plus-icon {
+    display: none;
+  }
+  .plus-div {
+    display: block;
+  }
+  .black-logo {
+    display: none;
+  }
+  .headTag {
+    border: none;
+  }
+}
+@media (min-width: 1200px) {
+  .first-dropdown {
+    padding: 0 210px;
+  }
+}
+@media (min-width: 1400px) {
+  .first-dropdown {
+    padding: 0 260px;
+  }
+  .first-list {
+    width: 120px;
+  }
+}

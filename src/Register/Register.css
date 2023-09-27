@@ -1,0 +1,67 @@
+.Register {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 53px 0;
+}
+
+.register-txt {
+  color: #333;
+  font-family: 'Rubik', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 4px;
+  padding-bottom: 10px;
+}
+.register-p {
+  color: #333;
+  font-family: 'Mooli', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  padding-bottom: 12px;
+}
+.input-register {
+    width: 100%;
+    padding: 13px 14px;
+    border: none;
+    background-color: #efecec;
+    font-family: "Rubik", sans-serif;
+    margin-bottom: 17px;
+    box-sizing: border-box;
+    color: #000;
+    border-radius: 10px;
+}
+.btn-register {
+    width: 100%;
+    padding: 13px 14px;
+    border: none;
+    margin-bottom: 17px;
+    box-sizing: border-box;
+    background-color: #222;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+.register-box {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 540px) {
+    .input-register {
+        width: 400px;
+    }
+    .Register {
+        align-items: center;
+    }
+    .register-box {
+        padding: 0;
+    }
+}
