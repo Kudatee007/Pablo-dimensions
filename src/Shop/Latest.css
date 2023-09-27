@@ -1,7 +1,7 @@
 .brand-txt {
   color: #333;
   text-align: center;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
@@ -21,7 +21,7 @@
   border: 1px solid #ededed;
   height: 57px;
   background-color: white;
-  font-family: 'Mooli', sans-serif;
+  font-family: "Mooli", sans-serif;
   color: #333;
 }
 .grid-box {
@@ -45,6 +45,17 @@
   grid-row-gap: 35px;
   padding: 40px 10px;
 }
+.display-box-NX {
+  display: block;
+  /* grid-template-columns: 1fr;
+  grid-column-gap: 8px;
+  grid-row-gap: 35px;
+  padding: 40px 10px; */
+}
+/* .litshit {
+  display: flex;
+  gap: 0px;
+} */
 .dis-box {
   position: relative;
 }
@@ -67,8 +78,8 @@
  height: 290px;
  } */
 .dis-box:hover .gridImg > img {
- object-fit: contain;
- transition: 0.3s;
+  object-fit: contain;
+  transition: 0.3s;
 }
 .dis-box .gridImg > img:last-child {
   display: none;
@@ -85,7 +96,7 @@
 .dis-box > h5 {
   color: #1c1b1b;
   text-align: center;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 11px;
   font-style: normal;
   font-weight: 500;
@@ -97,7 +108,7 @@
 .dis-box > h6 {
   color: #1c1b1b;
   text-align: center;
-  font-family: 'Mooli', sans-serif;
+  font-family: "Mooli", sans-serif;
   font-size: 11px;
   font-style: normal;
   font-weight: 500;
@@ -108,7 +119,7 @@
 .dis-box > p {
   color: #dc5a54;
   text-align: center;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 11px;
   font-style: normal;
   font-weight: 500;
@@ -127,7 +138,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
- 
+
   width: 100%;
 }
 @media (min-width: 540px) {

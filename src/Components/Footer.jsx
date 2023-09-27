@@ -13,27 +13,27 @@ const Footer = () => {
       <div className="foot1">
         <h2>Footer menu</h2>
         <ul className="footer-list">
-          <Link to="/about" className="Link">
-            <li>About</li>
+          <Link to="/about" className="lii Link">
+            <li className="lii">About</li>
           </Link>
-          <li>FAQs</li>
-          <Link to="/return" className="Link">
-            <li>Return Policy</li>
+          <Link to="/return" className="lii Link">
+            <li className="lii">Return Policy</li>
           </Link>
-          <Link to="/delivery-policy" className="Link">
-            <li>Delivery Policy</li>
+          <Link to="/delivery-policy" className="lii Link">
+            <li className="lii">Delivery Policy</li>
           </Link>
-          <Link to="/contact-us" className="Link">
-          <li>Contact</li>
+          <Link to="/contact-us" className="lii Link">
+            <li className="lii">Contact</li>
           </Link>
-          <li>Reviews</li>
-          <li>Custom orders</li>
+          <Link to="/contact-us" className="lii Link">
+            <li>Custom orders</li>
+          </Link>
         </ul>
       </div>
       <div className="foot2">
         <h2>CONTACT</h2>
-        <p>Email: info@maisondefashion.com</p>
-        <p>Call: +44 (0) 3330124624</p>
+        <p>Email: info@Pablo_Dimensions.com</p>
+        <p>Call: +44 3330124624</p>
       </div>
       <div className="foot3">
         <img src={ficon} alt="" />

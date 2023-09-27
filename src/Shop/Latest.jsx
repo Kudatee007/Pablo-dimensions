@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { render } from "react-dom";
 import shop from "../Img/shop1.svg";
@@ -9,8 +9,14 @@ import grid2 from "../Img/grid2.svg";
 import { Link } from "react-router-dom";
 import wish from "../Img/wish.svg";
 import cart from "../Img/cart.svg";
+import { FaThermometerQuarter } from "react-icons/fa";
 
 const Latest = () => {
+  const [grid, setGrid] = useState(false);
+
+  function handleGrid() {
+    setGrid(!grid);
+  }
   return (
     <div className="latest-brand">
       <h1 className="brand-txt">LATEST BRAND</h1>
@@ -39,8 +45,9 @@ const Latest = () => {
               <h6>FLAIR African Print mini skirt -SAMPLE SALE</h6>
               <p>$45.50 USD</p>
             </div>
+
+            {/* <ReactStars count={5} size={24} value={3} activeColor="#ffd700" /> */}
           </Link>
-          {/* <ReactStars count={5} size={24} value={3} activeColor="#ffd700" /> */}
           <ReactStars
             count={5}
             size={19}

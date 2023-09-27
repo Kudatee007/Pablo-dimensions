@@ -148,6 +148,7 @@ const Page1 = () => {
             ssr={true} // means to render carousel on server-side.
             autoPlaySpeed={1000}
             // renderDotsOutside={true}
+            removeArrowOnDeviceType={["tablet", "mobile"]}
             keyBoardControl={true}
             transitionDuration={500}
             containerClass="carousel-container"
@@ -205,6 +206,7 @@ const Page1 = () => {
             autoPlaySpeed={1000}
             // renderDotsOutside={true}
             keyBoardControl={true}
+            removeArrowOnDeviceType={["tablet", "mobile"]}
             transitionDuration={500}
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
@@ -286,6 +288,7 @@ const Page1 = () => {
             // renderDotsOutside={true}
             keyBoardControl={true}
             transitionDuration={500}
+            removeArrowOnDeviceType={["tablet", "mobile"]}
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"

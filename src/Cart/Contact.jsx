@@ -9,39 +9,16 @@ import {
   FaHouseUser,
 } from "react-icons/fa";
 import shoe from "../Img/shoe1.svg";
+import Cartdetails from "./Cartdetails";
 
 const Contact = () => {
   return (
     <div className="Contact">
-      {/* <div className="summary-box">
-        <div className="toggle-summary">
-          <div className="tog-sum">
-            <FaShoppingCart size={13} />
-            <p>Hide order summary</p>
-            <FaArrowDown size={10} />
-          </div>
-          <p>$72.50</p>
-        </div>
-        <div>
-          <div className="ship-inf">
-            <img src={shoe} alt="" className="ship-img" />
-            <div>
-              <p> New Pablo Dimension 2023 Classic wears.</p>
-              <p>XXL / WHITE</p>
-            </div>
-            <p>$72.50</p>
-          </div>
-          DISCOUNT BOX
-          <div>
-            <h2>Discount code</h2>
-            <div>
-              <input type="text" />
-              <FaSpinner />
-            </div>
-          </div>
-        </div>
-      </div> */}
-      <div>
+      <div className="inner-contact1">
+        <Cartdetails />
+      </div>
+      <hr className="divider" />
+      <div className="inner-contact2">
         <h2 className="contact-h">Contact</h2>
         <p className="contact-mail">Timmyturner@gmail.com</p>
         <h2 className="contact-h">Delivery method</h2>

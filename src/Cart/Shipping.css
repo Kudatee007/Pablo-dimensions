@@ -40,7 +40,10 @@
 .conship {
   border-bottom: 2px solid #efecec;
 }
-.shipping {
+/* .shipping {
+  padding: 14px 18px;
+} */
+.shipping1 {
   padding: 14px 18px;
 }
 .ship-H {
@@ -63,13 +66,13 @@
   display: flex;
   gap: 10px;
 }
-.ship-p {
+/* .ship-p {
   font-family: "Mooli", sans-serif;
   font-size: 14px;
   color: #555;
   font-weight: 400;
   line-height: 20px;
-}
+} */
 .ship-price {
   font-family: "Mooli", sans-serif;
   font-size: 16px;
@@ -77,20 +80,20 @@
   font-weight: 400;
   line-height: 20px;
 }
-.ship_price {
+/* .ship_price {
   font-family: "Mooli", sans-serif;
   font-size: 14px;
   color: #222;
   font-weight: 400;
   line-height: 20px;
-}
+} */
 .kk {
   font-family: "Mooli", sans-serif;
   font-family: "Rubik", sans-serif;
 }
-.ship-info {
+/* .ship-info {
   display: none;
-}
+} */
 .return-payment {
   display: flex;
   justify-content: space-between;
@@ -114,37 +117,7 @@
   border: none;
   border-radius: 5px;
 }
-.sub-ship1 {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-.sub-ship2 {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 2px solid #efecec;
-  padding-bottom: 10px;
-}
-.ship-total {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 0;
-}
-.total-span {
-  font-family: "Mooli", sans-serif;
-  font-size: 21px;
-  color: #222;
-  font-weight: 400;
-  line-height: 20px;
-}
-.total-txt {
-  font-family: "Mooli", sans-serif;
-  font-size: 14px;
-  color: #222;
-  font-weight: 400;
-  line-height: 20px;
-}
+
 .return-txt {
   font-family: "Mooli", sans-serif;
   font-size: 15px;
@@ -231,23 +204,23 @@
   padding: 12px;
 }
 @media (min-width: 540px) {
-.cvv-date {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-.card-number {
-  margin: 4px 0;
-}
-.input-card {
-  margin: 4px 0;
-}
-.payment-txt {
-  font-size: 14.5px;
-}
-.credit-txt {
-  font-size: 15px;
-}
+  .cvv-date {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .card-number {
+    margin: 4px 0;
+  }
+  .input-card {
+    margin: 4px 0;
+  }
+  .payment-txt {
+    font-size: 14.5px;
+  }
+  .credit-txt {
+    font-size: 15px;
+  }
 }
 @media (min-width: 768px) {
   .conship {
@@ -255,23 +228,36 @@
     justify-content: space-between; */
   }
   .shipping {
+    /* display: flex; */
+    /* justify-content: space-between;
+    padding: 0; */
+  }
+  .shipping {
     display: flex;
-    justify-content: space-between;
-    padding: 0;
+    flex-direction: row-reverse;
+    gap: 0;
   }
   .shipping1 {
+    width: 100%;
+  }
+  .innercont1 {
+    width: 80%;
+    background-color: rgb(250, 248, 248);
+  }
+  /* .shipping1 {
     width: 55%;
     padding: 14px 20px;
-  }
-  .shipping2 {
+  } */
+  /* .shipping2 {
     width: 45%;
     background-color: rgb(250, 248, 248);
     padding: 14px 20px;
-  }
+  } */
   .divider {
     border: 1px solid #efecec;
+    display: none;
   }
-  .ship-info {
+  /* .ship-info {
     display: flex;
     gap: 8px;
     align-items: center;
@@ -284,18 +270,23 @@
     color: #222;
     font-weight: 400;
     line-height: 13px;
-  }
-  .ship-img {
+  } */
+  /* .ship-img {
     height: 50px;
     border: 1px solid #efecec;
-  }
-  .sub-ship1 {
+  } */
+  /* .sub-ship1 {
     border-top: 2px solid #efecec;
     padding-top: 10px;
-  }
+  } */
   .return-payment {
     margin-bottom: 40px;
   }
+}
+@media (min-width: 768px) {
+.divider {
+  display: block;
+}
 }
 @media (min-width: 1024px) {
   .cont-shipping {
@@ -314,13 +305,12 @@
     padding-left: 80px;
     padding-top: 30px;
   }
-  .shipping2 {
-    /* padding: 14px 40px; */
+  /* .shipping2 {
     padding-left: 40px;
     padding-right: 100px;
     padding-top: 30px;
     box-sizing: border-box;
-  }
+  } */
   .pablo-d {
     font-size: 22px;
   }
@@ -333,9 +323,9 @@
   .ship-H {
     font-size: 18px;
   }
-  .ship-p {
+  /* .ship-p {
     font-size: 16px;
-  }
+  } */
   .ship-price {
     font-size: 18px;
   }
@@ -346,18 +336,18 @@
   .ship-info > p {
     font-size: 15px;
   }
-  .ship-img {
+  /* .ship-img {
     height: 70px;
-  }
-  .ship_price {
+  } */
+  /* .ship_price {
     font-size: 16px;
-  }
+  } */
   .total-span {
     font-size: 24px;
   }
-  .total-txt {
+  /* .total-txt {
     font-size: 16px;
-  }
+  } */
 }
 @media (min-width: 1200px) {
   .shipping1 {
@@ -367,11 +357,10 @@
     padding-left: 130px;
     padding-top: 30px;
   }
-  .shipping2 {
-    /* padding: 14px 40px; */
+  /* .shipping2 {
     padding-left: 40px;
     padding-right: 160px;
     padding-top: 30px;
     box-sizing: border-box;
-  }
+  } */
 }
