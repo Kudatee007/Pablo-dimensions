@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Page1 from "./LandingPage/Page1";
 import Latest from "./Shop/Latest";
 import Latestdetails from "./Shop-details/Latestdetails";
@@ -14,11 +14,13 @@ import About from "./Footer/About";
 import Return from "./Footer/Return";
 import Delivery from "./Footer/Delivery";
 import Contactus from "./Footer/Contactus";
+import { Provider } from "react-redux";
+import { store } from "./app/Store";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
+    <Router>
+      <Provider store={store}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Page1 />} />
@@ -36,8 +38,8 @@ function App() {
             <Route path="/contact-us" element={<Contactus />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </>
+      </Provider>
+    </Router>
   );
 }
 
