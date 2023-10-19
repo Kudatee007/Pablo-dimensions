@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Page1.css";
@@ -32,6 +32,8 @@ import latest7 from "../Img/latest7.svg";
 import latest8 from "../Img/latest8.svg";
 import latest9 from "../Img/latest9.svg";
 import latest10 from "../Img/latest10.svg";
+import { getAllProducts } from "../features/products/productSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Page1 = () => {
   const responsive = {
@@ -70,6 +72,18 @@ const Page1 = () => {
       items: 2,
     },
   };
+  const productState = useSelector((state) => state.product.product);
+  console.log(productState);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  const getProducts = () => {
+    dispatch(getAllProducts());
+  };
+
+
 
   return (
     <div>
@@ -106,8 +120,8 @@ const Page1 = () => {
               </Link>
             </div>
             <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
-            <Link to="/collections">
+              <img src={carousel1} alt="" className="carousel-img" />
+              <Link to="/collections">
                 <button className="shop-now">Shop now</button>
               </Link>
             </div>

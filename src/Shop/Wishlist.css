@@ -1,0 +1,19 @@
+.wish-list {
+    position: relative;
+    width: 200px;
+}
+.wishImg {
+    position: relative;
+    z-index: -1;
+    width: 200px;
+}
+.can {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    width: 20px;
+}
+.wish-list {
+    text-align: center;
+}

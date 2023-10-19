@@ -16,6 +16,7 @@ import Delivery from "./Footer/Delivery";
 import Contactus from "./Footer/Contactus";
 import { Provider } from "react-redux";
 import { store } from "./app/Store";
+import Wishlist from "./Shop/Wishlist";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/reset-pass" element={<ResetPass />} />
             <Route path="/contact-info" element={<Contact />} />
             <Route path="/shipping" element={<Shipping />} />
+            <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/about" element={<About />} />
             <Route path="/return" element={<Return />} />
             <Route path="/delivery-policy" element={<Delivery />} />
