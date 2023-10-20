@@ -2,13 +2,9 @@ import React from "react";
 import "./Contact.css";
 import { Link } from "react-router-dom";
 import {
-  FaShoppingCart,
-  FaArrowDown,
-  FaSpinner,
   FaShippingFast,
   FaHouseUser,
 } from "react-icons/fa";
-import shoe from "../Img/shoe1.svg";
 import Cartdetails from "./Cartdetails";
 
 const Contact = () => {

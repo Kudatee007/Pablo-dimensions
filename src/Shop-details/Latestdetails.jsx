@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Latestdetails.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -9,8 +9,20 @@ import shoe4 from "../Img/shoe4.svg";
 import shoe5 from "../Img/shoe5.svg";
 import plus from "../Img/plus.svg";
 import { FaShoppingCart, FaPhone } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getAProduct } from "../features/products/productSlice";
 
 const Latestdetails = () => {
+  const location = useLocation();
+  const getProductId = location.pathname.split("/")[2];
+  const dispatch = useDispatch();
+  const productState = useSelector(state => state.product.singleproduct)
+  console.log(productState);
+
+  useEffect(() => {
+    dispatch(getAProduct(getProductId));
+  }, []);
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -60,8 +72,8 @@ const Latestdetails = () => {
           </Carousel>
         </div>
         <div className="latest-div2">
-          <h1 className="latest-name">Pablo Dimension female Joggers</h1>
-          <p className="latest-price">$8,999</p>
+          <h1 className="latest-name">{productState?.title}</h1>
+          <p className="latest-price">${productState?.price}</p>
           <div className="size">
             <h2 className="size-txt">Size</h2>
             <div className="size-box">
@@ -73,14 +85,7 @@ const Latestdetails = () => {
           <div className="color">
             <h2 className="color-txt">Color</h2>
             <div className="color-box">
-              <span className="white"></span>
-              <span className="black"></span>
-              <span className="orange"></span>
-              <span className="green"></span>
-              <span className="pink"></span>
-              <span className="blue"></span>
-              <span className="red"></span>
-              <span className="purple"></span>
+              <span className="white">{productState?.color}</span>
             </div>
           </div>
           <div>
@@ -88,21 +93,24 @@ const Latestdetails = () => {
             <div>
               <div className="description">
                 <h3 className="description-txt">Description</h3>
-                <h2 className="description-name">ALEXANDER MCQUEEN</h2>
+                <h2 className="description-name">{productState?.title}</h2>
                 <p className="description-p">
-                  Brushstroke Harness abstract-print shirt For AW23, Alexander
-                  McQueen puts a futuristic spin on sartorial silhouettes, as
-                  exemplified by this shirt. Cut from stretch cotton poplin, a
-                  contrasting harness detailed with the ‘Brushstroke’ print
-                  interrupts the conventional collared style and gives it a
-                  unique edge.
+                {productState?.description}
+                {/* dangerouslySetInnerHtml={{
+                  _html:productState?.title
+                }} */}
                 </p>
               </div>
             </div>
           </div>
           <div className="button-cart">
-            <button className="call"><FaPhone /></button>
-            <button className="add-cart"> <FaShoppingCart /> <span>ADD TO CART</span></button>
+            <button className="call">
+              <FaPhone />
+            </button>
+            <button className="add-cart">
+              {" "}
+              <FaShoppingCart /> <span>ADD TO CART</span>
+            </button>
           </div>
         </div>
       </div>

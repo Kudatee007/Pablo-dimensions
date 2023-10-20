@@ -4,7 +4,7 @@ import { render } from "react-dom";
 import "./Latest.css";
 import grid1 from "../Img/grid1.svg";
 import grid2 from "../Img/grid2.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import wish from "../Img/wish.svg";
 import cart from "../Img/cart.svg";
 // import { FaThermometerQuarter } from "react-icons/fa";
@@ -16,6 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Latest = () => {
   const [grid, setGrid] = useState(false);
+  const navigate = useNavigate();
 
   function handleGrid() {
     setGrid(!grid);
@@ -23,7 +24,7 @@ const Latest = () => {
   const productState = useSelector((state) => state.product.product);
   const dispatch = useDispatch();
   console.log(productState);
-  
+
   const getProducts = () => {
     dispatch(getAllProducts());
   };
@@ -52,7 +53,7 @@ const Latest = () => {
           ? productState.map((item, index) => {
               const { brand, title, price, images, totalrating, _id } = item;
               return (
-                <div key={index}>
+                <div key={index} onClick={() => navigate("/product/" + _id)}>
                   {/* <div> */}
                   <div className="dis-box">
                     <div className="wish-cart">

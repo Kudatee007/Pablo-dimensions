@@ -26,7 +26,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Page1 />} />
             <Route path="/collections" element={<Latest />} />
-            <Route path="/collection-details" element={<Latestdetails />} />
+            <Route path="/product/:id" element={<Latestdetails />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
