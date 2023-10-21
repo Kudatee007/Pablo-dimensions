@@ -1,28 +1,55 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Latestdetails.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import shoe1 from "../Img/shoe1.svg";
-import shoe2 from "../Img/shoe2.svg";
-import shoe3 from "../Img/shoe3.svg";
-import shoe4 from "../Img/shoe4.svg";
-import shoe5 from "../Img/shoe5.svg";
-import plus from "../Img/plus.svg";
+import ReactStars from "react-rating-stars-component";
 import { FaShoppingCart, FaPhone } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAProduct } from "../features/products/productSlice";
+import { toast } from "react-toastify";
+import { addProdToCart, getUserCart } from "../features/users/userSlice";
 
 const Latestdetails = () => {
+  const [color, setColor] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+  const [alreadyAdded, setAlreadyAdded] = useState(false);
   const location = useLocation();
   const getProductId = location.pathname.split("/")[2];
   const dispatch = useDispatch();
-  const productState = useSelector(state => state.product.singleproduct)
+  const productState = useSelector((state) => state.product.singleproduct);
+  const cartState = useSelector((state) => state.auth.cartProducts);
+
   console.log(productState);
 
   useEffect(() => {
     dispatch(getAProduct(getProductId));
+    dispatch(getUserCart());
   }, []);
+
+  useEffect(() => {
+    for (let index = 0; index < cartState.length; index++) {
+      if (getProductId === cartState[index]?.productId?.price) {
+        setAlreadyAdded(true);
+      }
+    }
+  });
+
+  const uploadCart = async () => {
+    if (color === null) {
+      toast.error("Choose a color");
+    } else {
+      dispatch(
+        addProdToCart({
+          productId: productState?._id,
+          quantity,
+          color,
+          price: productState?.price,
+        })
+      );
+    }
+  };
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -42,6 +69,8 @@ const Latestdetails = () => {
       items: 1,
     },
   };
+
+  const colorData = productState?.color;
   return (
     <div className="latest-details">
       <div className="latest-display">
@@ -55,19 +84,30 @@ const Latestdetails = () => {
             renderDotsOutside={false}
           >
             <div className="details">
-              <img src={shoe1} alt="" className="latest-details-img1" />
+              <img
+                src={productState?.images[0].url}
+                alt=""
+                className="latest-details-img1"
+              />
+              <ReactStars
+                count={5}
+                size={19}
+                value={productState?.totalrating.toString()}
+                edit={false}
+                isHalf={true}
+                emptyIcon={<i className="far fa-star"></i>}
+                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                fullIcon={<i className="fa fa-star"></i>}
+                activeColor="#ffd700"
+                classNames="react-icon"
+              />
             </div>
             <div>
-              <img src={shoe2} alt="" className="latest-details-img1" />
-            </div>
-            <div>
-              <img src={shoe3} alt="" className="latest-details-img1" />
-            </div>
-            <div>
-              <img src={shoe4} alt="" className="latest-details-img1" />
-            </div>
-            <div>
-              <img src={shoe5} alt="" className="latest-details-img1" />
+              <img
+                src={productState?.images[0].url}
+                alt=""
+                className="latest-details-img1"
+              />
             </div>
           </Carousel>
         </div>
@@ -82,10 +122,35 @@ const Latestdetails = () => {
               <p className="xlarge">XL</p>
             </div>
           </div>
+          <div>
+            <h3>Quantity :</h3>
+            <div>
+              <input
+                type="number"
+                min={1}
+                max={10}
+                onChange={(e) => setQuantity(e.target.value)}
+                value={quantity}
+              />
+            </div>
+          </div>
           <div className="color">
             <h2 className="color-txt">Color</h2>
             <div className="color-box">
-              <span className="white">{productState?.color}</span>
+              {/* <span className="white">{productState?.color}</span> */}
+              <ul>
+                {colorData &&
+                  colorData.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        style={{ backgroundColor: item?.title }}
+                        className="colors"
+                        onClick={() => setColor(item?._id)}
+                      ></li>
+                    );
+                  })}
+              </ul>
             </div>
           </div>
           <div>
@@ -95,8 +160,8 @@ const Latestdetails = () => {
                 <h3 className="description-txt">Description</h3>
                 <h2 className="description-name">{productState?.title}</h2>
                 <p className="description-p">
-                {productState?.description}
-                {/* dangerouslySetInnerHtml={{
+                  {productState?.description}
+                  {/* dangerouslySetInnerHtml={{
                   _html:productState?.title
                 }} */}
                 </p>
@@ -104,11 +169,20 @@ const Latestdetails = () => {
             </div>
           </div>
           <div className="button-cart">
-            <button className="call">
+            <button
+              className="call"
+              onClick={() => {
+                addProdToCart({
+                  productId: productState?._id,
+                  quantity,
+                  color,
+                  price: productState?.price,
+                });
+              }}
+            >
               <FaPhone />
             </button>
-            <button className="add-cart">
-              {" "}
+            <button className="add-cart" type="button" onClick={uploadCart}>
               <FaShoppingCart /> <span>ADD TO CART</span>
             </button>
           </div>

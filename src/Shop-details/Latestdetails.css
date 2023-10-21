@@ -104,57 +104,7 @@
   font-weight: 400;
   line-height: 34px; */
 }
-.white {
-  background-color: white;
-  width: 25px;
-  height: 25px;
-  border-radius: 1000px;
-  border: 4px solid lightgray;
-}
-.black {
-  background-color: black;
-  width: 25px;
-  height: 25px;
-  border-radius: 1000px;
-  border: 4px solid lightgray;
-}
-.orange {
-  background-color: orange;
-  width: 25px;
-  height: 25px;
-  border-radius: 1000px;
-  border: 4px solid lightgray;
-}
-.green {
-  background-color: green;
-  width: 25px;
-  height: 25px;
-  border-radius: 1000px;
-  border: 4px solid lightgray;
-}
-.blue {
-  background-color: blue;
-  width: 25px;
-  height: 25px;
-  border-radius: 1000px;
-  border: 4px solid lightgray;
-}
-.red {
-  background-color: red;
-  width: 25px;
-  height: 25px;
-  border-radius: 1000px;
-  border: 4px solid lightgray;
-}
-.pink {
-  background-color: pink;
-  width: 25px;
-  height: 25px;
-  border-radius: 1000px;
-  border: 4px solid lightgray;
-}
-.purple {
-  background-color: purple;
+.colors {
   width: 25px;
   height: 25px;
   border-radius: 1000px;

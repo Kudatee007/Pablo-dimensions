@@ -22,6 +22,7 @@ const Latest = () => {
     setGrid(!grid);
   }
   const productState = useSelector((state) => state.product.product);
+  console.log(productState);
   const dispatch = useDispatch();
   console.log(productState);
 
@@ -32,7 +33,6 @@ const Latest = () => {
     console.log(id);
     dispatch(addToWishlist(id));
   };
-  console.log(addToWish);
   useEffect(() => {
     getProducts();
   }, []);
@@ -79,18 +79,6 @@ const Latest = () => {
                     <h6>{title}</h6>
                     <p>${price} USD</p>
                   </div>
-                  <ReactStars
-                    count={5}
-                    size={19}
-                    value={totalrating}
-                    edit={false}
-                    isHalf={true}
-                    emptyIcon={<i className="far fa-star"></i>}
-                    halfIcon={<i className="fa fa-star-half-alt"></i>}
-                    fullIcon={<i className="fa fa-star"></i>}
-                    activeColor="#ffd700"
-                    classNames="react-icon"
-                  />
                   {/* </div> */}
                 </div>
               );

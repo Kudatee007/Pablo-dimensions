@@ -26,6 +26,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Page1 />} />
             <Route path="/collections" element={<Latest />} />
+            <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/product/:id" element={<Latestdetails />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
@@ -33,7 +34,6 @@ function App() {
             <Route path="/reset-pass" element={<ResetPass />} />
             <Route path="/contact-info" element={<Contact />} />
             <Route path="/shipping" element={<Shipping />} />
-            <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/about" element={<About />} />
             <Route path="/return" element={<Return />} />
             <Route path="/delivery-policy" element={<Delivery />} />
