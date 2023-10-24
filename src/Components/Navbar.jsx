@@ -13,9 +13,26 @@ import lightcancel from "../Img/lightcancel.svg";
 import lightplus from "../Img/lightplus.svg";
 import lightminus from "../Img/lightminus.svg";
 import insta from "../Img/insta.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { BsCart4 } from "react-icons/bs";
+import { TbBrandWish } from "react-icons/tb";
 
 const Navbar = () => {
+  const [total, setTotal] = useState(null);
+  const dispatch = useDispatch();
+  const cartState = useSelector((state) => state?.auth?.cartProducts);
+  useEffect(() => {});
+  useEffect(() => {
+    let sum = 0;
+    for (let index = 0; index < cartState?.length; index++) {
+      sum =
+        sum +
+        Number(cartState[index].quantity) * Number(cartState[index].price);
+      setTotal(sum);
+    }
+  }, [cartState]);
   const [side, setSide] = useState(false);
   const [latest, setLatest] = useState(false);
   const [women, setWomen] = useState(false);
@@ -212,10 +229,12 @@ const Navbar = () => {
       setWomenFootIcon(plus);
     }
   }
+  const handleLogOut = () => {};
+
   return (
     <div className="navBar">
       <Marquee className="pabloHead">
-      <h1 className="pb-txt">Pablo_Dimensions</h1>
+        <h1 className="pb-txt">Pablo_Dimensions</h1>
       </Marquee>
       {/* <div >
         <h1>Pablo_Dimensions</h1>
@@ -438,15 +457,23 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <img src={search} alt="" className="search" />
+        <Link className="Link" to="/wishlist">
+          <TbBrandWish className="cart" />
+        </Link>
         <Link to="/" className="Link">
           <img src={pabloLogo} alt="" className="pablo-logo" />
         </Link>
+        <Link to="/cart" className="Link">
+          <div className="cartHead">
+            <div className="cartHeadP">
+            <p>{cartState?.length}</p>
+            </div>
+            <BsCart4 className="cart" />
+          </div>
+          {/* <p>$ {total ? total : 0}</p> */}
+        </Link>
         <Link to="/login" className="Link">
           <img src={profile} alt="" className="profile" />
-        </Link>
-        <Link to="/cart" className="Link">
-          <img src={cart} alt="" className="cart" />
         </Link>
       </nav>
     </div>

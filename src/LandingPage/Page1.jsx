@@ -54,7 +54,7 @@ const Page1 = () => {
       items: 2,
     },
   };
-  const productState = useSelector((state) => state.product.product);
+  const productState = useSelector((state) => state?.product?.product);
   console.log(productState);
   const dispatch = useDispatch();
   useEffect(() => {

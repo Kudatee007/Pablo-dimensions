@@ -26,16 +26,15 @@ const Latest = () => {
   const dispatch = useDispatch();
   console.log(productState);
 
+  useEffect(() => {
+    getProducts();
+  }, []);
   const getProducts = () => {
     dispatch(getAllProducts());
   };
   const addToWish = (id) => {
-    console.log(id);
     dispatch(addToWishlist(id));
   };
-  useEffect(() => {
-    getProducts();
-  }, []);
   return (
     <div className="latest-brand">
       <h1 className="brand-txt">LATEST BRAND</h1>
@@ -53,26 +52,24 @@ const Latest = () => {
           ? productState.map((item, index) => {
               const { brand, title, price, images, totalrating, _id } = item;
               return (
-                <div key={index} onClick={() => navigate("/product/" + _id)}>
+                <div key={index}>
                   {/* <div> */}
                   <div className="dis-box">
                     <div className="wish-cart">
-                      <Link to="/wishlist">
                         <img
                           src={wish}
                           alt=""
                           className="wish"
                           onClick={() => {
-                            addToWish(_id);
+                            addToWish(item?._id);
                           }}
                         />
-                      </Link>
                       <img src={cart} alt="" className="cart-w" />
                     </div>
                     {/* <div className="gridImg"> */}
-                    <Link to="/collection-details" className="Link">
+                    <div onClick={() => navigate("/product/" + _id)}>
                       <img src={images[0].url} alt="" className="grid-img" />
-                    </Link>
+                    </div>
                     {/* <img src={shop1} alt="" className="grid-img" />
                   </div> */}
                     <h5>{brand}</h5>

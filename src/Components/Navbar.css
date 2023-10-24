@@ -6,11 +6,17 @@
   position: fixed;
   background-color: #333;
 } */
+.cart {
+  text-decoration: none;
+  color: #111;
+  height: 25px;
+  width: 25px;
+}
 .navBar {
   /* position: relative; */
   position: -webkit-sticky;
   position: sticky;
-   top: 0px;
+  top: 0px;
   z-index: 1;
 }
 .pabloHead {
@@ -19,7 +25,7 @@
 .pb-txt {
   color: white;
   text-align: center;
-  font-family: 'Mooli', sans-serif;
+  font-family: "Mooli", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -29,7 +35,7 @@
 }
 .Nav {
   position: sticky;
-  top: 200px; 
+  top: 200px;
   z-index: 1;
   background-color: white;
   padding: 5px 0;
@@ -109,7 +115,7 @@
 .first-list {
   color: rgb(218, 207, 207);
   line-height: 65px;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 2px;
@@ -143,7 +149,7 @@
 .plus-div > h3 {
   color: rgb(174, 170, 170);
   line-height: 35px;
-  font-family: 'Mooli', sans-serif;
+  font-family: "Mooli", sans-serif;
   font-size: 10px;
   font-style: normal;
   font-weight: 500;
@@ -153,7 +159,7 @@
 .secondList-NX > li {
   color: rgb(218, 207, 207);
   line-height: 30px;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -167,7 +173,7 @@
 .secondList > li {
   color: rgb(218, 207, 207);
   line-height: 30px;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: lighter;
@@ -179,6 +185,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.cartHead {
+  position: relative;
+}
+.cartHeadP {
+  position: absolute;
+  right: -5px;
+  top: -3px;
+  background-color: #333;
+  padding: 3px;
+  border-radius: 50%;
+  font-size: 8px;
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 700;
 }
 @media (min-width: 420px) {
   .pablo-logo {
