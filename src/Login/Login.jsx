@@ -62,7 +62,7 @@ const Login = () => {
               <div className="error">
                 {formik.touched.password && formik.errors.password}
               </div>
-              <Link to="/reset-pass" className="Link">
+              <Link to="/reset-password" className="Link">
                 <p className="forgot">Forgot password?</p>
               </Link>
             </div>

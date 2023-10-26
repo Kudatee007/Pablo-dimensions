@@ -4,8 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
+import { forgotPasswordToken } from "../features/users/userSlice";
 
-const emailSchema = yup.object({
+const resetSchema = yup.object({
   email: yup
     .string()
     .email("Email should be valid")
@@ -20,14 +21,14 @@ const ResetPass = () => {
     initialValues: {
       email: "",
     },
-    validationSchema: emailSchema,
+    validationSchema: resetSchema,
     onSubmit: (values) => {
-      // dispatch(loginUser(values));
-      setTimeout(() => {
-        if (authState.isSuccess) {
-          navigate("/");
-        }
-      }, 300);
+      dispatch(forgotPasswordToken(values));
+      // setTimeout(() => {
+      //   if (authState.isSuccess) {
+      //     navigate("/");
+      //   }
+      // }, 300);
     },
   });
   return (
@@ -56,7 +57,7 @@ const ResetPass = () => {
               className="reset-login"
             />
           </div> */}
-            <button className="rst-login">Reset</button>
+            <button className="rst-login" type="submit">Reset</button>
           </div>
         </form>
       </div>

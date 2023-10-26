@@ -20,20 +20,20 @@ import { BsCart4 } from "react-icons/bs";
 import { TbBrandWish } from "react-icons/tb";
 
 const Navbar = () => {
-  const authState = useSelector((state) => state.auth);
+  const authState = useSelector((state) => state?.auth);
   const [total, setTotal] = useState(null);
   const dispatch = useDispatch();
-  const cartState = useSelector((state) => state?.auth?.cartProducts);
+  const cartState = useSelector((state) => state?.auth);
 
-  useEffect(() => {
-    let sum = 0;
-    for (let index = 0; index < cartState?.length; index++) {
-      sum =
-        sum +
-        Number(cartState[index].quantity) * Number(cartState[index].price);
-      setTotal(sum);
-    }
-  }, [cartState]);
+  // useEffect(() => {
+  //   let sum = 0;
+  //   for (let index = 0; index < cartState?.length; index++) {
+  //     sum =
+  //       sum +
+  //       Number(cartState[index].quantity) * Number(cartState[index].price);
+  //     setTotal(sum);
+  //   }
+  // }, [cartState]);
   const [side, setSide] = useState(false);
   const [latest, setLatest] = useState(false);
   const [women, setWomen] = useState(false);
@@ -462,7 +462,7 @@ const Navbar = () => {
             <button onClick={handleLogOut}>log out</button>
           </div>
         </div>
-        <Link className="Link" to="/my-orders">
+        <Link className="Link" to="/wishlist">
           <TbBrandWish className="cart" />
         </Link>
         <Link to="/" className="Link">

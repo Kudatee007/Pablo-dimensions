@@ -14,7 +14,7 @@ import {
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const userCartState = useSelector((state) => state.auth.cartProducts);
+  const userCartState = useSelector((state) => state?.auth?.cartProducts);
   console.log(userCartState);
   const [productUpdateDetail, setProductUpdateDetail] = useState(null);
   const [totalAmount, setTotalAmount] = useState(null);

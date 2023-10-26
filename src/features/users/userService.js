@@ -88,7 +88,21 @@ const updateUser = async (data) => {
 };
 
 const forgotPassToken = async (data) => {
-  const response = await axios.put(`${base_url}user/forgot-password-token`, data);
+  const response = await axios.post(
+    `${base_url}user/forgot-password-token`,
+    data
+  );
+  if (response.data) {
+    return response.data;
+  }
+};
+
+const resetPass = async (data) => {
+  const response = await axios.put(
+    `${base_url}user/reset-password/${data.token}`,
+    { password: data?.password },
+    data
+  );
   if (response.data) {
     return response.data;
   }
@@ -105,5 +119,6 @@ export const authService = {
   createOrder,
   getUserOrders,
   updateUser,
-  forgotPassToken
+  forgotPassToken,
+  resetPass,
 };

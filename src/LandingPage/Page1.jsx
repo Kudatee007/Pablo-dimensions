@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Page1.css";
@@ -64,6 +64,18 @@ const Page1 = () => {
   const getProducts = () => {
     dispatch(getAllProducts());
   };
+  const [popular, setPopular] = useState();
+  useEffect(() => {
+    let data = [];
+    for (let index = 0; index < productState.length; index++) {
+      const element = productState[index];
+      if (element.category === "Men's Clothing") {
+        data.push(element)
+      }
+      setPopular(data)
+    }
+  }, [productState]);
+  console.log(popular);
 
   return (
     <div>

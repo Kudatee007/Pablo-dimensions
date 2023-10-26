@@ -21,6 +21,7 @@ import { PrivateRoutes } from "./routing/PrivateRoutes";
 import Payment from "./Cart/Payment";
 import Orders from "./orders/Orders";
 import Profile from "./profile/Profile";
+import Forgotpass from "./Login/Forgotpass";
 
 function App() {
   return (
@@ -48,7 +49,8 @@ function App() {
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/reset-pass" element={<ResetPass />} />
+            <Route path="/reset-password" element={<ResetPass />} />
+            <Route path="/forgot-password/:token" element={<Forgotpass />} />
             <Route path="/contact-info" element={<Contact />} />
             <Route path="/shipping" element={<Shipping />} />
             <Route path="/about" element={<About />} />

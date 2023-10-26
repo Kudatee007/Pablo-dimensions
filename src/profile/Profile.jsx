@@ -17,7 +17,7 @@ const profileSchema = yup.object({
 
 const Profile = () => {
   const [edit, setEdit] = useState(true);
-  const userState = useSelector((state) => state.auth.user);
+  const userState = useSelector((state) => state?.auth?.user);
   console.log(userState);
   const dispatch = useDispatch();
 
@@ -39,18 +39,18 @@ const Profile = () => {
     <div>
       <div>
         <h1>My Profile</h1>
-        <BiEdit onClick={()=>setEdit(false)}/>
+        {/* <BiEdit onClick={()=>setEdit(false)}/> */}
       </div>
       <form action="" onSubmit={formik.handleSubmit}>
         <div>
           <label htmlFor="firstname">First Name</label>
           <input
             type="text"
-            // name="firstname"
+            name="firstname"
             onChange={formik.handleChange("firstname")}
             onBlur={formik.handleBlur("firstname")}
             value={formik.values.firstname}
-            disabled={edit}
+            // disabled={edit}
           />
           <div className="error">
             {formik.touched.firstname && formik.errors.firstname}
@@ -60,11 +60,11 @@ const Profile = () => {
           <label htmlFor="lastname">Last Name</label>
           <input
             type="text"
-            // name="lastname"
+            name="lastname"
             onChange={formik.handleChange("lastname")}
             onBlur={formik.handleBlur("lastname")}
             value={formik.values.lastname}
-            disabled={edit}
+            // disabled={edit}
           />
           <div className="error">
             {formik.touched.lastname && formik.errors.lastname}
@@ -74,11 +74,11 @@ const Profile = () => {
           <label htmlFor="email">Email Address</label>
           <input
             type="email"
-            // name="email"
+            name="email"
             value={formik.values.email}
             onChange={formik.handleChange("email")}
             onBlur={formik.handleBlur("email")}
-            disabled={edit}
+            // disabled={edit}
           />
           <div className="error">
             {formik.touched.email && formik.errors.email}
@@ -88,21 +88,24 @@ const Profile = () => {
           <label htmlFor="mobile">Mobile No</label>
           <input
             type="number"
-            // name="mobile"
+            name="mobile"
             onChange={formik.handleChange("mobile")}
             onBlur={formik.handleBlur("mobile")}
             value={formik.values.mobile}
-            disabled={edit}
+            // disabled={edit}
           />
           <div className="error">
             {formik.touched.mobile && formik.errors.mobile}
           </div>
         </div>
-        {edit === false && (
+        {/* {edit === false && (
           <button className="" type="submit">
             SAVE
           </button>
-        )}
+        )} */}
+          <button className="" type="submit">
+            SAVE
+          </button>
       </form>
     </div>
   );

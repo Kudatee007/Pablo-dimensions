@@ -26,7 +26,7 @@ const Wishlist = () => {
     <div className="wish-body">
       <h1 className="brand-txt">Wishlist</h1>
       <div className="wishList">
-        {wishlistState.length === 0 && <div>No Data</div>}
+        {wishlistState?.length === 0 && <div>No Data</div>}
         {wishlistState?.map((item, index) => {
           return (
             <div className="wish-list" key={index}>
