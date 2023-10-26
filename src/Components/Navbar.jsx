@@ -20,10 +20,11 @@ import { BsCart4 } from "react-icons/bs";
 import { TbBrandWish } from "react-icons/tb";
 
 const Navbar = () => {
+  const authState = useSelector((state) => state.auth);
   const [total, setTotal] = useState(null);
   const dispatch = useDispatch();
   const cartState = useSelector((state) => state?.auth?.cartProducts);
-  useEffect(() => {});
+
   useEffect(() => {
     let sum = 0;
     for (let index = 0; index < cartState?.length; index++) {
@@ -229,7 +230,10 @@ const Navbar = () => {
       setWomenFootIcon(plus);
     }
   }
-  const handleLogOut = () => {};
+  const handleLogOut = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
 
   return (
     <div className="navBar">
@@ -455,9 +459,10 @@ const Navbar = () => {
             <div className="black-logo">
               <img src={pabloblacklogo} alt="" />
             </div>
+            <button onClick={handleLogOut}>log out</button>
           </div>
         </div>
-        <Link className="Link" to="/wishlist">
+        <Link className="Link" to="/my-orders">
           <TbBrandWish className="cart" />
         </Link>
         <Link to="/" className="Link">
@@ -466,14 +471,22 @@ const Navbar = () => {
         <Link to="/cart" className="Link">
           <div className="cartHead">
             <div className="cartHeadP">
-            <p>{cartState?.length}</p>
+              <p>{cartState?.length}</p>
             </div>
             <BsCart4 className="cart" />
           </div>
           {/* <p>$ {total ? total : 0}</p> */}
         </Link>
-        <Link to="/login" className="Link">
+        <Link
+          to={authState?.user === null ? "/login" : "/my-profile"}
+          className="Link"
+        >
           <img src={profile} alt="" className="profile" />
+          {authState?.user === null ? (
+            <p>Login to your account</p>
+          ) : (
+            <p>{authState?.user?.firstname}</p>
+          )}
         </Link>
       </nav>
     </div>

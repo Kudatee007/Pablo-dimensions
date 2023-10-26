@@ -22,14 +22,14 @@ const Latestdetails = () => {
   const cartState = useSelector((state) => state.auth.cartProducts);
 
   console.log(productState);
-  console.log(localStorage.getItem("customer"));
+  console.log(localStorage.getItem("token"));
   useEffect(() => {
     dispatch(getAProduct(getProductId));
     dispatch(getUserCart());
   }, []);
 
   useEffect(() => {
-    for (let index = 0; index < cartState.length; index++) {
+    for (let index = 0; index < cartState?.length; index++) {
       if (getProductId === cartState[index]?.productId?._id) {
         setAlreadyAdded(true);
       }

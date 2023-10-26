@@ -22,6 +22,7 @@ const Layout = () => {
         draggable
         pauseOnHover
         theme="light"
+        icon={false}
       />
     </>
   );

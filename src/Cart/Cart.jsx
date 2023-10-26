@@ -54,7 +54,6 @@ const Cart = () => {
       setTotalAmount(sum);
     }
   }, [userCartState]);
-
   return (
     <div className="Cart">
       <div>

@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../features/users/userSlice";
 
 const loginSchema = yup.object({
@@ -14,6 +14,8 @@ const loginSchema = yup.object({
   password: yup.string().required("Password is required"),
 });
 const Login = () => {
+  const authState = useSelector((state) => state.auth);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
@@ -23,6 +25,11 @@ const Login = () => {
     validationSchema: loginSchema,
     onSubmit: (values) => {
       dispatch(loginUser(values));
+      setTimeout(() => {
+        if (authState.isSuccess) {
+          navigate("/");
+        }
+      }, 300);
     },
   });
   return (

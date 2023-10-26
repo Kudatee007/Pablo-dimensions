@@ -17,6 +17,10 @@ import Contactus from "./Footer/Contactus";
 import { Provider } from "react-redux";
 import { store } from "./app/Store";
 import Wishlist from "./Shop/Wishlist";
+import { PrivateRoutes } from "./routing/PrivateRoutes";
+import Payment from "./Cart/Payment";
+import Orders from "./orders/Orders";
+import Profile from "./profile/Profile";
 
 function App() {
   return (
@@ -26,9 +30,22 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Page1 />} />
             <Route path="/collections" element={<Latest />} />
-            <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/product/:id" element={<Latestdetails />} />
-            <Route path="/cart" element={<Cart />} />
+            {/* <Route
+              path="/cart"
+              element={
+                <PrivateRoutes>
+                  <Cart />
+                </PrivateRoutes>
+              }
+            /> */}
+            <Route element={<PrivateRoutes />}>
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/wishlist" element={<Wishlist />} />
+              <Route path="/payment" element={<Payment />} />
+              <Route path="/my-orders" element={<Orders />} />
+              <Route path="/my-profile" element={<Profile />} />
+            </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/reset-pass" element={<ResetPass />} />
