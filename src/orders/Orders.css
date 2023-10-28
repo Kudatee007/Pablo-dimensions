@@ -2,23 +2,58 @@
   display: flex;
   justify-content: space-around;
   padding: 1rem;
+  /* margin-left: 100px;
+  margin-right: 100px; */
 }
+/* .orders-orders {
+  margin-left: 100px;
+  margin-right: 100px;
+} */
 .my-col {
   /* padding: 1rem;
     border: 1px solid #ddd;  */
 }
-.last-col {
-  background-color: aliceblue;
-}
 .orderHead {
+  color: #000;
+  font-size: 12px;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  /* text-transform: uppercase; */
+  /* padding-bottom: 20px;
+  padding-left: 20px; */
+}
+.last-col {
+  background-color: whitesmoke;
+}
+.my-first-row {
+  background-color: #333;
+  margin-bottom: 30px;
+  /* margin-left: 100px;
+  margin-right: 100px; */
+}
+/* .orderHead {
   font-size: 25px;
   font-style: "Rubik", sans-serif;
   font-style: normal;
   font-weight: 400;
-}
+} */
 .orderP {
   font-size: 18px;
   font-style: "Mooli", sans-serif;
   font-style: normal;
   font-weight: 200;
+}
+.order-P {
+  font-size: 18px;
+  font-style: "Mooli", sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  color: white;
+}
+.list-style {
+  list-style: none;
+}
+.Rows {
 }

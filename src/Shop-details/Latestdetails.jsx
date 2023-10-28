@@ -12,6 +12,7 @@ import { addProdToCart, getUserCart } from "../features/users/userSlice";
 
 const Latestdetails = () => {
   const [color, setColor] = useState(null);
+  const [star, setStar] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [alreadyAdded, setAlreadyAdded] = useState(false);
   const location = useLocation();
@@ -20,9 +21,8 @@ const Latestdetails = () => {
   const dispatch = useDispatch();
   const productState = useSelector((state) => state.product.singleproduct);
   const cartState = useSelector((state) => state.auth.cartProducts);
+  console.log(productState?.tags);
 
-  console.log(productState);
-  console.log(localStorage.getItem("token"));
   useEffect(() => {
     dispatch(getAProduct(getProductId));
     dispatch(getUserCart());
@@ -105,7 +105,11 @@ const Latestdetails = () => {
         <ReactStars
           count={5}
           size={19}
-          value={productState?.totalrating.toString()}
+          value={
+            productState?.tags == "featured" ? 4 :
+            productState?.tags == "popular" ? 4.5 :
+            productState?.tags == "special" ? 5 : 0
+          }
           edit={false}
           isHalf={true}
           emptyIcon={<i className="far fa-star"></i>}

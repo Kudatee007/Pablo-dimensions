@@ -1,10 +1,12 @@
 .carousel-img {
   width: 98.6%;
   border-radius: 3px;
+  height: 220px;
 }
 .carousel-img1 {
   width: 98.6%;
   border-radius: 3px;
+  height: 220px;
 }
 .carousel {
   padding: 35px 3px;
@@ -29,6 +31,7 @@
   font-weight: 400;
   line-height: 12px;
   transition: 0.2s ease;
+  border-radius: 3px;
 }
 .shop-now:hover {
   background-color: initial;

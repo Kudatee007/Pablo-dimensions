@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Page1.css";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import shoe1 from "../Img/shoe1.svg";
 import shoe2 from "../Img/shoe2.svg";
 import shoe3 from "../Img/shoe3.svg";
@@ -18,6 +18,9 @@ import { getAllProducts } from "../features/products/productSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Page1 = () => {
+
+  const [searchParams, setSearchParams] = useSearchParams()
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1400 },
@@ -156,7 +159,9 @@ const Page1 = () => {
                           alt=""
                           className="carousel-img"
                         />
-                        <Link to="/collections">
+                        <Link onClick={()=>{
+                            setSearchParams({filterBy: "Women's Clothing"})
+                          }} to="/collections">
                           <button className="shop-now">Shop now</button>
                         </Link>
                       </div>

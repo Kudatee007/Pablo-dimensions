@@ -110,7 +110,6 @@ const Contact = () => {
       <div className="inner-contact1">
         <Cartdetails />
       </div>
-      <hr className="divider" />
       <div className="inner-contact2">
         <h2 className="contact-h">Contact</h2>
         <p className="contact-mail">Timmyturner@gmail.com</p>
