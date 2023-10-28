@@ -1,16 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Latestdetails.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import shoe1 from "../Img/shoe1.svg";
-import shoe2 from "../Img/shoe2.svg";
-import shoe3 from "../Img/shoe3.svg";
-import shoe4 from "../Img/shoe4.svg";
-import shoe5 from "../Img/shoe5.svg";
-import plus from "../Img/plus.svg";
+import ReactStars from "react-rating-stars-component";
 import { FaShoppingCart, FaPhone } from "react-icons/fa";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getAProduct } from "../features/products/productSlice";
+import { toast } from "react-toastify";
+import { addProdToCart, getUserCart } from "../features/users/userSlice";
 
 const Latestdetails = () => {
+  const [color, setColor] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+  const [alreadyAdded, setAlreadyAdded] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const getProductId = location.pathname.split("/")[2];
+  const dispatch = useDispatch();
+  const productState = useSelector((state) => state.product.singleproduct);
+  const cartState = useSelector((state) => state.auth.cartProducts);
+
+  console.log(productState);
+  console.log(localStorage.getItem("token"));
+  useEffect(() => {
+    dispatch(getAProduct(getProductId));
+    dispatch(getUserCart());
+  }, []);
+
+  useEffect(() => {
+    for (let index = 0; index < cartState?.length; index++) {
+      if (getProductId === cartState[index]?.productId?._id) {
+        setAlreadyAdded(true);
+      }
+    }
+  }, []);
+
+  const uploadCart = async () => {
+    if (color === null) {
+      toast.error("Please choose a color");
+      return false;
+    } else {
+      dispatch(
+        addProdToCart({
+          productId: productState?._id,
+          quantity,
+          color,
+          price: productState?.price,
+        })
+      );
+      // navigate("/cart");
+    }
+  };
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -30,6 +72,8 @@ const Latestdetails = () => {
       items: 1,
     },
   };
+
+  const colorData = productState?.color;
   return (
     <div className="latest-details">
       <div className="latest-display">
@@ -43,25 +87,36 @@ const Latestdetails = () => {
             renderDotsOutside={false}
           >
             <div className="details">
-              <img src={shoe1} alt="" className="latest-details-img1" />
+              <img
+                src={productState?.images[0].url}
+                alt=""
+                className="latest-details-img1"
+              />
             </div>
             <div>
-              <img src={shoe2} alt="" className="latest-details-img1" />
-            </div>
-            <div>
-              <img src={shoe3} alt="" className="latest-details-img1" />
-            </div>
-            <div>
-              <img src={shoe4} alt="" className="latest-details-img1" />
-            </div>
-            <div>
-              <img src={shoe5} alt="" className="latest-details-img1" />
+              <img
+                src={productState?.images[0].url}
+                alt=""
+                className="latest-details-img1"
+              />
             </div>
           </Carousel>
         </div>
+        <ReactStars
+          count={5}
+          size={19}
+          value={productState?.totalrating.toString()}
+          edit={false}
+          isHalf={true}
+          emptyIcon={<i className="far fa-star"></i>}
+          halfIcon={<i className="fa fa-star-half-alt"></i>}
+          fullIcon={<i className="fa fa-star"></i>}
+          activeColor="#ffd700"
+          classNames="react-icon"
+        />
         <div className="latest-div2">
-          <h1 className="latest-name">Pablo Dimension female Joggers</h1>
-          <p className="latest-price">$8,999</p>
+          <h1 className="latest-name">{productState?.title}</h1>
+          <p className="latest-price">${productState?.price}</p>
           <div className="size">
             <h2 className="size-txt">Size</h2>
             <div className="size-box">
@@ -70,39 +125,74 @@ const Latestdetails = () => {
               <p className="xlarge">XL</p>
             </div>
           </div>
+          <div>
+            {alreadyAdded === false && (
+              <>
+                <h3>Quantity :</h3>
+                <div>
+                  <input
+                    type="number"
+                    min={1}
+                    max={10}
+                    onChange={(e) => setQuantity(e.target.value)}
+                    value={quantity}
+                  />
+                </div>
+              </>
+            )}
+          </div>
           <div className="color">
-            <h2 className="color-txt">Color</h2>
-            <div className="color-box">
-              <span className="white"></span>
-              <span className="black"></span>
-              <span className="orange"></span>
-              <span className="green"></span>
-              <span className="pink"></span>
-              <span className="blue"></span>
-              <span className="red"></span>
-              <span className="purple"></span>
-            </div>
+            {alreadyAdded === false && (
+              <>
+                <h2 className="color-txt">Color</h2>
+                <div className="color-box">
+                  {/* <span className="white">{productState?.color}</span> */}
+                  <ul>
+                    {colorData &&
+                      colorData.map((item, index) => {
+                        return (
+                          <li
+                            key={index}
+                            style={{ backgroundColor: item?.title }}
+                            className="colors"
+                            onClick={() => setColor(item?._id)}
+                          ></li>
+                        );
+                      })}
+                  </ul>
+                </div>
+              </>
+            )}
           </div>
           <div>
             <h2 className="description-head">PRODUCT DETAILS</h2>
             <div>
               <div className="description">
                 <h3 className="description-txt">Description</h3>
-                <h2 className="description-name">ALEXANDER MCQUEEN</h2>
+                <h2 className="description-name">{productState?.title}</h2>
                 <p className="description-p">
-                  Brushstroke Harness abstract-print shirt For AW23, Alexander
-                  McQueen puts a futuristic spin on sartorial silhouettes, as
-                  exemplified by this shirt. Cut from stretch cotton poplin, a
-                  contrasting harness detailed with the ‘Brushstroke’ print
-                  interrupts the conventional collared style and gives it a
-                  unique edge.
+                  {productState?.description}
+                  {/* dangerouslySetInnerHtml={{
+                  _html:productState?.title
+                }} */}
                 </p>
               </div>
             </div>
           </div>
           <div className="button-cart">
-            <button className="call"><FaPhone /></button>
-            <button className="add-cart"> <FaShoppingCart /> <span>ADD TO CART</span></button>
+            <button className="call">
+              <FaPhone />
+            </button>
+            <button
+              className="add-cart"
+              type="button"
+              onClick={() => {
+                alreadyAdded ? navigate("/cart") : uploadCart();
+              }}
+            >
+              <FaShoppingCart />{" "}
+              <span>{alreadyAdded ? "Go to Cart" : "Add to Cart"}</span>
+            </button>
           </div>
         </div>
       </div>

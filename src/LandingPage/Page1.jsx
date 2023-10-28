@@ -1,14 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Page1.css";
 import { Link } from "react-router-dom";
-import carousel1 from "../Img/carousel1.svg";
-// import carousel2 from "../Img/carousel2.svg";
-// import carousel3 from "../Img/carousel3.svg";
-// import carousel4 from "../Img/carousel4.svg";
-// import carousel5 from "../Img/carousel5.svg";
-// import carousel6 from "../Img/carousel6.svg";
 import shoe1 from "../Img/shoe1.svg";
 import shoe2 from "../Img/shoe2.svg";
 import shoe3 from "../Img/shoe3.svg";
@@ -19,19 +13,9 @@ import shoe7 from "../Img/shoe7.svg";
 import shoe8 from "../Img/shoe8.svg";
 import shoe9 from "../Img/shoe9.svg";
 import shoe10 from "../Img/shoe10.svg";
-import women1 from "../Img/women1.svg";
-import women2 from "../Img/women2.svg";
-import women3 from "../Img/women3.svg";
 import latest1 from "../Img/latest1.svg";
-import latest2 from "../Img/latest2.svg";
-import latest3 from "../Img/latest3.svg";
-import latest4 from "../Img/latest4.svg";
-import latest5 from "../Img/latest5.svg";
-import latest6 from "../Img/latest6.svg";
-import latest7 from "../Img/latest7.svg";
-import latest8 from "../Img/latest8.svg";
-import latest9 from "../Img/latest9.svg";
-import latest10 from "../Img/latest10.svg";
+import { getAllProducts } from "../features/products/productSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Page1 = () => {
   const responsive = {
@@ -70,6 +54,28 @@ const Page1 = () => {
       items: 2,
     },
   };
+  const productState = useSelector((state) => state?.product?.product);
+  console.log(productState);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  const getProducts = () => {
+    dispatch(getAllProducts());
+  };
+  const [popular, setPopular] = useState();
+  useEffect(() => {
+    let data = [];
+    for (let index = 0; index < productState.length; index++) {
+      const element = productState[index];
+      if (element.category === "Men's Clothing") {
+        data.push(element)
+      }
+      setPopular(data)
+    }
+  }, [productState]);
+  console.log(popular);
 
   return (
     <div>
@@ -99,42 +105,25 @@ const Page1 = () => {
             itemClass="carousel-item-padding-40-px"
             className="carousel-responsive"
           >
-            <div className="carousel-div">
-              <img src={carousel1} alt="" className="carousel-img" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div">
-            <img src={carousel1} alt="" className="carousel-img" />
-            <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div">
-              <img src={carousel1} alt="" className="carousel-img" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div">
-              <img src={carousel1} alt="" className="carousel-img" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div">
-              <img src={carousel1} alt="" className="carousel-img" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div">
-              <img src={carousel1} alt="" className="carousel-img" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
+            {productState
+              ? productState.map((item, index) => {
+                  if (item.category == "Men's Clothing") {
+                    const { images } = item;
+                    return (
+                      <div className="carousel-div" key={index}>
+                        <img
+                          src={images[0].url}
+                          alt=""
+                          className="carousel-img"
+                        />
+                        <Link to="/collections">
+                          <button className="shop-now">Shop now</button>
+                        </Link>
+                      </div>
+                    );
+                  }
+                })
+              : []}
           </Carousel>
         </div>
         {/* LATEST WOMAN'S BRANDS */}
@@ -156,42 +145,25 @@ const Page1 = () => {
             itemClass="carousel-item-padding-40-px"
             className="carousel-responsive"
           >
-            <div className="carousel-div">
-              <img src={women1} alt="" className="carousel-img" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div">
-              <img src={women2} alt="" className="carousel-img" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div">
-              <img src={women3} alt="" className="carousel-img" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div">
-              <img src={women1} alt="" className="carousel-img" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div">
-              <img src={women2} alt="" className="carousel-img" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div">
-              <img src={women3} alt="" className="carousel-img" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
+            {productState
+              ? productState.map((item, index) => {
+                  if (item.category == "Women's Clothing") {
+                    const { images } = item;
+                    return (
+                      <div className="carousel-div" key={index}>
+                        <img
+                          src={images[0].url}
+                          alt=""
+                          className="carousel-img"
+                        />
+                        <Link to="/collections">
+                          <button className="shop-now">Shop now</button>
+                        </Link>
+                      </div>
+                    );
+                  }
+                })
+              : []}
           </Carousel>
         </div>
         {/* LATEST BRAND */}
@@ -213,66 +185,25 @@ const Page1 = () => {
             itemClass="carousel-item-padding-40-px"
             className="carousel-responsive"
           >
-            <div className="carousel-div1">
-              <img src={latest1} alt="" className="carousel-img1" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div1">
-              <img src={latest2} alt="" className="carousel-img1" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div1">
-              <img src={latest3} alt="" className="carousel-img1" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div1">
-              <img src={latest4} alt="" className="carousel-img1" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div1">
-              <img src={latest5} alt="" className="carousel-img1" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div1">
-              <img src={latest6} alt="" className="carousel-img1" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div1">
-              <img src={latest7} alt="" className="carousel-img1" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div1">
-              <img src={latest8} alt="" className="carousel-img1" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div1">
-              <img src={latest9} alt="" className="carousel-img1" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
-            <div className="carousel-div1">
-              <img src={latest10} alt="" className="carousel-img1" />
-              <Link to="/collections">
-                <button className="shop-now">Shop now</button>
-              </Link>
-            </div>
+            {productState
+              ? productState.map((item, index) => {
+                  if (item.tags == "featured") {
+                    const { images } = item;
+                    return (
+                      <div className="carousel-div1" key={index}>
+                        <img
+                          src={images[0].url}
+                          alt=""
+                          className="carousel-img1"
+                        />
+                        <Link to="/collections">
+                          <button className="shop-now">Shop now</button>
+                        </Link>
+                      </div>
+                    );
+                  }
+                })
+              : []}
           </Carousel>
         </div>
         {/* LATEST SLIDES */}

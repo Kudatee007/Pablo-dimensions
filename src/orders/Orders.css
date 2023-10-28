@@ -1,0 +1,24 @@
+.my-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+.my-col {
+  /* padding: 1rem;
+    border: 1px solid #ddd;  */
+}
+.last-col {
+  background-color: aliceblue;
+}
+.orderHead {
+  font-size: 25px;
+  font-style: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.orderP {
+  font-size: 18px;
+  font-style: "Mooli", sans-serif;
+  font-style: normal;
+  font-weight: 200;
+}
