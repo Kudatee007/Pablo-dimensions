@@ -131,17 +131,15 @@ export const resetPassword = createAsyncThunk(
   }
 );
 
-// const getCustomerfromLocalStorage = localStorage.getItem
-//   ? JSON.parse(localStorage.getItem("customer"))
-//   : localStorage.getItem("token");
 
-// const getCustomerfromLocalStorage = localStorage.getItem("customer")
-// ? JSON.parse(localStorage.getItem("customer"))
-// : null;
 
-const getCustomerfromLocalStorage = localStorage.getItem("token")
-? localStorage.getItem("token")
+const getCustomerfromLocalStorage = localStorage.getItem("customer")
+? JSON.parse(localStorage.getItem("customer"))
 : null;
+
+// const getCustomerfromLocalStorage = localStorage.getItem("token")
+// ? localStorage.getItem("token")
+// : null;
 
 const initialState = {
   user: getCustomerfromLocalStorage,
@@ -187,7 +185,6 @@ export const authSlice = createSlice({
         state.isSuccess = true;
         state.user = action.payload;
         if (state.isSuccess === true) {
-          localStorage.setItem("token", action.payload.token);
           toast.info("User Logged in successfully");
         }
       })
@@ -351,7 +348,7 @@ export const authSlice = createSlice({
         state.isError = true;
         state.isSuccess = false;
         state.message = action.error;
-        if (state.isSuccess) {
+        if (state.isSuccess === false) {
           toast.error("Something Went Wrong!");
         }
       })

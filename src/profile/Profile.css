@@ -1,0 +1,87 @@
+.profileHead {
+  font-size: 24px;
+  font-family: "Rubik", sans-serif;
+  color: rgba(47, 47, 47, 0.8);
+  font-weight: 400;
+  padding: 10px 0;
+  text-align: center;
+  line-height: 60px;
+  letter-spacing: 3px;
+}
+.profileField {
+  width: 100%;
+  height: 50px;
+  color: #3f3e3e;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 187.5% */
+  letter-spacing: -0.408px;
+  padding-left: 5px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid rgba(47, 47, 47, 0.4);
+}
+.profileLabel {
+  color: rgba(47, 47, 47, 0.8);
+  font-feature-settings: "case" on;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 214.286% */
+  letter-spacing: -0.408px;
+}
+.profileForm {
+  padding: 10px 15px;
+}
+.profileBox {
+  margin-bottom: 12px;
+}
+.profileBtn {
+  width: 100%;
+  height: 50px;
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 187.5% */
+  letter-spacing: -0.408px;
+  border-radius: 30px;
+  background: #020202;
+  border: none;
+  color: #fff;
+  margin: 20px 0;
+}
+.Profile {
+ padding-bottom: 50px;
+}
+.editIcon {
+
+}
+.editBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (min-width: 540px) {
+    .profileForm {
+        padding: 10px 55px;
+      }
+}
+@media (min-width: 768px) {
+    .profileForm {
+        padding: 10px 75px;
+      }
+}
+@media (min-width: 1024px) {
+    .profileForm {
+        padding: 10px 200px;
+      }
+}
+@media (min-width: 1200px) {
+    .profileForm {
+        padding: 10px 300px;
+      }
+}

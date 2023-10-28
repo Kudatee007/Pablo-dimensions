@@ -13,7 +13,7 @@ const Orders = () => {
     dispatch(getOrders());
   }, []);
   return (
-    <div>
+    <div className="orders-orders">
       <h1>Orders</h1>
       <div className="row">
         <div className="col-12">
@@ -32,23 +32,23 @@ const Orders = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="Rows">
           {orderState &&
             orderState?.map((item, index) => {
               return (
-                <div className="my-ro" key={index}>
+                <div className="my-first-row" key={index}>
                   <div className="my-row">
                     <div className="my-col">
-                      <p className="orderP">{item?._id}</p>
+                      <p className="order-P">{item?._id}</p>
                     </div>
                     <div className="col-3">
-                      <p className="orderP">{item?.totalPrice}</p>
+                      <p className="order-P">{item?.totalPrice}</p>
                     </div>
                     <div className="my-col">
-                      <p className="orderP">{item?.totalPriceAfterDiscount}</p>
+                      <p className="order-P">{item?.totalPriceAfterDiscount}</p>
                     </div>
                     <div className="col-3">
-                      <p className="orderP">{item?.orderStatus}</p>
+                      <p className="order-P">{item?.orderStatus}</p>
                     </div>
                   </div>
                   <div className="last-col">
@@ -79,12 +79,12 @@ const Orders = () => {
                             <p className="orderP">{i?.price}</p>
                           </div>
                           <div className="my-col">
-                          <ul>
-                        <li
-                          style={{ backgroundColor: i?.color.title }}
-                          className="colorS"
-                        ></li>
-                      </ul>
+                            <ul className="list-style">
+                              <li
+                                style={{ backgroundColor: i?.color.title }}
+                                className="colorS"
+                              ></li>
+                            </ul>
                           </div>
                         </div>
                       );

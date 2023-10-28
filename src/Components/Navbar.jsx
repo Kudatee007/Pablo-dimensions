@@ -16,24 +16,25 @@ import insta from "../Img/insta.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { BsCart4 } from "react-icons/bs";
+import { BsCart4, BsFillPersonFill, BsPerson } from "react-icons/bs";
 import { TbBrandWish } from "react-icons/tb";
 
 const Navbar = () => {
   const authState = useSelector((state) => state?.auth);
   const [total, setTotal] = useState(null);
   const dispatch = useDispatch();
-  const cartState = useSelector((state) => state?.auth);
+  const cartState = useSelector((state) => state?.auth.cartProducts);
 
-  // useEffect(() => {
-  //   let sum = 0;
-  //   for (let index = 0; index < cartState?.length; index++) {
-  //     sum =
-  //       sum +
-  //       Number(cartState[index].quantity) * Number(cartState[index].price);
-  //     setTotal(sum);
-  //   }
-  // }, [cartState]);
+  useEffect(() => {
+    let sum = 0;
+    for (let index = 0; index < cartState?.length; index++) {
+      sum =
+        sum +
+        Number(cartState[index].quantity) * Number(cartState[index].price);
+      setTotal(sum);
+    }
+  }, [cartState]);
+  console.log(cartState);
   const [side, setSide] = useState(false);
   const [latest, setLatest] = useState(false);
   const [women, setWomen] = useState(false);
@@ -456,10 +457,17 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
+            {/* <div className="buttons">
+              <Link className="Link" to="/my-orders">
+                <button className="btn-order">My Orders</button>
+              </Link>
+              <button onClick={handleLogOut} className="btn-logout">
+                Log Out
+              </button>
+            </div> */}
             <div className="black-logo">
               <img src={pabloblacklogo} alt="" />
             </div>
-            <button onClick={handleLogOut}>log out</button>
           </div>
         </div>
         <Link className="Link" to="/wishlist">
@@ -481,11 +489,14 @@ const Navbar = () => {
           to={authState?.user === null ? "/login" : "/my-profile"}
           className="Link"
         >
-          <img src={profile} alt="" className="profile" />
+          {/* <img src={profile} alt="" className="profile" /> */}
+
           {authState?.user === null ? (
-            <p>Login to your account</p>
+            // <p className="profileState">Login to your account</p>
+            <BsPerson className="cart" />
           ) : (
-            <p>{authState?.user?.firstname}</p>
+            // <p className="profileState">{authState?.user?.firstname}</p>
+            <BsFillPersonFill className="cart" />
           )}
         </Link>
       </nav>

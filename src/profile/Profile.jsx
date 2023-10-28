@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { updateProfile } from "../features/users/userSlice";
 import { BiEdit } from "react-icons/bi";
+import "./Profile.css";
 
 const profileSchema = yup.object({
   firstname: yup.string().required("First Name is required"),
@@ -32,80 +33,91 @@ const Profile = () => {
     validationSchema: profileSchema,
     onSubmit: (values) => {
       dispatch(updateProfile(values));
-      setEdit(true)
+      setEdit(true);
     },
   });
   return (
-    <div>
+    <div className="Profile">
       <div>
-        <h1>My Profile</h1>
-        {/* <BiEdit onClick={()=>setEdit(false)}/> */}
+        <h1 className="profileHead">My Profile</h1>
       </div>
-      <form action="" onSubmit={formik.handleSubmit}>
-        <div>
-          <label htmlFor="firstname">First Name</label>
+      <form action="" onSubmit={formik.handleSubmit} className="profileForm">
+        <div className="profileBox">
+          <div className="editBox">
+          <label htmlFor="firstname" className="profileLabel">
+            First Name
+          </label>
+          <BiEdit onClick={() => setEdit(false)} className="editIcon" />
+        </div>
           <input
             type="text"
             name="firstname"
+            value={formik.values.firstname}
             onChange={formik.handleChange("firstname")}
             onBlur={formik.handleBlur("firstname")}
-            value={formik.values.firstname}
-            // disabled={edit}
+            disabled={edit}
+            className="profileField"
           />
           <div className="error">
             {formik.touched.firstname && formik.errors.firstname}
           </div>
         </div>
-        <div>
-          <label htmlFor="lastname">Last Name</label>
+        <div className="profileBox">
+          <label htmlFor="lastname" className="profileLabel">
+            Last Name
+          </label>
           <input
             type="text"
             name="lastname"
+            value={formik.values.lastname}
             onChange={formik.handleChange("lastname")}
             onBlur={formik.handleBlur("lastname")}
-            value={formik.values.lastname}
-            // disabled={edit}
+            disabled={edit}
+            className="profileField"
           />
           <div className="error">
             {formik.touched.lastname && formik.errors.lastname}
           </div>
         </div>
-        <div>
-          <label htmlFor="email">Email Address</label>
+        <div className="profileBox">
+          <label htmlFor="email" className="profileLabel">
+            Email Address
+          </label>
           <input
             type="email"
             name="email"
             value={formik.values.email}
             onChange={formik.handleChange("email")}
             onBlur={formik.handleBlur("email")}
-            // disabled={edit}
+            disabled={edit}
+            className="profileField"
           />
           <div className="error">
             {formik.touched.email && formik.errors.email}
           </div>
         </div>
-        <div>
-          <label htmlFor="mobile">Mobile No</label>
+        <div className="profileBox">
+          <label htmlFor="mobile" className="profileLabel">
+            Mobile No
+          </label>
           <input
             type="number"
             name="mobile"
+            value={formik.values.mobile}
             onChange={formik.handleChange("mobile")}
             onBlur={formik.handleBlur("mobile")}
-            value={formik.values.mobile}
-            // disabled={edit}
+            disabled={edit}
+            className="profileField"
           />
           <div className="error">
             {formik.touched.mobile && formik.errors.mobile}
           </div>
         </div>
-        {/* {edit === false && (
-          <button className="" type="submit">
+        {edit === false && (
+          <button className="profileBtn" type="submit">
             SAVE
           </button>
-        )} */}
-          <button className="" type="submit">
-            SAVE
-          </button>
+        )}
       </form>
     </div>
   );

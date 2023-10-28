@@ -1,11 +1,11 @@
 .re-policy {
   font-size: 20px;
   font-family: "Rubik", sans-serif;
-  color: #222;
+  color: orangered;
   font-weight: 400;
   padding: 5px 0;
   text-align: center;
-  line-height: 70px;
+  line-height: 30px;
   letter-spacing: 3px;
 }
 .re-instruct {
@@ -16,7 +16,7 @@
   padding: 10px 0;
   padding-left: 10px;
   margin-bottom: 1.4em;
-  margin-top: 0.5em;
+  margin-top: 1em;
 }
 .re-txt {
   font-size: 16px;

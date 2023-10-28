@@ -25,11 +25,9 @@ const Login = () => {
     validationSchema: loginSchema,
     onSubmit: (values) => {
       dispatch(loginUser(values));
-      setTimeout(() => {
-        if (authState.isSuccess) {
-          navigate("/");
-        }
-      }, 300);
+      // if (authState.isSuccess === true) {
+        // navigate("/");
+      // }
     },
   });
   return (

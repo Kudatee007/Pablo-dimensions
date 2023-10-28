@@ -6,9 +6,9 @@ export const resetState = createAction("Reset_all");
 
 export const getAllProducts = createAsyncThunk(
   "product/get",
-  async (thunkApi) => {
-    try {
-      return await productService.getProducts();
+  async (data, thunkApi) => {
+    try { 
+      return await productService.getProducts(data);
     } catch (error) {
       return thunkApi.rejectWithValue(error);
     }
@@ -47,7 +47,6 @@ export const addRating = createAsyncThunk(
     }
   }
 );
-
 
 const productState = {
   product: "",
@@ -132,7 +131,7 @@ export const productSlice = createSlice({
         state.isSuccess = false;
         state.message = action.error;
       });
-      // .addCase(resetState, () => initialState);
+    // .addCase(resetState, () => initialState);
   },
 });
 
