@@ -38,7 +38,6 @@
   border-bottom: 2px solid #efecec;
 }
 .Delivery-method {
-  border: 2px solid #efecec;
   margin-bottom: 30px;
   border-radius: 5px;
 }
@@ -49,6 +48,16 @@
   font-style: normal;
   font-weight: 500;
   letter-spacing: 2px;
+}
+.error {
+  color: orangered;
+  margin-bottom: 10px;
+  font-family: "Mooli", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  /* letter-spacing: 2px; */
 }
 .address-block {
   display: flex;

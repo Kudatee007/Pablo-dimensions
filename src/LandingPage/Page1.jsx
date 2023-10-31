@@ -2,24 +2,15 @@ import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Page1.css";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import shoe1 from "../Img/shoe1.svg";
-import shoe2 from "../Img/shoe2.svg";
-import shoe3 from "../Img/shoe3.svg";
-import shoe4 from "../Img/shoe4.svg";
-import shoe5 from "../Img/shoe5.svg";
-import shoe6 from "../Img/shoe6.svg";
-import shoe7 from "../Img/shoe7.svg";
-import shoe8 from "../Img/shoe8.svg";
-import shoe9 from "../Img/shoe9.svg";
-import shoe10 from "../Img/shoe10.svg";
-import latest1 from "../Img/latest1.svg";
 import { getAllProducts } from "../features/products/productSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Page1 = () => {
+  const navigate = useNavigate();
 
-  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const responsive = {
     superLargeDesktop: {
@@ -73,9 +64,9 @@ const Page1 = () => {
     for (let index = 0; index < productState.length; index++) {
       const element = productState[index];
       if (element.category === "Men's Clothing") {
-        data.push(element)
+        data.push(element);
       }
-      setPopular(data)
+      setPopular(data);
     }
   }, [productState]);
   console.log(popular);
@@ -95,9 +86,8 @@ const Page1 = () => {
           <Carousel
             swipeable={true}
             draggable={true}
-            showDots={true}
+            showDots={false}
             responsive={responsive}
-            removeArrowOnDeviceType={["tablet", "mobile"]}
             ssr={true} // means to render carousel on server-side.
             autoPlaySpeed={1000}
             // renderDotsOutside={true}
@@ -119,9 +109,17 @@ const Page1 = () => {
                           alt=""
                           className="carousel-img"
                         />
-                        <Link to="/collections">
-                          <button className="shop-now">Shop now</button>
-                        </Link>
+                         <button
+                          className="shop-now"
+                          onClick={() => {
+                            navigate({
+                              pathname: "/collections",
+                              search: "?filterBy=Men's Clothing",
+                            });
+                          }}
+                        >
+                          Shop now
+                        </button>
                       </div>
                     );
                   }
@@ -135,12 +133,11 @@ const Page1 = () => {
           <Carousel
             swipeable={true}
             draggable={true}
-            showDots={true}
+            showDots={false}
             responsive={responsive}
             ssr={true} // means to render carousel on server-side.
             autoPlaySpeed={1000}
             // renderDotsOutside={true}
-            removeArrowOnDeviceType={["tablet", "mobile"]}
             keyBoardControl={true}
             transitionDuration={500}
             containerClass="carousel-container"
@@ -159,11 +156,18 @@ const Page1 = () => {
                           alt=""
                           className="carousel-img"
                         />
-                        <Link onClick={()=>{
-                            setSearchParams({filterBy: "Women's Clothing"})
-                          }} to="/collections">
-                          <button className="shop-now">Shop now</button>
-                        </Link>
+
+                        <button
+                          className="shop-now"
+                          onClick={() => {
+                            navigate({
+                              pathname: "/collections",
+                              search: "?filterBy=Women's Clothing",
+                            });
+                          }}
+                        >
+                          Shop now
+                        </button>
                       </div>
                     );
                   }
@@ -177,13 +181,12 @@ const Page1 = () => {
           <Carousel
             swipeable={false}
             draggable={false}
-            showDots={true}
+            showDots={false}
             responsive={responsive1}
             ssr={true} // means to render carousel on server-side.
             autoPlaySpeed={1000}
             // renderDotsOutside={true}
             keyBoardControl={true}
-            removeArrowOnDeviceType={["tablet", "mobile"]}
             transitionDuration={500}
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
@@ -192,8 +195,9 @@ const Page1 = () => {
           >
             {productState
               ? productState.map((item, index) => {
-                  if (item.tags == "featured") {
+                  if (item.tags == "special") {
                     const { images } = item;
+                    console.log(images[0].url);
                     return (
                       <div className="carousel-div1" key={index}>
                         <img
@@ -201,9 +205,18 @@ const Page1 = () => {
                           alt=""
                           className="carousel-img1"
                         />
-                        <Link to="/collections">
-                          <button className="shop-now">Shop now</button>
-                        </Link>
+                      
+                      <button
+                          className="shop-now"
+                          onClick={() => {
+                            navigate({
+                              pathname: "/collections",
+                              search: "?filterBy=Men's Clothing",
+                            });
+                          }}
+                        >
+                          Shop now
+                        </button>
                       </div>
                     );
                   }
@@ -215,16 +228,15 @@ const Page1 = () => {
         <div className="inner-carousel">
           <h1 className="latest-text">LATEST SLIDES BRANDS</h1>
           <Carousel
-            swipeable={false}
-            draggable={false}
-            showDots={true}
+            swipeable={true}
+            draggable={true}
+            showDots={false}
             responsive={responsive1}
             ssr={true} // means to render carousel on server-side.
             autoPlaySpeed={1000}
             // renderDotsOutside={true}
             keyBoardControl={true}
             transitionDuration={500}
-            removeArrowOnDeviceType={["tablet", "mobile"]}
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
@@ -237,55 +249,55 @@ const Page1 = () => {
               </Link>
             </div>
             <div className="carousel-div1">
-              <img src={shoe2} alt="" className="carousel-img1" />
+              <img src={shoe1} alt="" className="carousel-img1" />
               <Link to="/collections">
                 <button className="shop-now">Shop now</button>
               </Link>
             </div>
             <div className="carousel-div1">
-              <img src={shoe3} alt="" className="carousel-img1" />
+              <img src={shoe1} alt="" className="carousel-img1" />
               <Link to="/collections">
                 <button className="shop-now">Shop now</button>
               </Link>
             </div>
             <div className="carousel-div1">
-              <img src={shoe4} alt="" className="carousel-img1" />
+              <img src={shoe1} alt="" className="carousel-img1" />
               <Link to="/collections">
                 <button className="shop-now">Shop now</button>
               </Link>
             </div>
             <div className="carousel-div1">
-              <img src={shoe5} alt="" className="carousel-img1" />
+              <img src={shoe1} alt="" className="carousel-img1" />
               <Link to="/collections">
                 <button className="shop-now">Shop now</button>
               </Link>
             </div>
             <div className="carousel-div1">
-              <img src={shoe6} alt="" className="carousel-img1" />
+              <img src={shoe1} alt="" className="carousel-img1" />
               <Link to="/collections">
                 <button className="shop-now">Shop now</button>
               </Link>
             </div>
             <div className="carousel-div1">
-              <img src={shoe7} alt="" className="carousel-img1" />
+              <img src={shoe1} alt="" className="carousel-img1" />
               <Link to="/collections">
                 <button className="shop-now">Shop now</button>
               </Link>
             </div>
             <div className="carousel-div1">
-              <img src={shoe8} alt="" className="carousel-img1" />
+              <img src={shoe1} alt="" className="carousel-img1" />
               <Link to="/collections">
                 <button className="shop-now">Shop now</button>
               </Link>
             </div>
             <div className="carousel-div1">
-              <img src={shoe9} alt="" className="carousel-img1" />
+              <img src={shoe1} alt="" className="carousel-img1" />
               <Link to="/collections">
                 <button className="shop-now">Shop now</button>
               </Link>
             </div>
             <div className="carousel-div1">
-              <img src={shoe10} alt="" className="carousel-img1" />
+              <img src={shoe1} alt="" className="carousel-img1" />
               <Link to="/collections">
                 <button className="shop-now">Shop now</button>
               </Link>

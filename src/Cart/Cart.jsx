@@ -26,10 +26,21 @@ const Cart = () => {
     }, 200);
   };
 
-  console.log();
+  const getTokenFromLocalStorage = localStorage.getItem("customer")
+  ? JSON.parse(localStorage.getItem("customer"))
+  : null;
+
+const config2 = {
+  headers: {
+    Authorization: `Bearer ${
+      getTokenFromLocalStorage !== null ? getTokenFromLocalStorage.token : ""
+    }`,
+    Accept: "application/json",
+  },
+};
 
   useEffect(() => {
-    dispatch(getUserCart());
+    dispatch(getUserCart(config2));
   }, []);
 
   useEffect(() => {
@@ -42,9 +53,10 @@ const Cart = () => {
       );
       setTimeout(() => {
         dispatch(getUserCart());
-      }, 200);
+      }, 300);
     }
   }, [productUpdateDetail]);
+   
   useEffect(() => {
     let sum = 0;
     for (let index = 0; index < userCartState?.length; index++) {
@@ -54,6 +66,7 @@ const Cart = () => {
       setTotalAmount(sum);
     }
   }, [userCartState]);
+
   return (
     <div className="Cart">
       <div>
@@ -109,12 +122,10 @@ const Cart = () => {
                       <input
                         type="number"
                         min={1}
-                        max={10}
-                        value={
-                          productUpdateDetail?.quantity
-                            ? productUpdateDetail?.quantity
-                            : item?.quantity
-                        }
+                        max={100}
+                        value={item?.quantity}
+                        name={"quantity" + item?._id}
+                        id={"cart" + item?._id}
                         onChange={(e) => {
                           setProductUpdateDetail({
                             cartItemId: item?._id,

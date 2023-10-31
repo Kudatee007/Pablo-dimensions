@@ -48,8 +48,8 @@ function App() {
               <Route path="/my-profile" element={<Profile />} />
             </Route>
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
             <Route path="/reset-password" element={<ResetPass />} />
+            <Route path="/register-account" element={<Register />} />
             <Route path="/forgot-password/:token" element={<Forgotpass />} />
             <Route path="/contact-info" element={<Contact />} />
             <Route path="/shipping" element={<Shipping />} />

@@ -14,7 +14,7 @@ const Orders = () => {
   }, []);
   return (
     <div className="orders-orders">
-      <h1>Orders</h1>
+      <h1 className="ordersH">Orders</h1>
       <div className="row">
         <div className="col-12">
           <div className="my-row">
@@ -24,7 +24,7 @@ const Orders = () => {
             <div className="my-col">
               <h5 className="orderHead">Total Amount</h5>
             </div>
-            <div className="col-3">
+            <div className="col-3 colo">
               <h5 className="orderHead">Total Amount After Discount</h5>
             </div>
             <div className="col-3">
@@ -44,7 +44,7 @@ const Orders = () => {
                     <div className="col-3">
                       <p className="order-P">{item?.totalPrice}</p>
                     </div>
-                    <div className="my-col">
+                    <div className="my-col colo">
                       <p className="order-P">{item?.totalPriceAfterDiscount}</p>
                     </div>
                     <div className="col-3">
@@ -70,13 +70,13 @@ const Orders = () => {
                       return (
                         <div className="my-row" key={index}>
                           <div className="col-3">
-                            <p className="orderP">{i?.product?.title}</p>
+                            <p className="orderP1">{i?.product?.title}</p>
                           </div>
                           <div className="col-3">
-                            <p className="orderP">{i?.quantity}</p>
+                            <p className="orderP2">{i?.quantity}</p>
                           </div>
                           <div className="col-3">
-                            <p className="orderP">{i?.price}</p>
+                            <p className="orderP2">{i?.price}</p>
                           </div>
                           <div className="my-col">
                             <ul className="list-style">

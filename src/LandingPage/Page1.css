@@ -6,11 +6,18 @@
 .carousel-img1 {
   width: 98.6%;
   border-radius: 3px;
-  height: 220px;
+height: 220px;
 }
 .carousel {
   padding: 35px 3px;
 }
+/* .carousel-responsive {
+  position: relative;
+  z-index: -1;
+}
+.carousel-div1 {
+  z-index: 1;
+} */
 .carousel-div {
   position: relative;
 }

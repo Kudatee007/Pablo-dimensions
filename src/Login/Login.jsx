@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useFormik } from "formik";
@@ -25,11 +25,15 @@ const Login = () => {
     validationSchema: loginSchema,
     onSubmit: (values) => {
       dispatch(loginUser(values));
-      // if (authState.isSuccess === true) {
-        // navigate("/");
-      // }
     },
   });
+
+  useEffect(() => {
+    if (authState.user !== null && authState.isError == false) {
+      navigate("/");
+    }
+  }, [authState]);
+
   return (
     <div className="Login">
       <div className="login">
@@ -50,7 +54,7 @@ const Login = () => {
             </div>
             <div className="forgot-pass">
               <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 className="input-login"
                 onChange={formik.handleChange("password")}
@@ -68,7 +72,7 @@ const Login = () => {
               LOGIN
             </button>
           </div>
-          <Link to="/register" className="Link">
+          <Link to="/register-account" className="Link">
             <p className="create-one">
               Don't have an account? <span>Create one</span>
             </p>

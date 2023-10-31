@@ -216,11 +216,11 @@
 }
 @media (min-width: 1200px) {
   .cart-space {
-    margin: 20px 150px;
+    padding: 30px 50px;
   }
 }
 @media (min-width: 1400px) {
   .cart-space {
-    margin: 20px 220px;
+    padding: 30px 150px;
   }
 }

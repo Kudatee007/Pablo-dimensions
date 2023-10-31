@@ -9,10 +9,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAProduct } from "../features/products/productSlice";
 import { toast } from "react-toastify";
 import { addProdToCart, getUserCart } from "../features/users/userSlice";
+import wish from "../Img/wish.svg";
+import {
+  addToWishlist,
+} from "../features/products/productSlice";
 
 const Latestdetails = () => {
   const [color, setColor] = useState(null);
   const [star, setStar] = useState(null);
+  // const [selectedSize, setSelectedSize] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [alreadyAdded, setAlreadyAdded] = useState(false);
   const location = useLocation();
@@ -35,6 +40,10 @@ const Latestdetails = () => {
       }
     }
   }, []);
+
+  const addToWish = (id) => {
+    dispatch(addToWishlist(id));
+  };
 
   const uploadCart = async () => {
     if (color === null) {
@@ -101,37 +110,81 @@ const Latestdetails = () => {
               />
             </div>
           </Carousel>
+          <div className="wish-Cart">
+            <img
+              src={wish}
+              alt=""
+              className="wish"
+              onClick={() => {
+                addToWish(productState?._id);
+              }}
+            />
+          </div>
+          <ReactStars
+            count={5}
+            size={19}
+            value={
+              productState?.tags == "featured"
+                ? 4
+                : productState?.tags == "popular"
+                ? 4.5
+                : productState?.tags == "special"
+                ? 5
+                : 0
+            }
+            edit={false}
+            isHalf={true}
+            emptyIcon={<i className="far fa-star"></i>}
+            halfIcon={<i className="fa fa-star-half-alt"></i>}
+            fullIcon={<i className="fa fa-star"></i>}
+            activeColor="#ffd700"
+            classNames="react-icon"
+          />
         </div>
-        <ReactStars
-          count={5}
-          size={19}
-          value={
-            productState?.tags == "featured" ? 4 :
-            productState?.tags == "popular" ? 4.5 :
-            productState?.tags == "special" ? 5 : 0
-          }
-          edit={false}
-          isHalf={true}
-          emptyIcon={<i className="far fa-star"></i>}
-          halfIcon={<i className="fa fa-star-half-alt"></i>}
-          fullIcon={<i className="fa fa-star"></i>}
-          activeColor="#ffd700"
-          classNames="react-icon"
-        />
         <div className="latest-div2">
           <h1 className="latest-name">{productState?.title}</h1>
           <p className="latest-price">${productState?.price}</p>
-          <div className="size">
+          {/* <div className="size">
             <h2 className="size-txt">Size</h2>
             <div className="size-box">
-              <p className="medium">M</p>
-              <p className="large">L</p>
-              <p className="xlarge">XL</p>
+              <p
+                className={`medium ${
+                  selectedSize === "medium" ? "selected" : ""
+                }`}
+                onClick={() => setSelectedSize("medium")}
+              >
+                M
+              </p>
+              <p
+                className={`large ${
+                  selectedSize === "large" ? "selected" : ""
+                }`}
+                onClick={() => setSelectedSize("large")}
+              >
+                L
+              </p>
+              <p
+                className={`xlarge ${
+                  selectedSize === "xlarge" ? "selected" : ""
+                }`}
+                onClick={() => setSelectedSize("xlarge")}
+              >
+                XL
+              </p>
+              <p
+                className={`xlarge ${
+                  selectedSize === "xxlarge" ? "selected" : ""
+                }`}
+                onClick={() => setSelectedSize("xxlarge")}
+              >
+                XXL
+              </p>
             </div>
-          </div>
+          </div> */}
+
           <div>
             {alreadyAdded === false && (
-              <>
+              <div className="quant">
                 <h3>Quantity :</h3>
                 <div>
                   <input
@@ -140,9 +193,10 @@ const Latestdetails = () => {
                     max={10}
                     onChange={(e) => setQuantity(e.target.value)}
                     value={quantity}
+                    className="quantityBox"
                   />
                 </div>
-              </>
+              </div>
             )}
           </div>
           <div className="color">
@@ -151,7 +205,7 @@ const Latestdetails = () => {
                 <h2 className="color-txt">Color</h2>
                 <div className="color-box">
                   {/* <span className="white">{productState?.color}</span> */}
-                  <ul>
+                  <ul className="colorUl">
                     {colorData &&
                       colorData.map((item, index) => {
                         return (

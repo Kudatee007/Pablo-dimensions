@@ -58,7 +58,6 @@
 .cform-input {
   border: 2px solid #efecec;
   padding: 13px 7px;
-  margin-bottom: 13px;
   border-radius: 3px;
   color: #333;
   font-family: "Mooli", sans-serif;
@@ -71,7 +70,6 @@
 .cform-area {
   border: 2px solid #efecec;
   padding: 10px;
-  margin-bottom: 12px;
   border-radius: 3px;
   color: #333;
   font-family: "Mooli", sans-serif;
@@ -115,7 +113,6 @@
 }
 .cform-input {
     width: 100%;
-    margin-bottom: 15px;
 }
   .Contact-us {
     padding: 30px 56px;

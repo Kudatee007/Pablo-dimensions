@@ -13,6 +13,7 @@ import {
   getAllProducts,
 } from "../features/products/productSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useSearchFilter } from "../hooks/useFilterProducts";
 
 const Latest = () => {
   const [grid, setGrid] = useState(false);
@@ -22,7 +23,7 @@ const Latest = () => {
   const [tags, setTags] = useState([]);
   const productState = useSelector((state) => state?.product?.product);
   const dispatch = useDispatch();
-  console.log(productState?.tags);
+  const { filteredProducts } = useSearchFilter(productState);
   // FILTER STATE
   const [category, setCategory] = useState(null);
   const [brand, setBrand] = useState(null);
@@ -46,7 +47,7 @@ const Latest = () => {
     setTags(newtags);
   }, [productState]);
 
-  console.log(sort);
+  console.log(filteredProducts);
 
   function handleGrid() {
     setGrid(!grid);
@@ -68,9 +69,8 @@ const Latest = () => {
   console.log([...new Set(categories)], [...new Set(tags)]);
   return (
     <div className="latest-brand">
-      <h1 className="brand-txt">LATEST BRAND</h1>
+      <h1 className="brand-txt">LATEST</h1>
       <div className="func-box">
-        <div>
           <select
             name=""
             id=""
@@ -88,16 +88,10 @@ const Latest = () => {
             <option value="createdAt">Date, old to new</option>
             <option value="-createdAt">Date, new to old</option>
           </select>
-        </div>
-        <div className="empty-div"></div>
-        <div className="grid-box">
-          <img src={grid1} alt="" />
-          <img src={grid2} alt="" />
-        </div>
       </div>
       <div className="display-box">
-        {productState
-          ? productState.map((item, index) => {
+        {filteredProducts
+          ? filteredProducts.map((item, index) => {
               const { brand, title, price, images, totalrating, _id } = item;
               return (
                 <div key={index}>
@@ -121,7 +115,15 @@ const Latest = () => {
                     <ReactStars
                       count={5}
                       size={19}
-                      value={5}
+                      value={
+                        item?.tags == "featured"
+                          ? 4
+                          : item?.tags == "popular"
+                          ? 4.5
+                          : item?.tags == "special"
+                          ? 5
+                          : 0
+                      }
                       edit={false}
                       isHalf={true}
                       emptyIcon={<i className="far fa-star"></i>}
@@ -129,7 +131,7 @@ const Latest = () => {
                       fullIcon={<i className="fa fa-star"></i>}
                       activeColor="#ffd700"
                       classNames="react-icon"
-                    />{" "}
+                    />
                     <h5>{brand}</h5>
                     <h6>{title}</h6>
                     <p>${price} USD</p>

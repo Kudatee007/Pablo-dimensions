@@ -17,13 +17,33 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { BsCart4, BsFillPersonFill, BsPerson } from "react-icons/bs";
+import { AiOutlineLogout } from "react-icons/ai";
 import { TbBrandWish } from "react-icons/tb";
+import { getUserCart } from "../features/users/userSlice";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const authState = useSelector((state) => state?.auth);
   const [total, setTotal] = useState(null);
   const dispatch = useDispatch();
   const cartState = useSelector((state) => state?.auth.cartProducts);
+
+  const getTokenFromLocalStorage = localStorage.getItem("customer")
+    ? JSON.parse(localStorage.getItem("customer"))
+    : null;
+
+  const config2 = {
+    headers: {
+      Authorization: `Bearer ${
+        getTokenFromLocalStorage !== null ? getTokenFromLocalStorage.token : ""
+      }`,
+      Accept: "application/json",
+    },
+  };
+
+  useEffect(() => {
+    dispatch(getUserCart(config2));
+  }, []);
 
   useEffect(() => {
     let sum = 0;
@@ -34,7 +54,6 @@ const Navbar = () => {
       setTotal(sum);
     }
   }, [cartState]);
-  console.log(cartState);
   const [side, setSide] = useState(false);
   const [latest, setLatest] = useState(false);
   const [women, setWomen] = useState(false);
@@ -236,6 +255,10 @@ const Navbar = () => {
     window.location.reload();
   };
 
+  const reloadPage = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="navBar">
       <Marquee className="pabloHead">
@@ -261,7 +284,14 @@ const Navbar = () => {
           <div className="first-dropdown">
             <div className="headTag">
               <Link to="/" className="Link">
-                <h2 className="first-list">HOME</h2>
+                <h2
+                  className="first-list"
+                  onClick={() => {
+                    setSide(false);
+                  }}
+                >
+                  HOME
+                </h2>
               </Link>
             </div>
             <div className="headTag">
@@ -279,7 +309,17 @@ const Navbar = () => {
                     className={newMen ? "secondList" : "secondList-NX"}
                     id="latests"
                   >
-                    <li>T-shirts</li>
+                    <li
+                      onClick={() => {
+                        setSide(false);
+                        navigate({
+                          pathname: "/collections",
+                          search: "?filterBy=Men's Clothing",
+                        });
+                      }}
+                    >
+                      T-shirts
+                    </li>
                     <li>Shirts</li>
                     <li>Sweatshirts</li>
                     <li>Sweatpants</li>
@@ -457,14 +497,19 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            {/* <div className="buttons">
+            <Link className="Link" to="/my-orders">
+              <h2 className="order-text">My orders</h2>
+            </Link>
+            <div className="buttons">
               <Link className="Link" to="/my-orders">
-                <button className="btn-order">My Orders</button>
+                <button className="btn-order" onClick={reloadPage}>
+                  My Orders
+                </button>
               </Link>
               <button onClick={handleLogOut} className="btn-logout">
-                Log Out
+                Log Out <AiOutlineLogout />
               </button>
-            </div> */}
+            </div>
             <div className="black-logo">
               <img src={pabloblacklogo} alt="" />
             </div>
@@ -499,6 +544,7 @@ const Navbar = () => {
             <BsFillPersonFill className="cart" />
           )}
         </Link>
+        <AiOutlineLogout className="btnLogout" />
       </nav>
     </div>
   );

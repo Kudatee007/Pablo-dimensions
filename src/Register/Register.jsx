@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Register.css";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../features/users/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const signUpSchema = yup.object({
   firstname: yup.string().required("First Name is required"),
   lastname: yup.string().required("Last Name is required"),
-  email: yup.string().nullable().email("Email should be valid").required("Email Address is required"),
+  email: yup
+    .string()
+    .nullable()
+    .email("Email should be valid")
+    .required("Email Address is required"),
   mobile: yup.string().required("Mobile No is required"),
   password: yup.string().required("Password is required"),
 });
 
 const Register = () => {
+  const authState = useSelector((state) => state?.auth);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -29,6 +36,13 @@ const Register = () => {
       dispatch(registerUser(values));
     },
   });
+
+  // useEffect(() => {
+  //   if (authState.createdUser !== null && authState.isError == false) {
+  //     navigate("/login");
+  //   }
+  // });
+  
   return (
     <div className="Register">
       <div className="register">

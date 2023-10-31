@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./Contact.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaShippingFast, FaHouseUser } from "react-icons/fa";
 import Cartdetails from "./Cartdetails";
 import { useDispatch, useSelector } from "react-redux";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { createAnOrder } from "../features/users/userSlice";
+import {
+  createAnOrder,
+  deleteUserCart,
+  getUserCart,
+  resetState,
+} from "../features/users/userSlice";
 import { PaystackButton } from "react-paystack";
 
 const shippingSchema = yup.object({
@@ -20,12 +25,14 @@ const shippingSchema = yup.object({
 });
 
 const Contact = () => {
+  const navigate = useNavigate();
   const cartState = useSelector((state) => state?.auth?.cartProducts);
+  const authState = useSelector((state) => state?.auth);
   const [shippingInfo, setShippingInfo] = useState(null);
   const dispatch = useDispatch();
   const [cartProductState, setCartProductState] = useState([]);
   const shippingFee = 20;
-
+console.log(cartState);
   const [totalAmount, setTotalAmount] = useState(null);
 
   useEffect(() => {
@@ -35,6 +42,20 @@ const Contact = () => {
       setTotalAmount(sum);
     }
   }, [cartState]);
+
+  const getTokenFromLocalStorage = localStorage.getItem("customer")
+    ? JSON.parse(localStorage.getItem("customer"))
+    : null;
+
+  const config2 = {
+    headers: {
+      Authorization: `Bearer ${
+        getTokenFromLocalStorage !== null ? getTokenFromLocalStorage.token : ""
+      }`,
+      Accept: "application/json",
+    },
+  };
+
 
   useEffect(() => {
     let items = [];
@@ -49,15 +70,24 @@ const Contact = () => {
     }
   }, [cartState]);
 
-  const checkOutHandler = async () => {
+  // useEffect(()=> {
+  //   if (authState.orderedProduct !== null && authState.orderedProduct.status == true) {
+  //     navigate("/my-orders")
+  //   }
+  // })
+
+  const checkOutHandler = () => {
     dispatch(
       createAnOrder({
         totalPrice: totalAmount,
         totalPriceAfterDiscount: totalAmount,
         orderItems: cartProductState,
-        shippingInfo: shippingInfo,
+        shippingInfo: JSON.parse(localStorage.getItem("address")),
       })
     );
+    dispatch(deleteUserCart(config2));
+    localStorage.removeItem("address");
+    dispatch(resetState());
   };
   const formik = useFormik({
     initialValues: {
@@ -73,7 +103,7 @@ const Contact = () => {
     validationSchema: shippingSchema,
     onSubmit: (values) => {
       setShippingInfo(values);
-    
+      localStorage.setItem("address", JSON.stringify(values));
     },
   });
 
@@ -81,13 +111,13 @@ const Contact = () => {
   // you can call this function anything
   const handlePaystackSuccessAction = (reference) => {
     // Implementation for whatever you want to do with reference and after success call.
-    console.log(reference);
-    checkOutHandler()
+     checkOutHandler();
   };
 
+  const emailAddress = authState?.user?.email
   const config = {
     reference: new Date().getTime().toString(),
-    email: "user@example.com",
+    email: emailAddress,
     amount: totalAmount * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
     publicKey: "pk_test_ff3ace27b32e03f132720a4c38669d241b54e842",
   };
@@ -95,7 +125,7 @@ const Contact = () => {
   // you can call this function anything
   const handlePaystackCloseAction = () => {
     // implementation for  whatever you want to do when the Paystack dialog closed.
-    console.log("closed");
+    // console.log("closed");
   };
 
   const componentProps = {
@@ -112,18 +142,12 @@ const Contact = () => {
       </div>
       <div className="inner-contact2">
         <h2 className="contact-h">Contact</h2>
-        <p className="contact-mail">Timmyturner@gmail.com</p>
+        <p className="contact-mail">{emailAddress}</p>
         <h2 className="contact-h">Delivery method</h2>
         <div className="Delivery-method">
           <div className="del-method">
-            <input type="checkbox" name="" id="" />
             <FaShippingFast />
-            <p>Ship</p>
-          </div>
-          <div className="del-method">
-            <input type="checkbox" name="" id="" />
-            <FaHouseUser />
-            <p>Pick up</p>
+            <p>Shipping</p>
           </div>
         </div>
         <h1 className="contact-h">Shipping address</h1>
@@ -134,6 +158,7 @@ const Contact = () => {
               onChange={formik.handleChange("country")}
               onBlur={formik.handleBlur("country")}
               value={formik.values.country}
+              required
             >
               <option value="" disabled>
                 Select Country
@@ -152,6 +177,7 @@ const Contact = () => {
               onChange={formik.handleChange("firstName")}
               onBlur={formik.handleBlur("firstName")}
               value={formik.values.firstName}
+              required
             />
             <div className="error">
               {formik.touched.firstName && formik.errors.firstName}
@@ -163,6 +189,7 @@ const Contact = () => {
               onChange={formik.handleChange("lastName")}
               onBlur={formik.handleBlur("lastName")}
               value={formik.values.lastName}
+              required
             />
             <div className="error">
               {formik.touched.lastName && formik.errors.lastName}
@@ -174,6 +201,7 @@ const Contact = () => {
               onChange={formik.handleChange("address")}
               onBlur={formik.handleBlur("address")}
               value={formik.values.address}
+              required
             />
             <div className="error">
               {formik.touched.address && formik.errors.address}
@@ -185,6 +213,7 @@ const Contact = () => {
               onChange={formik.handleChange("other")}
               onBlur={formik.handleBlur("other")}
               value={formik.values.other}
+              required
             />
             <div className="error">
               {formik.touched.other && formik.errors.other}
@@ -196,6 +225,7 @@ const Contact = () => {
               onChange={formik.handleChange("city")}
               onBlur={formik.handleBlur("city")}
               value={formik.values.city}
+              required
             />
             <div className="error">
               {formik.touched.city && formik.errors.city}
@@ -207,6 +237,7 @@ const Contact = () => {
               onChange={formik.handleChange("state")}
               onBlur={formik.handleBlur("state")}
               value={formik.values.state}
+              required
             />
             <div className="error">
               {formik.touched.state && formik.errors.state}
@@ -218,6 +249,7 @@ const Contact = () => {
               onChange={formik.handleChange("pincode")}
               onBlur={formik.handleBlur("pincode")}
               value={formik.values.pincode}
+              required
             />
             <div className="error">
               {formik.touched.pincode && formik.errors.pincode}
@@ -245,10 +277,10 @@ const Contact = () => {
             </div>
             {/* <Link className="Link"> */}
             {/* <PaystackButton {...componentProps} /> */}
-            <button className="btn-gotoship" type="submit">
+            {/* <button className="btn-gotoship" type="submit">
               Place Order
-            </button>
-            <PaystackButton {...componentProps} />
+            </button> */}
+            <PaystackButton {...componentProps} type="submit"  className="btn-gotoship"/>
             {/* </Link> */}
             {/* <button type="submit">Place Order</button> */}
           </div>

@@ -14,15 +14,29 @@
     border: 1px solid #ddd;  */
 }
 .orderHead {
-  color: #000;
-  font-size: 12px;
+  color: #222;
+  font-size: 14px;
   font-family: "Rubik", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 16px;
-  /* text-transform: uppercase; */
-  /* padding-bottom: 20px;
-  padding-left: 20px; */
+}
+.orderP1 {
+  color: #555;
+  font-size: 14px;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  text-transform: lowercase;
+}
+.orderP2 {
+  color: #444;
+  font-size: 14px;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
 }
 .last-col {
   background-color: whitesmoke;
@@ -40,13 +54,24 @@
   font-weight: 400;
 } */
 .orderP {
-  font-size: 18px;
+  font-size: 15px;
   font-style: "Mooli", sans-serif;
   font-style: normal;
   font-weight: 200;
+  color: #222;
+}
+.ordersH {
+  font-size: 20px;
+  font-family: "Rubik", sans-serif;
+  color: #222;
+  font-weight: 400;
+  padding: 10px 0;
+  text-align: center;
+  line-height: 60px;
+  letter-spacing: 3px;
 }
 .order-P {
-  font-size: 18px;
+  font-size: 13px;
   font-style: "Mooli", sans-serif;
   font-style: normal;
   font-weight: 200;
@@ -56,4 +81,20 @@
   list-style: none;
 }
 .Rows {
+}
+.row {
+  width: 95%;
+  margin: 0 auto;
+}
+.colo {
+  display: none;
+}
+@media (min-width: 768px) {
+  .colo {
+    display: block;
+  }
+  .ordersH {
+    font-size: 30px;
+    line-height: 80px;
+  }
 }
